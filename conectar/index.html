@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conectar WhatsApp Business — Soulbyte</title>
+<meta name="description" content="Conecta la cuenta de WhatsApp Business de tu comercio a la plataforma de automatización de Soulbyte con tu propia cuenta de Meta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/soulbyte.css">
+</head>
+<body>
+<div class="contenedor">
+  <header class="barra">
+    <a class="marca" href="../">soul<span>byte</span></a>
+    <nav>
+      <a href="../#que-incluye">Qué incluye</a>
+      <a href="../#como-funciona">Cómo funciona</a>
+    </nav>
+  </header>
+
+  <div class="hero" style="align-items:start">
+    <div>
+      <h1>Conecta WhatsApp Business a tu tienda.</h1>
+      <p class="entrada">Autorizas a Soulbyte desde tu propia cuenta de Meta. La cuenta de WhatsApp, el número y las plantillas siguen siendo de tu empresa; nosotros enviamos los mensajes de tus pedidos en tu nombre.</p>
+
+      <h3>Qué pasa al pulsar el botón</h3>
+      <ol>
+        <li class="paso"><b>Tus datos</b> Guardamos el nombre de la empresa y el contacto para la puesta en marcha.</li>
+        <li class="paso"><b>Ventana de Meta</b> Inicias sesión en Meta, eliges o creas la cuenta de WhatsApp Business y el número. Meta te pide verificar el número por SMS o llamada.</li>
+        <li class="paso"><b>Conexión</b> Meta entrega a Soulbyte un permiso para tu cuenta. Registramos el número para la API y activamos los avisos de pedido cuando aprobemos tus plantillas.</li>
+      </ol>
+
+      <h3>Antes de empezar</h3>
+      <ul>
+        <li>Una cuenta de Meta con acceso de administrador al portafolio comercial de tu empresa (o crearás uno en el flujo).</li>
+        <li>Un número de teléfono que pueda recibir SMS o llamada y que no esté en uso en la app WhatsApp o WhatsApp Business (si lo está, primero elimina la cuenta desde la app).</li>
+        <li>Un método de pago en tu cuenta de WhatsApp Business; Meta cobra las conversaciones directamente a tu empresa.</li>
+      </ul>
+      <p><small>Los permisos que se solicitan son solo los de WhatsApp Business (gestión y mensajería). No pedimos acceso a tu perfil, amigos ni publicaciones. Detalle en la <a href="../privacidad/">política de privacidad</a>.</small></p>
+    </div>
+
+    <form class="ficha" id="ficha" onsubmit="return false">
+      <label for="empresa">Empresa</label>
+      <input id="empresa" name="empresa" autocomplete="organization" required maxlength="120" placeholder="Nombre comercial">
+      <label for="nombre">Persona de contacto</label>
+      <input id="nombre" name="nombre" autocomplete="name" maxlength="120">
+      <label for="email">Correo de contacto</label>
+      <input id="email" name="email" type="email" autocomplete="email" required maxlength="160">
+      <label for="telefono">Teléfono de contacto</label>
+      <input id="telefono" name="telefono" type="tel" autocomplete="tel" maxlength="40" placeholder="+57 300 000 0000">
+      <label for="sitio">Sitio web (opcional)</label>
+      <input id="sitio" name="sitio" type="url" autocomplete="url" maxlength="200" placeholder="https://">
+      <button class="boton" id="conectar" type="button" disabled>Conectar WhatsApp Business</button>
+      <div class="estado" id="estado" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <footer>
+    <p><b>Soulbyte S.A.S.</b> · NIT 901.923.996-1 · Medellín, Colombia</p>
+    <p>Contacto: <a href="mailto:ivancorrea@plazablack.com">ivancorrea@plazablack.com</a> · <a href="../privacidad/">Política de privacidad</a></p>
+  </footer>
+</div>
+<script src="../assets/onboarding.js"></script>
+</body>
+</html>
