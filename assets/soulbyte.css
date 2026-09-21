@@ -106,6 +106,27 @@ section { padding: 3rem 0; border-top: 1px solid var(--salvia); }
 .estado-fase .hitos li { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: start; margin-bottom: 0.5rem; }
 .estado-fase .hitos svg { width: 20px; height: 20px; color: var(--esmeralda); margin-top: 0.15rem; }
 
+/* Por qué un motor propio: comparativa */
+.entrada-seccion { font-size: 1.15rem; color: var(--tinta-suave); max-width: 70ch; margin-bottom: 1.75rem; }
+.tabla { background: var(--blanco); border: 1px solid var(--salvia); border-radius: 10px; overflow: hidden; margin-top: 2rem; }
+.comparativa { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+.comparativa caption { text-align: left; font-family: var(--display); font-weight: 600; font-size: 1.1rem; padding: 1.1rem 1.25rem 0.75rem; }
+.comparativa th, .comparativa td { text-align: left; vertical-align: top; padding: 0.85rem 1.25rem; border-top: 1px solid var(--salvia); }
+.comparativa thead th { background: var(--esmeralda-tenue); color: var(--esmeralda-oscura); font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.comparativa tbody th { font-family: var(--display); font-weight: 600; width: 22%; }
+.comparativa tbody td:nth-child(2) { color: var(--tinta); }
+.comparativa tbody td:nth-child(3) { color: var(--tinta-suave); }
+.nota-tabla { margin: 0.6rem 0 0; max-width: none; }
+@media (max-width: 720px) {
+  .comparativa thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .comparativa tr { display: block; border-top: 1px solid var(--salvia); }
+  .comparativa tbody tr:first-child { border-top: 0; }
+  .comparativa th, .comparativa td { display: block; border-top: 0; padding: 0.45rem 1.1rem; width: auto; }
+  .comparativa tbody th { width: auto; padding-top: 0.9rem; }
+  .comparativa td::before { content: attr(data-col); display: block; font-family: var(--display); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--esmeralda); margin-bottom: 0.1rem; }
+  .comparativa td:last-child { padding-bottom: 0.9rem; }
+}
+
 .faq details { border-top: 1px solid var(--salvia); padding: 0.9rem 0; max-width: 70ch; }
 .faq details:last-of-type { border-bottom: 1px solid var(--salvia); }
 .faq summary { font-family: var(--display); font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
