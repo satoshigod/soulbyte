@@ -1,10 +1,17 @@
-/* Soulbyte — conexión de WhatsApp Business (Meta Embedded Signup v4).
-   La página nunca ve el App Secret ni tokens: envía el código de un solo uso a n8n,
-   que hace el intercambio servidor-a-servidor. */
+/* Soulbyte — conexión de WhatsApp Business para comercios (Tech Provider de Meta).
+   Dos vías, ambas configuradas desde n8n (GET /soulbyte-onboarding-config):
+     1) Registro guiado por Meta ("hosted Embedded Signup"): se abre la página de registro
+        que Meta aloja para Soulbyte (hosted_url). La cuenta queda compartida con la app y
+        Meta avisa por webhook (account_update / PARTNER_ADDED). Aquí solo guardamos el lead.
+     2) Registro integrado (Embedded Signup con el SDK JS, config_id): el código de un solo uso
+        se envía a n8n, que hace el intercambio servidor-a-servidor.
+   La página nunca ve el App Secret ni tokens. */
 (function () {
   const N8N = 'https://n8n.hitaircolombia.com/webhook';
   const form = document.getElementById('ficha');
-  const boton = document.getElementById('conectar');
+  const botonMeta = document.getElementById('conectar-meta');
+  const botonSDK = document.getElementById('conectar');
+  const nota = document.getElementById('nota');
   const estado = document.getElementById('estado');
   let cfg = null;
   let sesion = null;          // datos del evento WA_EMBEDDED_SIGNUP (waba_id, phone_number_id, business_id, event)
@@ -14,45 +21,83 @@
     estado.innerHTML = html;
     estado.className = 'estado visible' + (esError ? ' error' : '');
   }
+  function escapar(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
   function datosFormulario() {
     const v = id => (document.getElementById(id).value || '').trim();
     return { empresa: v('empresa'), contacto_nombre: v('nombre'), contacto_email: v('email'), contacto_telefono: v('telefono'), sitio_web: v('sitio') };
   }
-
   function formularioValido() {
     const d = datosFormulario();
-    if (!d.empresa) { mostrar('Escribe el nombre de tu empresa antes de conectar.', true); return false; }
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.contacto_email)) { mostrar('Escribe un correo de contacto válido.', true); return false; }
+    if (!d.empresa) { mostrar('Escribe el nombre de tu empresa antes de continuar.', true); document.getElementById('empresa').focus(); return false; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.contacto_email)) { mostrar('Escribe un correo de contacto válido.', true); document.getElementById('email').focus(); return false; }
     return true;
   }
 
-  // 1) Configuración pública (app_id, config_id) desde n8n
+  // 1) Configuración pública desde n8n
   fetch(N8N + '/soulbyte-onboarding-config', { cache: 'no-store' })
     .then(r => r.json())
     .then(c => {
       cfg = c;
-      if (!c.habilitado) {
-        boton.disabled = true;
-        mostrar('El registro de nuevos comercios está en configuración. Déjanos tus datos por correo a <a href="mailto:ivancorrea@plazablack.com">ivancorrea@plazablack.com</a> y te avisamos cuando abra.');
-        return;
+      const hayMeta = !!(c.habilitado_hosted && c.hosted_url);
+      const haySDK = !!c.habilitado;
+      if (hayMeta) botonMeta.disabled = false;
+      if (haySDK) { botonSDK.classList.remove('oculto'); cargarSDK(c.app_id, c.version || 'v25.0'); }
+      if (!hayMeta && !haySDK) {
+        botonMeta.disabled = true;
+        nota.classList.add('oculto');
+        mostrar('El registro de nuevos comercios está en configuración. Déjanos tus datos por correo a <a href="mailto:ivancorrea@plazablack.com?subject=Conectar%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> y te avisamos cuando abra.');
+      } else if (!hayMeta) {
+        botonMeta.classList.add('oculto');
+        nota.textContent = 'La conexión se hace en una ventana de Meta sin salir de esta página.';
       }
-      cargarSDK(c.app_id, c.version || 'v25.0');
     })
-    .catch(() => { boton.disabled = true; mostrar('No se pudo cargar la configuración. Recarga la página o escríbenos.', true); });
+    .catch(() => { botonMeta.disabled = true; nota.classList.add('oculto'); mostrar('No se pudo cargar la configuración. Recarga la página o escríbenos a <a href="mailto:ivancorrea@plazablack.com">ivancorrea@plazablack.com</a>.', true); });
 
-  // 2) SDK de Meta
+  // 2) Vía 1: registro guiado por Meta. Guarda el lead y abre la página de registro de Meta.
+  botonMeta.addEventListener('click', function () {
+    if (!cfg || !cfg.hosted_url) { mostrar('El registro de Meta todavía no está disponible. Intenta en un momento.', true); return; }
+    if (!formularioValido()) return;
+    const d = datosFormulario();
+    // Abrir primero (dentro del clic, para que el navegador no lo bloquee); luego guardar el lead.
+    const ventana = window.open(cfg.hosted_url, '_blank');
+    if (ventana) { try { ventana.opener = null; } catch (e) { /* sin opener */ } }
+    guardarLead(d, ventana);
+  });
+
+  function guardarLead(d, ventana) {
+    const cuerpo = Object.assign({ via: 'hosted' }, d);
+    mostrar('Guardando tus datos…');
+    fetch(N8N + '/soulbyte-onboarding-lead', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cuerpo) })
+      .then(r => r.json().then(j => ({ ok: r.ok, j: j })))
+      .then(({ ok, j }) => {
+        const guardado = ok && j.ok;
+        mostrar(
+          (ventana
+            ? '<p><b>Se abrió el registro de Meta en otra pestaña.</b> Termina ahí los pasos: inicia sesión, elige o crea tu cuenta de WhatsApp Business y verifica el número.</p>'
+            : '<p><b>Tu navegador bloqueó la ventana.</b> Abre el registro de Meta aquí: <a href="' + escapar(cfg.hosted_url) + '" target="_blank" rel="noopener">registro de WhatsApp Business para Soulbyte</a>.</p>') +
+          (guardado
+            ? '<p>Registramos a <b>' + escapar(d.empresa) + '</b>. Cuando Meta nos comparta tu cuenta, te escribimos a ' + escapar(d.contacto_email) + ' en máximo un día hábil para registrar el número y activar tus plantillas.</p>'
+            : '<p>No pudimos guardar tus datos automáticamente. Cuando termines en Meta, escríbenos a <a href="mailto:ivancorrea@plazablack.com?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> con el nombre de tu empresa para completar la activación.</p>') +
+          '<p>Recuerda añadir un método de pago a tu cuenta de WhatsApp Business en Meta Business Suite; sin él Meta no permite enviar mensajes.</p>'
+        );
+      })
+      .catch(() => {
+        mostrar('<p><b>Se abrió el registro de Meta en otra pestaña.</b> No hubo respuesta de nuestro servidor al guardar tus datos; cuando termines en Meta, escríbenos a <a href="mailto:ivancorrea@plazablack.com?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> con el nombre de tu empresa.</p>');
+      });
+  }
+
+  // 3) Vía 2: registro integrado (SDK de Meta, Embedded Signup con response_type 'code')
   function cargarSDK(appId, version) {
     window.fbAsyncInit = function () {
       FB.init({ appId: appId, autoLogAppEvents: true, xfbml: false, version: version });
-      boton.disabled = false;
+      botonSDK.disabled = false;
     };
     const s = document.createElement('script');
     s.src = 'https://connect.facebook.net/es_LA/sdk.js'; s.async = true; s.defer = true; s.crossOrigin = 'anonymous';
     document.head.appendChild(s);
   }
 
-  // 3) Evento de sesión del flujo (identificadores de la cuenta creada/compartida)
   window.addEventListener('message', function (event) {
     if (!event.origin.endsWith('facebook.com')) return;
     try {
@@ -61,15 +106,14 @@
       if (data.event === 'CANCEL') {
         const paso = data.data && data.data.current_step;
         const err = data.data && data.data.error_message;
-        mostrar(err ? 'Meta reportó un error en el flujo: ' + err + (data.data.error_code ? ' (código ' + data.data.error_code + ')' : '')
-                    : 'Cerraste la ventana de Meta' + (paso ? ' en el paso <code>' + paso + '</code>' : '') + '. Puedes volver a intentarlo cuando quieras.', true);
+        mostrar(err ? 'Meta reportó un error en el flujo: ' + escapar(err) + (data.data.error_code ? ' (código ' + escapar(data.data.error_code) + ')' : '')
+                    : 'Cerraste la ventana de Meta' + (paso ? ' en el paso <code>' + escapar(paso) + '</code>' : '') + '. Puedes volver a intentarlo cuando quieras.', true);
         return;
       }
       sesion = Object.assign({ event: data.event }, data.data || {});
     } catch (e) { /* mensajes que no son del flujo */ }
   });
 
-  // 4) Callback de FB.login: llega el código de un solo uso (30 s de vida)
   function alTerminar(response) {
     if (!(response.authResponse && response.authResponse.code)) {
       if (!estado.classList.contains('visible')) mostrar('No se completó la autorización en Meta. Puedes intentarlo de nuevo.', true);
@@ -85,7 +129,7 @@
 
   function enviar(code) {
     if (enviando) return; enviando = true;
-    boton.disabled = true;
+    botonSDK.disabled = true;
     mostrar('Conectando tu cuenta con Soulbyte…');
     const cuerpo = Object.assign({ code: code }, datosFormulario(), {
       waba_id: sesion && sesion.waba_id || '', phone_number_id: sesion && sesion.phone_number_id || '',
@@ -94,8 +138,8 @@
     fetch(N8N + '/soulbyte-onboarding', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cuerpo) })
       .then(r => r.json().then(j => ({ ok: r.ok, j: j })))
       .then(({ ok, j }) => {
-        enviando = false; boton.disabled = false;
-        if (!ok || !j.ok) { mostrar('No se pudo completar la conexión: ' + (j.error || 'error desconocido') + '. Escríbenos y lo revisamos.', true); return; }
+        enviando = false; botonSDK.disabled = false;
+        if (!ok || !j.ok) { mostrar('No se pudo completar la conexión: ' + escapar(j.error || 'error desconocido') + '. Escríbenos y lo revisamos.', true); return; }
         const t = j.tenant || {};
         const numero = t.display_phone_number || t.phone_number_id || 'sin número todavía';
         mostrar('<p><b>Listo, ' + escapar(t.empresa || '') + '.</b> Tu cuenta de WhatsApp Business quedó conectada a Soulbyte.</p>' +
@@ -104,13 +148,10 @@
                 '<p>Recuerda añadir un método de pago a tu cuenta de WhatsApp Business en Meta Business Suite; sin él Meta no permite enviar mensajes. Te contactamos en máximo un día hábil para activar tus plantillas.</p>');
         form.reset(); sesion = null;
       })
-      .catch(() => { enviando = false; boton.disabled = false; mostrar('No hubo respuesta del servidor. Intenta de nuevo en un minuto.', true); });
+      .catch(() => { enviando = false; botonSDK.disabled = false; mostrar('No hubo respuesta del servidor. Intenta de nuevo en un minuto.', true); });
   }
 
-  function escapar(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
-
-  // 5) Botón: abre el flujo de Meta con datos de la empresa pre-cargados
-  boton.addEventListener('click', function () {
+  botonSDK.addEventListener('click', function () {
     if (!cfg || !cfg.habilitado || typeof FB === 'undefined') { mostrar('Meta todavía no está listo. Espera un momento y vuelve a intentar.', true); return; }
     if (!formularioValido()) return;
     const d = datosFormulario();

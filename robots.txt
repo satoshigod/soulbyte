@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://satoshigod.github.io/soulbyte/sitemap.xml
