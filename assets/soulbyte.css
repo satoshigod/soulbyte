@@ -400,6 +400,11 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .pie ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
 .pie a { color: var(--claro-oscuro); text-decoration: none; }
 .pie a:hover { color: #fff; text-decoration: underline; }
+/* Redes sociales en el pie (23-sep-2026): Facebook e Instagram de Soulbyte. Glifos de Simple Icons (CC0). */
+.pie .redes { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.3rem; }
+.pie .redes a { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(255, 255, 255, 0.04); color: var(--claro-oscuro); transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease; }
+.pie .redes a:hover, .pie .redes a:focus-visible { color: #fff; background: rgba(52, 211, 158, 0.14); border-color: rgba(52, 211, 158, 0.5); text-decoration: none; }
+.pie .redes svg { width: 18px; height: 18px; fill: currentColor; }
 .pie-legal { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: grid; gap: 0.6rem; font-size: 0.8rem; color: rgba(183, 210, 198, 0.78); }
 .pie-legal p { max-width: none; margin: 0; }
 
