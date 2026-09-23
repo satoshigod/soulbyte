@@ -35,11 +35,11 @@
 		-Server
 	}
 
-	# Caché: imágenes e íconos 30 días; CSS y JS 1 hora; páginas siempre revalidan
+	# Caché: imágenes e íconos 30 días; CSS, JS y páginas siempre revalidan (ETag: 304 si no cambiaron)
 	@imagenes path *.png *.jpg *.jpeg *.svg *.ico *.webp
 	header @imagenes Cache-Control "public, max-age=2592000"
 	@estilos path *.css *.js
-	header @estilos Cache-Control "public, max-age=3600"
+	header @estilos Cache-Control "no-cache"
 	@paginas path / */ *.html
 	header @paginas Cache-Control "no-cache"
 
