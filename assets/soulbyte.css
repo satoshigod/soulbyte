@@ -553,3 +553,21 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 .enlace-flecha .ico { width: 16px; height: 16px; transition: transform 0.15s; }
 .enlace-flecha:hover .ico { transform: translateX(3px); }
 @media (max-width: 1020px) { .pasos.pasos-3 { grid-template-columns: 1fr; } }
+/* Agenda y solicitud de la página de servicios (23-sep-2026) */
+.agenda-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: start; }
+.agenda-grid h2 { max-width: 20ch; }
+.servicios-agenda { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1rem; }
+.servicio-agenda { display: grid; grid-template-columns: 1fr auto; gap: 1.2rem; align-items: center; background: #fff; border: 1px solid var(--linea); border-radius: var(--radio-grande); padding: 1.4rem 1.5rem; }
+.servicio-agenda h3 { margin: 0 0 0.35rem; font-size: 1.12rem; }
+.servicio-agenda p { margin: 0; color: var(--tinta-2); font-size: 0.95rem; }
+.servicio-agenda .datos-servicio { margin-top: 0.55rem; font-size: 0.84rem; font-weight: 600; color: var(--esmeralda-2); }
+.agenda-grid form.ficha { position: static; }
+form.ficha textarea, form.ficha select { width: 100%; font: inherit; font-size: 0.98rem; padding: 0.78rem 0.9rem; border: 1px solid var(--linea-fuerte); border-radius: 12px; background: #fbfdfc; color: var(--tinta); transition: border-color 0.15s, box-shadow 0.15s; }
+form.ficha textarea { min-height: 7rem; resize: vertical; }
+form.ficha textarea:focus, form.ficha select:focus { outline: none; border-color: var(--esmeralda); box-shadow: 0 0 0 4px rgba(11, 122, 90, 0.14); background: #fff; }
+form.ficha label.casilla { display: grid; grid-template-columns: 20px 1fr; gap: 0.6rem; align-items: start; font-weight: 400; font-size: 0.88rem; color: var(--tinta-2); margin: 1rem 0 0; }
+form.ficha label.casilla input { width: 18px; height: 18px; margin: 0.15rem 0 0; padding: 0; accent-color: var(--esmeralda); }
+form.ficha .opcional { font-weight: 400; color: var(--tinta-3); }
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 1020px) { .agenda-grid { grid-template-columns: 1fr; gap: 2.6rem; } }
+@media (max-width: 680px) { .servicio-agenda { grid-template-columns: 1fr; } .servicio-agenda .btn { width: 100%; } }
