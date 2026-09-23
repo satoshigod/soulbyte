@@ -23,9 +23,24 @@
   }
   function escapar(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
+  // Origen del tráfico: primera página de la visita y sitio de procedencia (cada página lo guarda en
+  // sessionStorage al cargar; sin cookies). Se envía con el lead para saber qué canales traen comercios.
+  function origenTrafico() {
+    let o = null;
+    try { o = JSON.parse(sessionStorage.getItem('sb_origen') || 'null'); } catch (e) { o = null; }
+    if (!o || typeof o !== 'object') o = { ref: document.referrer || '', entrada: location.pathname + location.search };
+    const ref = String(o.ref || '').slice(0, 300), entrada = String(o.entrada || '').slice(0, 300);
+    let origen = '';
+    try { origen = new URLSearchParams(entrada.split('?')[1] || '').get('utm_source') || ''; } catch (e) { origen = ''; }
+    if (!origen && ref) {
+      try { const h = new URL(ref).hostname.replace(/^www\./, ''); origen = /(^|\.)google\./.test(h) ? 'google' : /(^|\.)bing\.com$/.test(h) ? 'bing' : h; } catch (e) { origen = ''; }
+    }
+    return { trafico_origen: (origen || 'directo').slice(0, 80), trafico_entrada: entrada, trafico_referrer: ref };
+  }
+
   function datosFormulario() {
     const v = id => (document.getElementById(id).value || '').trim();
-    return { empresa: v('empresa'), contacto_nombre: v('nombre'), contacto_email: v('email'), contacto_telefono: v('telefono'), sitio_web: v('sitio') };
+    return Object.assign({ empresa: v('empresa'), contacto_nombre: v('nombre'), contacto_email: v('email'), contacto_telefono: v('telefono'), sitio_web: v('sitio') }, origenTrafico());
   }
   function formularioValido() {
     const d = datosFormulario();

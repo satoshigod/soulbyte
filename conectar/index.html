@@ -192,6 +192,7 @@
 </footer>
 
 <script>
+try { if (!sessionStorage.getItem('sb_origen')) sessionStorage.setItem('sb_origen', JSON.stringify({ ref: (document.referrer || '').slice(0, 300), entrada: (location.pathname + location.search).slice(0, 300) })); } catch (e) { /* sin almacenamiento: se usa el referrer de la página */ }
 (function () {
   var boton = document.querySelector('.nav-toggle'), menu = document.getElementById('menu');
   if (!boton || !menu) return;

@@ -89,7 +89,7 @@
 
     <h2>Qué datos tratamos</h2>
     <ul>
-      <li><b>De los comercios que se conectan:</b> nombre de la empresa, persona de contacto, correo, teléfono, sitio web, identificadores de sus activos de Meta (portafolio comercial, cuenta de WhatsApp Business, número) y el token de acceso que Meta emite para esos activos, ya sea mediante el registro guiado que aloja Meta o mediante el registro integrado en nuestra página.</li>
+      <li><b>De los comercios que se conectan:</b> nombre de la empresa, persona de contacto, correo, teléfono, sitio web, la primera página del sitio de Soulbyte que visitaron y el sitio del que venían (por ejemplo, un buscador), identificadores de sus activos de Meta (portafolio comercial, cuenta de WhatsApp Business, número) y el token de acceso que Meta emite para esos activos, ya sea mediante el registro guiado que aloja Meta o mediante el registro integrado en nuestra página.</li>
       <li><b>De los clientes finales de cada comercio:</b> nombre, número de teléfono, número y estado del pedido y el contenido de los mensajes de WhatsApp que intercambian con el comercio, incluido el anuncio de Meta desde el que escribieron, si llegaron por uno, y los productos y cantidades del carrito que envían desde el catálogo de WhatsApp.</li>
       <li><b>De la tienda del comercio, cuando activa la medición de Meta:</b> eventos de navegación y compra (páginas y productos vistos, carritos, pagos iniciados y compras) enviados por el píxel de Meta y por la API de conversiones. Con cada compra van el correo, el teléfono, el nombre, la ciudad, el departamento, el código postal, el país y el identificador del cliente cifrados con SHA-256 antes de salir, además de las cookies de Meta (<code>_fbp</code>, <code>_fbc</code>), la dirección IP y el navegador.</li>
       <li><b>Para los públicos personalizados del comercio:</b> listas de sus compradores, carritos abandonados, contactos de WhatsApp y distribuidores, con correo, teléfono, nombre y ciudad cifrados con SHA-256 antes de enviarse a la cuenta publicitaria del comercio. Las personas que pidieron no estar, o que respondieron STOP en WhatsApp, nunca se envían y se retiran de los públicos existentes.</li>
@@ -108,6 +108,7 @@
       <li>Vigilar los anuncios del comercio (rechazos, gasto e inventario del producto anunciado), preparar sus campañas en pausa y enviarle reportes.</li>
       <li>Responder, con reglas que define el comercio, los comentarios y mensajes de Messenger de sus páginas de Facebook y publicar el contenido que programe.</li>
       <li>Responder, con reglas que define el comercio, los comentarios y mensajes directos de su cuenta de Instagram; avisar a su equipo de lo que requiere atención; registrar como contacto del comercio a quien pregunta precio, pide un asesor o escribe desde un anuncio; publicar el contenido que programe y enviarle un resumen semanal de la cuenta.</li>
+      <li>Saber por qué canales llegan los comercios que se registran (por ejemplo, desde Google) para mejorar el sitio de Soulbyte. Para esto no usamos cookies: el navegador guarda ese dato solo mientras dura la visita.</li>
       <li>Operar, respaldar y dar soporte a la infraestructura contratada.</li>
     </ul>
     <p>No vendemos datos, no los usamos para publicidad propia ni de otros comercios y no cruzamos datos entre comercios: la medición y los públicos de Meta se hacen solo para el comercio dueño de los datos, en su propia cuenta publicitaria. Los mensajes de marketing solo se envían a clientes que dieron su consentimiento en la tienda del comercio y pueden darse de baja respondiendo STOP.</p>
@@ -175,6 +176,7 @@
 </footer>
 
 <script>
+try { if (!sessionStorage.getItem('sb_origen')) sessionStorage.setItem('sb_origen', JSON.stringify({ ref: (document.referrer || '').slice(0, 300), entrada: (location.pathname + location.search).slice(0, 300) })); } catch (e) { /* sin almacenamiento: se usa el referrer de la página */ }
 (function () {
   var boton = document.querySelector('.nav-toggle'), menu = document.getElementById('menu');
   if (!boton || !menu) return;
