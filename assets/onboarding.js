@@ -46,13 +46,13 @@
       if (!hayMeta && !haySDK) {
         botonMeta.disabled = true;
         nota.classList.add('oculto');
-        mostrar('El registro de nuevos comercios está en configuración. Déjanos tus datos por correo a <a href="mailto:ivancorrea@plazablack.com?subject=Conectar%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> y te avisamos cuando abra.');
+        mostrar('El registro de nuevos comercios está en configuración. Déjanos tus datos por correo a <a href="mailto:hola@soulbyte.app?subject=Conectar%20WhatsApp%20Business%20con%20Soulbyte">hola@soulbyte.app</a> y te avisamos cuando abra.');
       } else if (!hayMeta) {
         botonMeta.classList.add('oculto');
         nota.textContent = 'La conexión se hace en una ventana de Meta sin salir de esta página.';
       }
     })
-    .catch(() => { botonMeta.disabled = true; nota.classList.add('oculto'); mostrar('No se pudo cargar la configuración. Recarga la página o escríbenos a <a href="mailto:ivancorrea@plazablack.com">ivancorrea@plazablack.com</a>.', true); });
+    .catch(() => { botonMeta.disabled = true; nota.classList.add('oculto'); mostrar('No se pudo cargar la configuración. Recarga la página o escríbenos a <a href="mailto:hola@soulbyte.app">hola@soulbyte.app</a>.', true); });
 
   // 2) Vía 1: registro guiado por Meta. Guarda el lead y abre la página de registro de Meta.
   botonMeta.addEventListener('click', function () {
@@ -78,12 +78,12 @@
             : '<p><b>Tu navegador bloqueó la ventana.</b> Abre el registro de Meta aquí: <a href="' + escapar(cfg.hosted_url) + '" target="_blank" rel="noopener">registro de WhatsApp Business para Soulbyte</a>.</p>') +
           (guardado
             ? '<p>Registramos a <b>' + escapar(d.empresa) + '</b>. Cuando Meta nos comparta tu cuenta, te escribimos a ' + escapar(d.contacto_email) + ' en máximo un día hábil para registrar el número y activar tus plantillas.</p>'
-            : '<p>No pudimos guardar tus datos automáticamente. Cuando termines en Meta, escríbenos a <a href="mailto:ivancorrea@plazablack.com?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> con el nombre de tu empresa para completar la activación.</p>') +
+            : '<p>No pudimos guardar tus datos automáticamente. Cuando termines en Meta, escríbenos a <a href="mailto:hola@soulbyte.app?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">hola@soulbyte.app</a> con el nombre de tu empresa para completar la activación.</p>') +
           '<p>Recuerda añadir un método de pago a tu cuenta de WhatsApp Business en Meta Business Suite; sin él Meta no permite enviar mensajes.</p>'
         );
       })
       .catch(() => {
-        mostrar('<p><b>Se abrió el registro de Meta en otra pestaña.</b> No hubo respuesta de nuestro servidor al guardar tus datos; cuando termines en Meta, escríbenos a <a href="mailto:ivancorrea@plazablack.com?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">ivancorrea@plazablack.com</a> con el nombre de tu empresa.</p>');
+        mostrar('<p><b>Se abrió el registro de Meta en otra pestaña.</b> No hubo respuesta de nuestro servidor al guardar tus datos; cuando termines en Meta, escríbenos a <a href="mailto:hola@soulbyte.app?subject=Conect%C3%A9%20WhatsApp%20Business%20con%20Soulbyte">hola@soulbyte.app</a> con el nombre de tu empresa.</p>');
       });
   }
 

@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soulbyte — infraestructura para vender en línea con WhatsApp y Google</title>
-<meta name="description" content="Soulbyte S.A.S. instala, conecta y opera la infraestructura de comercio electrónico de tu marca: tienda propia multimarca con canal mayorista, reglas propias en el carrito, sin comisión por venta, automatización, datos, WhatsApp Business (proveedor de tecnología acreditado por Meta), Instagram automatizado, medición y control de anuncios de Meta y Google Merchant Center (cuenta avanzada). Medellín, Colombia.">
+<title>Soulbyte — plataforma de comercio electrónico: tienda, WhatsApp, Instagram y Google</title>
+<meta name="description" content="Soulbyte es la plataforma de comercio electrónico que instala, conecta y opera tu tienda propia —multimarca y con canal mayorista— junto a WhatsApp Business, Meta, Instagram y Google Merchant Center sobre un mismo inventario, sin comisión por venta. Proveedor de tecnología de WhatsApp Business acreditado por Meta. Medellín, Colombia.">
 <link rel="canonical" href="https://soulbyte.app/">
-<meta name="theme-color" content="#0b7a5a">
+<meta name="theme-color" content="#06140f">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
-<meta property="og:title" content="Soulbyte — infraestructura para vender en línea con WhatsApp y Google">
-<meta property="og:description" content="Tienda propia multimarca y mayorista, reglas propias en el carrito, sin comisión por venta, automatización, datos, WhatsApp Business, Instagram automatizado, anuncios de Meta medidos con ventas reales y Google Merchant sobre una misma infraestructura. Proveedor de tecnología de WhatsApp acreditado por Meta.">
+<meta property="og:site_name" content="Soulbyte">
+<meta property="og:title" content="Soulbyte — vende en tu tienda, WhatsApp, Instagram y Google desde un solo motor">
+<meta property="og:description" content="Tienda propia multimarca y mayorista, WhatsApp Business, anuncios de Meta medidos con ventas reales, Instagram automatizado y Google Merchant sobre un mismo inventario. Sin comisión por venta. Proveedor de tecnología de WhatsApp acreditado por Meta.">
 <meta property="og:url" content="https://soulbyte.app/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b7a5a'/%3E%3Ctext x='32' y='44' font-family='Sora,Arial,sans-serif' font-size='34' font-weight='700' fill='%23fff' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/soulbyte.css">
 <script type="application/ld+json">
 {
@@ -24,7 +25,7 @@
   "name": "Soulbyte S.A.S.",
   "alternateName": "Soulbyte",
   "url": "https://soulbyte.app/",
-  "email": "ivancorrea@plazablack.com",
+  "email": "hola@soulbyte.app",
   "taxID": "901.923.996-1",
   "address": { "@type": "PostalAddress", "streetAddress": "Carrera 48 # 10-45, C.C. Monterrey, Oficina 2219", "addressLocality": "Medellín", "addressRegion": "Antioquia", "addressCountry": "CO" },
   "areaServed": "CO",
@@ -64,407 +65,677 @@
 </script>
 </head>
 <body>
-<a class="salto" href="#contenido">Ir al contenido</a>
-<div class="contenedor">
-  <header class="barra">
-    <a class="marca" href="./">soul<span>byte</span></a>
-    <nav aria-label="Principal">
-      <a href="#que-incluye">Qué incluye</a>
-      <a href="#motor-propio">Por qué propio</a>
-      <a href="#whatsapp">WhatsApp</a>
-      <a href="#meta">Meta</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#preguntas">Preguntas</a>
-      <a class="destacado" href="conectar/">Conectar WhatsApp</a>
-    </nav>
-  </header>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-tienda" viewBox="0 0 24 24"><path d="M4 9.5L5.5 4h13L20 9.5"/><path d="M4 9.5a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0 2.7 2.7 0 0 0 5.3 0"/><path d="M5 11.5V20h14v-8.5"/><path d="M10 20v-4.5h4V20"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-10.9 6.7L4 19.5l1.3-4.6A7.5 7.5 0 1 1 20 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></symbol>
+  <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M7.5 14.5l3.5-4 3 3 5-6"/></symbol>
+  <symbol id="i-imagen" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="M20.5 15.5l-4.8-4.8L6 19.5"/></symbol>
+  <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M20 20l-4.4-4.4"/></symbol>
+  <symbol id="i-cajas" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3.5l8.5 4-8.5 4z"/><path d="M3.5 7.5v9l8.5 4 8.5-4v-9"/><path d="M12 11.5v9"/></symbol>
+  <symbol id="i-datos" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v6.2c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8V5.5"/><path d="M4.5 11.7v6.5c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8v-6.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-check-circulo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.2 12.3l2.6 2.6 5-5.6"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12l2.2 2.2 4.3-4.4"/></symbol>
+  <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-rayo" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6z"/></symbol>
+  <symbol id="i-capas" viewBox="0 0 24 24"><path d="M12 3.5l8.5 4.5L12 12.5 3.5 8z"/><path d="M3.5 12.5L12 17l8.5-4.5"/><path d="M3.5 16.5L12 21l8.5-4.5"/></symbol>
+  <symbol id="i-carrito" viewBox="0 0 24 24"><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/><path d="M3 4h2.2l2.3 11h10.2l2.1-7.5H6.4"/></symbol>
+  <symbol id="i-porcentaje" viewBox="0 0 24 24"><path d="M18.5 5.5l-13 13"/><circle cx="7.5" cy="7.5" r="2.4"/><circle cx="16.5" cy="16.5" r="2.4"/></symbol>
+  <symbol id="i-llave" viewBox="0 0 24 24"><circle cx="8" cy="15.5" r="3.6"/><path d="M10.6 12.9L19.5 4M16.3 7.2l2.4 2.4M14 9.5l2 2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-campana" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-usuarios" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><path d="M16 5.6a3 3 0 0 1 0 5.8M18.3 14.6c1.5.8 2.4 2.4 2.7 4.9"/></symbol>
+  <symbol id="i-avion" viewBox="0 0 24 24"><path d="M21 3.5L10.5 14"/><path d="M21 3.5l-6.5 17-4-6.5-6.5-4z"/></symbol>
+  <symbol id="i-pausa" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 9v6M14 9v6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></symbol>
+</svg>
 
-  <main id="contenido">
-  <div class="hero">
-    <div>
-      <p class="antetitulo">Proveedor tecnológico de comercio electrónico · Medellín, Colombia</p>
-      <h1>Tu tienda, tu WhatsApp, tu Google. Nosotros operamos el motor.</h1>
-      <p class="entrada">Soulbyte instala, conecta y opera el sistema completo de una tienda en línea: catálogo, pagos, automatización, datos, WhatsApp Business, Instagram, anuncios de Meta y Google Merchant. Varias marcas y un canal mayorista sobre un mismo inventario, reglas propias en el carrito y ningún porcentaje por venta. La tienda, la cuenta de WhatsApp y los datos son de tu empresa; nosotros mantenemos el motor funcionando.</p>
-      <div class="acciones">
-        <a class="boton" href="conectar/">Conectar WhatsApp Business</a>
-        <a class="boton secundario" href="mailto:ivancorrea@plazablack.com?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con Soulbyte</a>
+<a class="salto" href="#contenido">Ir al contenido</a>
+
+<aside class="anuncio" aria-label="Aviso">Soulbyte es proveedor de tecnología de WhatsApp Business acreditado por Meta · <a href="conectar/">Conecta tu número →</a></aside>
+
+<header class="sitio">
+  <div class="envoltura">
+    <a class="marca" href="./" aria-label="Soulbyte, inicio"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#que-incluye">Plataforma</a>
+      <div class="desplegable">
+        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-canales">Canales<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="desplegable-panel" id="menu-canales">
+          <div class="desplegable-lista">
+            <a href="#whatsapp"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span><span><b>WhatsApp Business</b><small>Autoservicio, catálogo y pago desde el chat</small></span></a>
+            <a href="#meta"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-grafico"/></svg></span><span><b>Meta</b><small>Medición, públicos y anuncios vigilados</small></span></a>
+            <a href="#instagram"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-imagen"/></svg></span><span><b>Instagram</b><small>Publicaciones, comentarios y mensajes directos</small></span></a>
+            <a href="#google"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-buscar"/></svg></span><span><b>Google</b><small>Merchant Center y Perfil de Negocio</small></span></a>
+          </div>
+        </div>
       </div>
+      <a href="#mayoristas">Mayoristas</a>
+      <a href="#motor-propio">Por qué Soulbyte</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="solo-movil" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con ventas</a>
+      <a class="solo-movil btn btn-primario" href="conectar/">Conectar WhatsApp</a>
+    </nav>
+    <div class="acciones-barra">
+      <a class="enlace" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con ventas</a>
+      <a class="btn btn-primario btn-chico" href="conectar/">Conectar WhatsApp</a>
+      <button class="nav-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="hero">
+  <div class="envoltura hero-grid">
+    <div>
+      <a class="chip" href="#preguntas"><span class="punto" aria-hidden="true"></span>En producción con dos marcas en Colombia</a>
+      <h1>Vende en tu tienda, WhatsApp, Instagram y Google desde <em>un solo motor</em>.</h1>
+      <p class="lead">Soulbyte es la plataforma de comercio electrónico que instala, conecta y opera tu tienda propia —multimarca y con canal mayorista— junto a WhatsApp Business, Meta, Instagram y Google Merchant, sobre un mismo inventario. La tienda, las cuentas y los datos son de tu empresa; nosotros mantenemos el motor funcionando.</p>
+      <div class="hero-acciones">
+        <a class="btn btn-primario" href="conectar/">Conectar WhatsApp Business <svg class="ico"><use href="#i-flecha"/></svg></a>
+        <a class="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con ventas</a>
+      </div>
+      <ul class="confianza">
+        <li><svg class="ico"><use href="#i-check-circulo"/></svg>Proveedor de tecnología de Meta</li>
+        <li><svg class="ico"><use href="#i-check-circulo"/></svg>Cuenta avanzada de Google Merchant Center</li>
+        <li><svg class="ico"><use href="#i-check-circulo"/></svg>0 % de comisión por venta</li>
+      </ul>
     </div>
 
-    <svg class="mapa" viewBox="0 0 520 330" role="img" aria-labelledby="mapa-titulo">
-      <title id="mapa-titulo">Mapa del sistema Soulbyte: la tienda del comercio se conecta al motor de comercio, la automatización y los datos, y desde ahí a WhatsApp Business (acreditado por Meta) y Google Merchant Center (cuenta avanzada).</title>
-      <path class="via" d="M100 62 V120 M100 178 V236 M160 149 H260 M330 149 H420 M420 149 V78 M420 149 V220 M260 62 H330 M260 236 H330"/>
-      <g>
-        <rect class="caja" x="40" y="22" width="120" height="40" rx="6"/><text x="100" y="47" text-anchor="middle">Tu tienda</text>
-        <rect class="caja centro" x="40" y="120" width="120" height="58" rx="6"/><text x="100" y="144" text-anchor="middle">Motor de comercio</text><text class="pie" x="100" y="163" text-anchor="middle">catálogo · pedidos · pagos</text>
-        <rect class="caja" x="40" y="236" width="120" height="40" rx="6"/><text x="100" y="261" text-anchor="middle">Pagos y envíos</text>
-        <rect class="caja centro" x="260" y="120" width="70" height="58" rx="6"/><text x="295" y="144" text-anchor="middle">Automa-</text><text x="295" y="160" text-anchor="middle">tización</text>
-        <rect class="caja" x="260" y="22" width="120" height="40" rx="6"/><text x="320" y="47" text-anchor="middle">Datos y ERP</text>
-        <rect class="caja" x="260" y="236" width="120" height="40" rx="6"/><text x="320" y="261" text-anchor="middle">Correo</text>
-        <rect class="caja acreditada" x="352" y="58" width="136" height="40" rx="6"/><text x="420" y="77" text-anchor="middle">WhatsApp Business</text><text class="pie" x="420" y="92" text-anchor="middle">acreditado por Meta</text>
-        <rect class="caja acreditada" x="352" y="130" width="136" height="40" rx="6"/><text x="420" y="149" text-anchor="middle">Google Merchant</text><text class="pie" x="420" y="164" text-anchor="middle">cuenta avanzada</text>
-        <rect class="caja" x="360" y="200" width="120" height="40" rx="6"/><text x="420" y="225" text-anchor="middle">Marketplaces</text>
-      </g>
-      <text class="pie" x="40" y="312">Un mismo motor sirve varias marcas, tiendas y países.</text>
-    </svg>
+    <div class="escena" role="img" aria-label="Ilustración de la plataforma con datos de ejemplo: panel de ventas del día por canal, una conversación de WhatsApp con el botón Pagar mi pedido, el catálogo sincronizado con Google Merchant Center y una compra enviada a la API de conversiones de Meta.">
+      <div class="ventana" aria-hidden="true">
+        <div class="ventana-barra"><i></i><i></i><i></i><span>Soulbyte · Panel del comercio</span></div>
+        <div class="panel">
+          <div class="panel-lateral">
+            <ul>
+              <li class="activo"><svg class="ico"><use href="#i-grafico"/></svg>Resumen</li>
+              <li><svg class="ico"><use href="#i-carrito"/></svg>Pedidos</li>
+              <li><svg class="ico"><use href="#i-capas"/></svg>Catálogo</li>
+              <li><svg class="ico"><use href="#i-usuarios"/></svg>Clientes</li>
+              <li><svg class="ico"><use href="#i-cajas"/></svg>Mayoristas</li>
+              <li><svg class="ico"><use href="#i-chat"/></svg>Canales</li>
+              <li><svg class="ico"><use href="#i-rayo"/></svg>Automatizaciones</li>
+            </ul>
+          </div>
+          <div class="panel-principal">
+            <div class="panel-titulo"><b>Resumen de hoy</b><span>Todas las tiendas</span></div>
+            <div class="kpis">
+              <div class="kpi"><small>Ventas</small><b>$ 4.860.000</b><em>+12 %</em></div>
+              <div class="kpi"><small>Pedidos</small><b>31</b><em>+5</em></div>
+              <div class="kpi"><small>Conversaciones</small><b>118</b><em>92 % solas</em></div>
+            </div>
+            <p class="subtitulo-panel">Ventas por canal</p>
+            <div class="barras">
+              <div class="fila"><span>Tienda web</span><div class="barra"><i style="width:78%"></i></div><span>48 %</span></div>
+              <div class="fila"><span>WhatsApp</span><div class="barra"><i style="width:52%"></i></div><span>27 %</span></div>
+              <div class="fila"><span>Mayoristas</span><div class="barra"><i style="width:30%"></i></div><span>15 %</span></div>
+              <div class="fila"><span>Instagram</span><div class="barra"><i style="width:18%"></i></div><span>10 %</span></div>
+            </div>
+            <ul class="pedidos">
+              <li><b>#1042</b><span>WhatsApp · 2 productos</span><em class="pildora ok">Pagado</em></li>
+              <li><b>#1041</b><span>Distribuidor · lista mayorista</span><em class="pildora neutra">Borrador</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flotante f1" aria-hidden="true">
+        <div class="cabeza"><svg class="ico"><use href="#i-chat"/></svg>WhatsApp</div>
+        <p>Tu carrito está listo: 2 productos, total con IVA.</p>
+        <span class="boton-chat">Pagar mi pedido</span>
+      </div>
+      <div class="flotante f2" aria-hidden="true">
+        <div class="cabeza"><svg class="ico"><use href="#i-buscar"/></svg>Google Merchant</div>
+        <p>Catálogo sincronizado hoy a las 06:00. Precios y tallas al día.</p>
+      </div>
+      <div class="flotante f3" aria-hidden="true">
+        <div class="cabeza"><svg class="ico"><use href="#i-grafico"/></svg>Meta</div>
+        <p>Compra #1042 enviada a la API de conversiones.</p>
+      </div>
+      <p class="leyenda">Ilustración de la interfaz con datos de ejemplo.</p>
+    </div>
   </div>
+</section>
 
-  <ul class="sellos" aria-label="Acreditaciones y estado">
-    <li class="sello">
-      <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
-      <div>
-        <b>Proveedor de tecnología de WhatsApp Business, acreditado por Meta</b>
-        <p>Empresa verificada y revisión de app aprobada con acceso avanzado a mensajería y gestión de WhatsApp Business. Podemos conectar y operar cuentas de WhatsApp de otros comercios.</p>
-        <span class="fecha">Aprobado el 12 de septiembre de 2026</span>
+<section class="prueba" aria-label="Tiendas e integraciones en producción">
+  <div class="envoltura prueba-grid">
+    <div>
+      <p class="rotulo">En producción con marcas reales</p>
+      <div class="tiendas">
+        <a class="tienda" href="https://hitaircolombia.com"><b>Hit-Air Colombia</b><span>Airbags para motociclistas · hitaircolombia.com</span></a>
+        <a class="tienda" href="https://ekivibes.com"><b>Ekivibes</b><span>Equitación · ekivibes.com</span></a>
       </div>
-    </li>
-    <li class="sello">
-      <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></span>
-      <div>
-        <b>Cuenta avanzada de Google Merchant Center</b>
-        <p>Una subcuenta por tienda o marca bajo nuestra cuenta principal, con el catálogo sincronizado a diario desde el motor: precios, tallas y disponibilidad reales en Google Shopping.</p>
-        <span class="fecha">Aprobada el 3 de septiembre de 2026</span>
-      </div>
-    </li>
-    <li class="sello">
-      <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4 4L20 4"/><path d="M4 19h16"/></svg></span>
-      <div>
-        <b>En producción con dos marcas</b>
-        <p><a href="https://hitaircolombia.com">Hit-Air Colombia</a> y <a href="https://ekivibes.com">Ekivibes</a> venden a diario sobre esta infraestructura: pedidos, pagos, WhatsApp Business, píxel y API de conversiones de Meta, Google Merchant y perfiles de negocio verificados.</p>
-        <span class="fecha">Operando desde 2026</span>
-      </div>
-    </li>
-  </ul>
+    </div>
+    <div>
+      <p class="rotulo">Integraciones en producción</p>
+      <ul class="integraciones">
+        <li>WhatsApp Business Platform</li>
+        <li>Píxel y API de conversiones de Meta</li>
+        <li>Instagram</li>
+        <li>Facebook y Messenger</li>
+        <li>Google Merchant Center</li>
+        <li>Perfil de Negocio de Google</li>
+        <li>Wompi</li>
+        <li>Addi</li>
+        <li>Envia</li>
+        <li>Resend</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <section id="que-incluye">
-    <p class="antetitulo">Qué incluye</p>
-    <h2>Todo lo que una tienda necesita para vender, sobre una misma infraestructura.</h2>
-    <div class="cuatro">
-      <div class="tarjeta">
-        <span class="etiqueta">Tienda</span>
-        <h3>Tienda y motor de comercio</h3>
-        <p>Tienda propia con tu dominio: catálogo, variantes, inventario, precios minoristas y mayoristas, pagos locales (tarjeta, PSE, Nequi, transferencia, Bre-B, cuotas) y envíos. Si una transferencia no llega, el cliente recibe un recordatorio por WhatsApp a las 12 horas; si compró en preventa, un aviso cuando llega la importación. Construida sobre software de código abierto: la tienda es tuya, no alquilada.</p>
+<section id="que-incluye" class="seccion suave">
+  <div class="envoltura">
+    <div class="cabecera">
+      <p class="eyebrow">Plataforma</p>
+      <h2>Una plataforma. Todos los canales donde vende tu marca.</h2>
+      <p class="lead">Catálogo, inventario, pedidos y clientes viven en un solo motor, y cada canal lee y escribe sobre los mismos datos. Nada de copiar precios ni cuadrar inventarios a mano.</p>
+    </div>
+    <div class="bento">
+      <article class="baldosa ancha oscura">
+        <span class="icono"><svg class="ico"><use href="#i-tienda"/></svg></span>
+        <h3>Tienda propia, multimarca y con canal mayorista</h3>
+        <p>Tu dominio, tu catálogo y tus reglas. Varias marcas y un canal mayorista sobre el mismo inventario, con pagos locales y envíos cotizados por pedido. Construida sobre software de código abierto: la tienda es tuya, no alquilada.</p>
+        <ul class="datos-tienda">
+          <li>Tarjeta</li><li>PSE</li><li>Nequi</li><li>Bre-B</li><li>Transferencia</li><li>Cuotas</li>
+        </ul>
+        <a class="mas" href="#motor-propio">Por qué un motor propio <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-chat"/></svg></span>
+        <h3>WhatsApp Business</h3>
+        <p>Autoservicio, catálogo en el chat, carrito que se paga con un botón y avisos de cada pedido en tu propio número.</p>
+        <a class="mas" href="#whatsapp">Ver WhatsApp <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-grafico"/></svg></span>
+        <h3>Meta: medición y anuncios</h3>
+        <p>Píxel y API de conversiones, públicos que se actualizan solos y anuncios vigilados cada hora contra ventas reales.</p>
+        <a class="mas" href="#meta">Ver Meta <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-imagen"/></svg></span>
+        <h3>Instagram</h3>
+        <p>Publicaciones programadas, comentarios y mensajes directos respondidos por reglas, conectados a la tienda.</p>
+        <a class="mas" href="#instagram">Ver Instagram <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-buscar"/></svg></span>
+        <h3>Google</h3>
+        <p>Merchant Center con cuenta avanzada, catálogo enviado cada día, Perfil de Negocio y Search Console vigilados.</p>
+        <a class="mas" href="#google">Ver Google <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-cajas"/></svg></span>
+        <h3>Mayoristas B2B</h3>
+        <p>Listas de precios por distribuidor, cotizaciones que se vuelven pedido y cartera con avisos cada mañana.</p>
+        <a class="mas" href="#mayoristas">Ver mayoristas <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa ancha">
+        <span class="icono"><svg class="ico"><use href="#i-datos"/></svg></span>
+        <h3>Datos y automatización</h3>
+        <p>ERP y CRM ligeros en una base de datos de tu empresa, con respaldos cifrados. Conciliación de pagos, reportes, alertas, reorden sugerido, cierre de IVA y estado de resultados corren solos cada día, semana y mes.</p>
+        <a class="mas" href="#datos">Ver la operación automática <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="whatsapp" class="seccion">
+  <div class="envoltura division">
+    <div class="division-texto">
+      <p class="eyebrow">WhatsApp Business · API oficial de Meta</p>
+      <h2>Tu WhatsApp vende y atiende solo. Y sabe cuándo entra tu equipo.</h2>
+      <p class="lead">Corre hoy en el número de Hit-Air Colombia y Ekivibes, con formularios nativos de WhatsApp Flows y el catálogo de Meta en el chat. Un comercio nuevo recibe el mismo paquete instalado sobre su propia cuenta.</p>
+      <ul class="lista-check">
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Menú de autoservicio.</b> Estado del pedido consultado en vivo, guía de talla, catálogo, garantía o hablar con un asesor.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Catálogo en el chat.</b> Sincronizado cada hora desde la tienda, con precios y disponibilidad reales y botón «Agregar al carrito».</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>WhatsApp Flows.</b> Guía de talla con las medidas del cliente y encuesta después de la entrega; una calificación baja abre una incidencia.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Cada pedido acompañado.</b> Confirmación, pago, envío y entrega; uso a los 2 días, reseña a los 10, recambio a los 12 meses; carrito abandonado solo con permiso.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Código de verificación.</b> Seis dígitos que vencen a los diez minutos, con límite de envíos e intentos.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Tu equipo primero.</b> Si alguien respondió en las últimas 24 horas, el robot no interviene; «STOP» se respeta y todo queda registrado.</span></li>
+      </ul>
+      <div class="destacado">
+        <b>Del carrito al pago, con un botón</b>
+        <p>En Colombia WhatsApp no cobra dentro del chat. El carrito del catálogo recibe en segundos sus productos, el total con IVA y el botón «Pagar mi pedido», que abre el pago de tu tienda ya armado. Si mezcla dos tiendas, un enlace por cada una; lo agotado no se manda a pagar, y si no paga, un solo recordatorio.</p>
       </div>
-      <div class="tarjeta">
-        <span class="etiqueta">WhatsApp Business · acreditado por Meta</span>
-        <h3>Ventas y atención en tu propio número</h3>
-        <p>Conectas tu cuenta de WhatsApp Business desde tu propia cuenta de Meta, sin programar. Desde ahí salen la confirmación de pedido, pago, envío y entrega, la postventa y el carrito abandonado (solo con permiso del cliente); el cliente consulta su pedido, recibe el catálogo, paga en tu tienda con un solo botón el carrito que arma en WhatsApp y llena formularios dentro del chat; cuando pide un asesor, entra tu equipo. El número, las plantillas y la facturación de Meta siguen siendo de tu empresa. <a href="#whatsapp">Ver todo lo que hace</a>.</p>
+      <p class="nota">Conexión con el registro guiado de Meta. Meta cobra las conversaciones directamente al comercio; Soulbyte no las intermedia ni las recarga.</p>
+    </div>
+    <div class="marco">
+      <div class="telefono" role="img" aria-label="Ilustración de una conversación de WhatsApp atendida por Soulbyte: menú de autoservicio, estado del pedido y carrito con el botón Pagar mi pedido.">
+        <div class="chat-cabecera" aria-hidden="true"><span class="avatar">TM</span><div><b>Tu marca</b><small>Cuenta de empresa</small></div></div>
+        <div class="chat-cuerpo" aria-hidden="true">
+          <div class="burbuja entra">Hola, ¿cómo va mi pedido?<span class="hora">10:21</span></div>
+          <div class="burbuja sale">¡Hola, Laura! ¿En qué te ayudo?
+            <div class="opciones"><span>Estado de mi pedido</span><span>Guía de talla</span><span>Ver catálogo</span><span>Hablar con un asesor</span></div>
+          </div>
+          <div class="burbuja sale"><b>Pedido #1042</b> · En camino. Llega mañana con la transportadora.<span class="hora">10:21</span></div>
+          <div class="burbuja sale">
+            <div class="carrito-chat">
+              <b>Tu carrito</b>
+              <div class="linea-item"><span>1 × Producto A</span><span>$ 890.000</span></div>
+              <div class="linea-item"><span>1 × Accesorio</span><span>$ 120.000</span></div>
+              <div class="total"><span>Total con IVA</span><span>$ 1.010.000</span></div>
+            </div>
+            <span class="boton-chat">Pagar mi pedido</span>
+          </div>
+        </div>
       </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Google · cuenta avanzada</span>
-        <h3>Merchant Center, Perfil de Negocio y buscador</h3>
-        <p>Subcuenta propia de Merchant Center bajo nuestra cuenta avanzada, con el catálogo enviado a Google automáticamente cada día. Perfil de Negocio, Search Console y seguimiento de posicionamiento configurados y vigilados por nosotros.</p>
+      <p class="leyenda">Ilustración con datos de ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="meta" class="seccion suave">
+  <div class="envoltura division invertida">
+    <div class="division-texto">
+      <p class="eyebrow">Meta · Facebook e Instagram</p>
+      <h2>Anuncios medidos contra ventas reales y vigilados cada hora.</h2>
+      <p class="lead">Sobre las API oficiales de Meta y conectado al mismo motor de pedidos e inventario. Las respuestas salen de reglas que defines, sin inteligencia artificial, y ninguna automatización gasta por su cuenta: las campañas nuevas se crean en pausa.</p>
+      <ul class="lista-check">
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Cada venta atribuida.</b> Píxel en la tienda y cada compra pagada enviada desde el servidor por la API de conversiones, con datos del cliente cifrados (SHA-256) y el pedido como identificador para no contarla dos veces.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Públicos que se actualizan solos.</b> Compradores, carritos, contactos de WhatsApp y distribuidores, cada día. Quien pide no estar, o respondió STOP, nunca se sube.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Vigilancia cada hora.</b> Aviso si Meta rechaza un anuncio, pausa si su producto se agota y reactivación cuando vuelve; alerta de gasto y de costo por compra.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>El retorno real, cada mañana.</b> Gasto y compras por campaña cruzados con las ventas pagadas de la tienda, no solo con lo que informa Meta.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Página de Facebook y Messenger.</b> Publicaciones programadas, comentarios respondidos por reglas con mensaje privado, autoservicio en Messenger y contactos de clic a WhatsApp con su anuncio de origen.</span></li>
+      </ul>
+      <p class="nota">Opera hoy sobre el píxel, la cuenta publicitaria y las páginas de nuestras marcas. Para operar los de otro comercio, Meta debe aprobar además el acceso avanzado de nuestra app a los permisos de páginas y anuncios. La cuenta publicitaria y su facturación siguen siendo del comercio.</p>
+    </div>
+    <div class="marco" role="img" aria-label="Ilustración con datos de ejemplo del reporte diario de anuncios: gasto, compras y retorno real por campaña, y un anuncio pausado por falta de inventario.">
+      <div class="tarjeta-ui" aria-hidden="true">
+        <div class="tarjeta-ui-cabecera"><b>Reporte diario · Meta</b><span>Ayer · Colombia</span></div>
+        <table class="tabla-ui">
+          <thead><tr><th>Campaña</th><th class="num">Gasto</th><th class="num">Compras</th><th class="num">Retorno real</th></tr></thead>
+          <tbody>
+            <tr><td>Catálogo · recompra</td><td class="num">$ 180.000</td><td class="num">6</td><td class="num"><span class="pildora ok">7,4×</span></td></tr>
+            <tr><td>Novedades</td><td class="num">$ 240.000</td><td class="num">4</td><td class="num"><span class="pildora ok">4,1×</span></td></tr>
+            <tr><td>Público similar 1&nbsp;%</td><td class="num">$ 150.000</td><td class="num">1</td><td class="num"><span class="pildora aviso">1,3×</span></td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Meta · Facebook e Instagram</span>
-        <h3>Medición, públicos y anuncios bajo control</h3>
-        <p>Píxel y API de conversiones en tu tienda para que cada venta pagada llegue a Meta, públicos personalizados que se actualizan solos, vigilancia de anuncios cada hora (rechazos, inventario y gasto) y un reporte diario con el retorno real de la publicidad. Tu página de Facebook responde comentarios y mensajes por reglas. La cuenta publicitaria y su facturación son de tu empresa. <a href="#meta">Ver todo lo que hace</a>.</p>
+      <div class="tarjeta-ui" aria-hidden="true">
+        <div class="alerta-ui"><svg class="ico"><use href="#i-pausa"/></svg><span><b>Anuncio pausado:</b> su producto se quedó sin inventario. Se reactiva solo cuando vuelva el stock.</span></div>
       </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Mayoristas · B2B</span>
-        <h3>Distribuidores, cotizaciones y cartera sin planillas</h3>
-        <p>Apruebas a un distribuidor en el ERP y en minutos tiene su lista de precios en la tienda, un correo de aprobación y su serie de bienvenida; si todavía no tiene cuenta, se reintenta cada hora. Una cotización aceptada se convierte sola en pedido borrador, las cotizaciones sin respuesta se marcan para seguimiento a los 3, 7 y 14 días y la cartera avisa al equipo vencimientos y cupo cada mañana.</p>
+      <div class="tarjeta-ui" aria-hidden="true">
+        <div class="alerta-ui"><svg class="ico"><use href="#i-escudo"/></svg><span><b>Compra enviada a la API de conversiones</b> con el pedido como identificador. Correo y teléfono cifrados.</span></div>
       </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Datos y operación</span>
-        <h3>ERP y CRM ligeros, alertas y respaldos</h3>
-        <p>Pedidos, clientes, inventario y costos en una base de datos tuya, con respaldos cifrados. Los precios que apruebas en el ERP se publican en la tienda y en las listas mayoristas y se verifican. Lo demás corre solo:</p>
+      <p class="leyenda">Ilustración con datos de ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="instagram" class="seccion">
+  <div class="envoltura division">
+    <div class="division-texto">
+      <p class="eyebrow">Instagram · API oficial de Meta</p>
+      <h2>Tu Instagram publica, responde y te avisa, conectado a la tienda.</h2>
+      <p class="lead">En producción desde el 22 de septiembre de 2026 en @hitaircolombia. Las respuestas salen de reglas que define el comercio, sin inteligencia artificial, y el robot se apaga con un interruptor: desde ese momento todo llega a tu equipo.</p>
+      <ul class="lista-check">
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>El catálogo en el feed.</b> Publicaciones programadas de foto o carrusel de hasta diez; cuando entra un producto o vuelve el stock, la publicación se programa sola.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Comentarios respondidos al instante.</b> Precio, talla, envío o dónde comprar, con mensaje directo privado cuando hace falta un enlace; las palabras que marques se ocultan.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Autoservicio en los mensajes directos.</b> Preguntas frecuentes y menú: estado del pedido, guía de tallas, catálogo o asesor en tu horario.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Menciones y contactos.</b> Aviso cuando mencionan la cuenta, agradecimiento a quien la menciona en su historia y registro de interesados con su anuncio de origen.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Resumen cada lunes.</b> Seguidores, publicaciones, alcance, lo que respondió el robot y los contactos nuevos, por correo.</span></li>
+      </ul>
+      <p class="nota">Opera hoy sobre la cuenta de nuestra marca. Para la cuenta de otro comercio, Meta debe aprobar además el acceso avanzado a los permisos de Instagram, y la cuenta debe ser profesional y estar conectada a su página. La cuenta y sus seguidores siguen siendo del comercio.</p>
+    </div>
+    <div class="marco">
+      <div class="publicacion" role="img" aria-label="Ilustración de una publicación con comentarios: una pregunta por el precio recibe respuesta automática y un mensaje directo con el enlace a la tienda.">
+        <div class="publicacion-cabeza" aria-hidden="true"><span class="avatar">TM</span>tumarca</div>
+        <div class="publicacion-imagen" aria-hidden="true"><span>Nuevo en el catálogo</span></div>
+        <div class="comentarios" aria-hidden="true">
+          <div><b>andres.moto</b> ¿Precio y tallas?</div>
+          <div class="respuesta"><b>tumarca</b><span class="marca-auto">Automático</span> ¡Hola! Te escribimos por mensaje directo con el precio y la guía de tallas.</div>
+          <div><b>carolina.r</b> ¿Hacen envíos a Cali?</div>
+          <div class="respuesta"><b>tumarca</b><span class="marca-auto">Automático</span> Sí, a todo Colombia. El envío se calcula en la tienda: enlace en la bio.</div>
+        </div>
+      </div>
+      <p class="leyenda">Ilustración con datos de ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="google" class="seccion suave">
+  <div class="envoltura division invertida">
+    <div class="division-texto">
+      <p class="eyebrow">Google · cuenta avanzada de Merchant Center</p>
+      <h2>Tu catálogo en Google, al día sin tocarlo.</h2>
+      <p class="lead">Cada tienda o marca tiene su propia subcuenta de Merchant Center bajo nuestra cuenta avanzada, con precios, tallas y disponibilidad enviados cada día desde el motor.</p>
+      <ul class="lista-check">
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Merchant Center.</b> Subcuenta del comercio, con el catálogo sincronizado a diario y el mismo formato que usa Meta.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Perfil de Negocio.</b> Configurado y verificado para cada marca.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Buscador.</b> Search Console y seguimiento de posicionamiento vigilados por nosotros, con reporte semanal.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Sitio a la medida.</b> Rutas, redirecciones, mapa del sitio y datos estructurados propios en tu tienda.</span></li>
+      </ul>
+    </div>
+    <div class="marco" role="img" aria-label="Ilustración con datos de ejemplo: tres productos del catálogo con precio y disponibilidad y el estado de la última sincronización con Google Merchant Center.">
+      <div class="resultados" aria-hidden="true">
+        <div class="producto"><div class="foto"></div><b>Producto A</b><span class="precio">$ 890.000</span><small>En stock</small></div>
+        <div class="producto"><div class="foto"></div><b>Producto B</b><span class="precio">$ 1.250.000</span><small>En stock</small></div>
+        <div class="producto"><div class="foto"></div><b>Accesorio</b><span class="precio">$ 120.000</span><small>Últimas unidades</small></div>
+      </div>
+      <div class="estado-feed" aria-hidden="true">
+        <span class="icono-mini"><svg class="ico"><use href="#i-buscar"/></svg></span>
+        <div><b>Catálogo sincronizado con Merchant Center</b><span>Hoy, 06:00 · subcuenta de la tienda</span></div>
+        <span class="pildora ok">Al día</span>
+      </div>
+      <p class="leyenda">Ilustración con datos de ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="mayoristas" class="seccion">
+  <div class="envoltura division">
+    <div class="division-texto">
+      <p class="eyebrow">Mayoristas · B2B</p>
+      <h2>Tu canal mayorista, sin planillas.</h2>
+      <p class="lead">Minoristas y distribuidores compran del mismo inventario, cada uno con su precio. Los distribuidores ven el catálogo completo con su lista de precios, en la misma cuenta y el mismo pedido.</p>
+      <ul class="lista-check">
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Aprobación en minutos.</b> Apruebas a un distribuidor en el ERP y recibe su lista de precios, un correo de aprobación y su serie de bienvenida.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Cotizaciones que se vuelven pedido.</b> Una cotización aceptada pasa sola a pedido borrador; las que no tienen respuesta se marcan a los 3, 7 y 14 días.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Cartera bajo control.</b> Vencimientos y cupo avisados al equipo cada mañana.</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Precios que se verifican.</b> Los precios que apruebas se publican en la tienda y en las listas mayoristas, y se comprueba que quedaron bien.</span></li>
+      </ul>
+    </div>
+    <div class="marco" role="img" aria-label="Ilustración con datos de ejemplo de una lista de precios mayorista frente al precio al público.">
+      <div class="tarjeta-ui" aria-hidden="true">
+        <div class="tarjeta-ui-cabecera"><b>Lista de precios · Distribuidor</b><span class="pildora ok">Aprobado</span></div>
+        <table class="tabla-ui">
+          <thead><tr><th>Producto</th><th class="num">Al público</th><th class="num">Distribuidor</th></tr></thead>
+          <tbody>
+            <tr><td>Producto A</td><td class="num">$ 890.000</td><td class="num"><b>$ 668.000</b></td></tr>
+            <tr><td>Producto B</td><td class="num">$ 1.250.000</td><td class="num"><b>$ 940.000</b></td></tr>
+            <tr><td>Accesorio</td><td class="num">$ 120.000</td><td class="num"><b>$ 84.000</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tarjeta-ui" aria-hidden="true">
+        <div class="alerta-ui"><svg class="ico"><use href="#i-calendario"/></svg><span><b>Cotización COT-118 aceptada:</b> se creó el pedido borrador para revisión.</span></div>
+      </div>
+      <p class="leyenda">Ilustración con datos de ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="datos" class="seccion oscura">
+  <div class="envoltura">
+    <div class="cabecera">
+      <p class="eyebrow">Datos y operación</p>
+      <h2>Tu operación corre sola: cada día, cada semana, cada mes.</h2>
+      <p class="lead">Pedidos, clientes, inventario y costos en una base de datos de tu empresa, con respaldos cifrados. Los precios que apruebas en el ERP se publican en la tienda y se verifican.</p>
+    </div>
+    <div class="tiempos">
+      <div class="tiempo">
+        <span class="cuando"><svg class="ico"><use href="#i-reloj"/></svg>Cada día</span>
         <ul>
-          <li><b>Cada día:</b> conciliación de pagos, reporte de ventas, alerta de caída de ventas, incidencias vencidas, fichas para la factura electrónica de cada pedido y revisión de respaldos y servicios; el sitio se vigila cada 5 minutos.</li>
-          <li><b>Cada semana:</b> reorden sugerido por velocidad de venta, mercancía en tránsito y tiempo de entrega; costo aterrizado, conciliación de inventario, segmentos de clientes y Search Console.</li>
-          <li><b>Cada mes:</b> cierre de IVA, estado de resultados y reactivación de clientes a los seis meses.</li>
+          <li>Conciliación de pagos y reporte de ventas.</li>
+          <li>Alerta de caída de ventas e incidencias vencidas.</li>
+          <li>Fichas para la factura electrónica de cada pedido.</li>
+          <li>Recordatorio por WhatsApp si una transferencia no llega en 12 horas.</li>
+          <li>Revisión de respaldos y servicios; el sitio se vigila cada 5 minutos.</li>
+        </ul>
+      </div>
+      <div class="tiempo">
+        <span class="cuando"><svg class="ico"><use href="#i-calendario"/></svg>Cada semana</span>
+        <ul>
+          <li>Reorden sugerido por velocidad de venta, mercancía en tránsito y tiempo de entrega.</li>
+          <li>Costo aterrizado y conciliación de inventario.</li>
+          <li>Segmentos de clientes y Search Console.</li>
+          <li>Aviso de llegada a quien compró en preventa.</li>
+        </ul>
+      </div>
+      <div class="tiempo">
+        <span class="cuando"><svg class="ico"><use href="#i-grafico"/></svg>Cada mes</span>
+        <ul>
+          <li>Cierre de IVA.</li>
+          <li>Estado de resultados.</li>
+          <li>Reactivación de clientes a los seis meses.</li>
         </ul>
       </div>
     </div>
-  </section>
+    <p class="pie-seccion">Sin órdenes de compra automáticas: el reorden llega como sugerencia y la decisión es tuya.</p>
+  </div>
+</section>
 
-  <section id="motor-propio">
-    <p class="antetitulo">Por qué un motor propio</p>
-    <h2>Lo que una tienda alquilada no te deja hacer, o te cobra en plan empresarial.</h2>
-    <p class="entrada-seccion">Hit-Air Colombia y Ekivibes operan sobre este motor porque ninguna plataforma alquilada permitía hacerlo así: dos marcas y un canal mayorista en un solo sistema, reglas propias en el carrito y ningún porcentaje por venta. Lo mismo queda disponible para cada comercio que se conecta.</p>
-    <div class="cuatro">
-      <div class="tarjeta">
-        <span class="etiqueta">Multimarca y mayorista</span>
-        <h3>Un motor para varias marcas, tiendas y un canal mayorista</h3>
-        <p>Un solo catálogo, un solo inventario y una sola operación sirven varias tiendas con dominio propio, cada una con las categorías que le corresponden. Los distribuidores compran el catálogo completo con su lista de precios, en la misma cuenta y el mismo pedido. Sin una suscripción por marca ni límite de listas de precios.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Carrito y pago a tu medida</span>
-        <h3>Las reglas de tu negocio, dentro del carrito</h3>
-        <p>Un accesorio obligatorio que se agrega solo, cuotas solo para el canal minorista, precios mayoristas visibles únicamente para distribuidores autenticados, promociones al costo para el canal B2B. Cada regla se programa en el motor y queda en producción; no depende de una app de terceros ni de un plan empresarial.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Sin comisión por venta</span>
-        <h3>Ningún porcentaje de tus ventas para la plataforma</h3>
-        <p>Pagas la comisión de tu pasarela (tarjeta, PSE, Nequi, Bre-B, cuotas) y nada más. Las plataformas alquiladas suman entre 0,2 % y 2 % adicional por cada pedido cuando cobras con una pasarela colombiana, porque su pasarela propia no opera en Colombia, además de la mensualidad de cada tienda.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Sitio y datos bajo tu control</span>
-        <h3>URLs, posicionamiento, base de datos y respaldos tuyos</h3>
-        <p>Rutas y redirecciones propias, mapa del sitio y datos estructurados a la medida, cabeceras y rendimiento en tus manos. Pedidos, clientes e inventario en una base de datos de tu empresa, con respaldos cifrados y exportables. Software de código abierto: puedes irte con todo cuando quieras.</p>
-      </div>
+<section id="motor-propio" class="seccion">
+  <div class="envoltura">
+    <div class="cabecera">
+      <p class="eyebrow">Por qué Soulbyte</p>
+      <h2>Lo que una tienda alquilada no te deja hacer, o te cobra en plan empresarial.</h2>
+      <p class="lead">Hit-Air Colombia y Ekivibes operan sobre este motor porque ninguna plataforma alquilada permitía hacerlo así: dos marcas y un canal mayorista en un solo sistema, reglas propias en el carrito y ningún porcentaje por venta. Lo mismo queda disponible para cada comercio que se conecta.</p>
     </div>
-
-    <div class="tabla">
-      <table class="comparativa">
+    <div class="valores">
+      <div class="valor"><span class="icono"><svg class="ico"><use href="#i-capas"/></svg></span><h3>Multimarca y mayorista</h3><p>Un catálogo, un inventario y una operación para varias tiendas con dominio propio y un canal mayorista, sin suscripción por marca ni límite de listas de precios.</p></div>
+      <div class="valor"><span class="icono"><svg class="ico"><use href="#i-carrito"/></svg></span><h3>Tus reglas en el carrito</h3><p>Accesorios que se agregan solos, cuotas solo al minorista, precios mayoristas solo para distribuidores autenticados. Programado en el motor, sin apps de terceros.</p></div>
+      <div class="valor"><span class="icono"><svg class="ico"><use href="#i-porcentaje"/></svg></span><h3>Sin comisión por venta</h3><p>Pagas la comisión de tu pasarela (tarjeta, PSE, Nequi, Bre-B, cuotas) y nada más.</p></div>
+      <div class="valor"><span class="icono"><svg class="ico"><use href="#i-llave"/></svg></span><h3>Sitio y datos tuyos</h3><p>URLs, posicionamiento, base de datos y respaldos cifrados de tu empresa. Código abierto: puedes irte con todo cuando quieras.</p></div>
+    </div>
+    <div class="comparacion">
+      <table>
         <caption>Motor Soulbyte frente a una tienda alquilada</caption>
         <thead>
-          <tr><th scope="col">Aspecto</th><th scope="col">Motor Soulbyte</th><th scope="col">Tienda alquilada</th></tr>
+          <tr><th scope="col">Aspecto</th><th scope="col" class="nuestro">Motor Soulbyte</th><th scope="col">Tienda alquilada</th></tr>
         </thead>
         <tbody>
           <tr>
             <th scope="row">Varias marcas o tiendas</th>
-            <td data-col="Motor Soulbyte">Un motor, un inventario y tantas tiendas con dominio propio como necesites.</td>
-            <td data-col="Tienda alquilada">Una tienda por marca, cada una con su suscripción, su catálogo y su inventario.</td>
+            <td class="nuestro" data-col="Motor Soulbyte"><span class="con-icono"><svg class="ico"><use href="#i-check"/></svg><span>Un motor, un inventario y tantas tiendas con dominio propio como necesites.</span></span></td>
+            <td class="ellos" data-col="Tienda alquilada">Una tienda por marca, cada una con su suscripción, su catálogo y su inventario.</td>
           </tr>
           <tr>
             <th scope="row">Canal mayorista (B2B)</th>
-            <td data-col="Motor Soulbyte">Listas de precios sin límite por grupo de clientes; catálogo completo en el mismo pedido.</td>
-            <td data-col="Tienda alquilada">Hasta tres listas de precios; más listas, tienda B2B propia o anticipos exigen el plan empresarial.</td>
+            <td class="nuestro" data-col="Motor Soulbyte"><span class="con-icono"><svg class="ico"><use href="#i-check"/></svg><span>Listas de precios sin límite por grupo de clientes; catálogo completo en el mismo pedido.</span></span></td>
+            <td class="ellos" data-col="Tienda alquilada">Hasta tres listas de precios; más listas, tienda B2B propia o anticipos exigen el plan empresarial.</td>
           </tr>
           <tr>
             <th scope="row">Reglas en carrito y pago</th>
-            <td data-col="Motor Soulbyte">Programadas en el motor, a pedido del comercio.</td>
-            <td data-col="Tienda alquilada">Caja cerrada; personalizar el pago con lógica propia exige el plan empresarial, desde USD 2.300 al mes.</td>
+            <td class="nuestro" data-col="Motor Soulbyte"><span class="con-icono"><svg class="ico"><use href="#i-check"/></svg><span>Programadas en el motor, a pedido del comercio.</span></span></td>
+            <td class="ellos" data-col="Tienda alquilada">Caja cerrada; personalizar el pago con lógica propia exige el plan empresarial, desde USD 2.300 al mes.</td>
           </tr>
           <tr>
             <th scope="row">Comisión por venta</th>
-            <td data-col="Motor Soulbyte">Ninguna; solo la de tu pasarela.</td>
-            <td data-col="Tienda alquilada">0,2 % a 2 % adicional por pedido con pasarela externa, más la mensualidad.</td>
+            <td class="nuestro" data-col="Motor Soulbyte"><span class="con-icono"><svg class="ico"><use href="#i-check"/></svg><span>Ninguna; solo la de tu pasarela.</span></span></td>
+            <td class="ellos" data-col="Tienda alquilada">0,2 % a 2 % adicional por pedido con pasarela externa, más la mensualidad.</td>
           </tr>
           <tr>
             <th scope="row">Datos y código</th>
-            <td data-col="Motor Soulbyte">Base de datos y motor de código abierto de tu empresa.</td>
-            <td data-col="Tienda alquilada">Datos exportables, pero el motor, el carrito y el pago son de la plataforma.</td>
+            <td class="nuestro" data-col="Motor Soulbyte"><span class="con-icono"><svg class="ico"><use href="#i-check"/></svg><span>Base de datos y motor de código abierto de tu empresa.</span></span></td>
+            <td class="ellos" data-col="Tienda alquilada">Datos exportables, pero el motor, el carrito y el pago son de la plataforma.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="nota-tabla"><small>Columna «Tienda alquilada» con datos públicos de Shopify (planes Basic, Grow, Advanced y Plus; comisión por pasarela externa; países con Shopify Payments; B2B nativo desde abril de 2026) verificados el 21 de septiembre de 2026. Pueden cambiar.</small></p>
-  </section>
+    <p class="nota">Columna «Tienda alquilada» con datos públicos de Shopify (planes Basic, Grow, Advanced y Plus; comisión por pasarela externa; países con Shopify Payments; B2B nativo desde abril de 2026) verificados el 21 de septiembre de 2026. Pueden cambiar.</p>
+  </div>
+</section>
 
-  <section id="whatsapp">
-    <p class="antetitulo">WhatsApp Business, en producción</p>
-    <h2>Lo que tu número de WhatsApp hace solo, y cuándo entra tu equipo.</h2>
-    <p class="entrada-seccion">Todo esto corre hoy en el número de Hit-Air Colombia y Ekivibes sobre la API oficial de WhatsApp (Meta), con formularios nativos de WhatsApp Flows y el catálogo de Meta conectado al chat. Un comercio nuevo recibe el mismo paquete instalado: plantillas, formularios y catálogo se crean con un solo proceso sobre su propia cuenta.</p>
-    <div class="tres">
-      <div class="tarjeta">
-        <span class="etiqueta">Autoservicio</span>
-        <h3>Menú de opciones en el chat</h3>
-        <p>El cliente escribe y recibe un menú: estado de su pedido consultado en vivo en el motor, guía de talla, catálogo, garantía o hablar con un asesor. Responde sin que nadie esté conectado y registra cada conversación.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Catálogo de Meta</span>
-        <h3>Tus productos dentro de WhatsApp</h3>
-        <p>Catálogo del comercio en Meta, sincronizado cada hora desde la tienda con el mismo formato que usa Google. Ícono de catálogo en el chat, listas de productos enviadas por el robot y botón «Agregar al carrito», con precios y disponibilidad reales.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">WhatsApp Flows</span>
-        <h3>Formularios nativos, sin salir del chat</h3>
-        <p>Guía de talla que recomienda la referencia con las medidas del cliente y encuesta de satisfacción después de la entrega. Una calificación baja abre una incidencia y avisa al equipo el mismo día.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Transaccional y postventa</span>
-        <h3>Cada pedido, acompañado hasta la recompra</h3>
-        <p>Confirmación de pedido, pago, envío y entrega; instrucciones de uso a los dos días, solicitud de reseña a los diez, recordatorio de recambio o reposición a los doce meses; carrito abandonado solo con permiso del cliente.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Verificación</span>
-        <h3>Código de un solo uso por WhatsApp</h3>
-        <p>Plantilla de autenticación de Meta con código de seis dígitos que vence a los diez minutos, con límite de envíos e intentos, para confirmar el número del cliente en el pago o en el portal de distribuidores.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Equipo humano</span>
-        <h3>El robot sabe cuándo callarse</h3>
-        <p>Si tu equipo respondió en las últimas 24 horas, el robot no interviene; el menú se ofrece como máximo cada media hora; «STOP» se respeta; el cliente que pide asesor recibe atención de una persona en el horario que definas. Todo queda registrado para auditoría.</p>
-      </div>
-      <div class="tarjeta ancha">
-        <span class="etiqueta">Del carrito al pago</span>
-        <h3>El carrito de WhatsApp se paga en tu tienda, con un botón</h3>
-        <div class="dos">
-          <p>En Colombia WhatsApp no cobra dentro del chat: el carrito que el cliente arma en el catálogo llega como una solicitud de pedido. En segundos recibe la respuesta con sus productos, los precios de la tienda, el total con IVA y el botón «Pagar mi pedido», que abre el pago de tu tienda con el carrito ya armado: tarjeta, PSE, Nequi, <span style="white-space:nowrap">Bre-B</span>, transferencia o cuotas.</p>
-          <ul>
-            <li>Si mezcla productos de dos tiendas, recibe un enlace por cada una.</li>
-            <li>Lo que no tiene inventario no se manda a pagar: el cliente y tu equipo quedan avisados.</li>
-            <li>Si no paga, recibe un solo recordatorio unas horas después, en la misma conversación.</li>
-            <li>El pedido entra al motor como una venta en línea más, con su origen en WhatsApp, y tu equipo recibe el aviso con el detalle.</li>
-          </ul>
-        </div>
-      </div>
+<section class="cifras-banda" aria-label="Soulbyte en cifras">
+  <div class="envoltura">
+    <ul class="cifras">
+      <li><b>2 marcas</b><span>vendiendo a diario sobre la plataforma en Colombia.</span></li>
+      <li><b>0 %</b><span>de comisión por venta: solo pagas tu pasarela.</span></li>
+      <li><b>12 sep 2026</b><span>proveedor de tecnología de WhatsApp Business, acreditado por Meta.</span></li>
+      <li><b>3 sep 2026</b><span>cuenta avanzada de Google Merchant Center aprobada.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="como-funciona" class="seccion suave">
+  <div class="envoltura">
+    <div class="cabecera">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>Cada tienda nueva sale de una base que ya está en producción.</h2>
     </div>
-    <p class="nota-tabla"><small>Conexión mediante el registro guiado de Meta (Inicio de sesión con Facebook para empresas). Meta cobra las conversaciones directamente al comercio; Soulbyte no las intermedia ni las recarga.</small></p>
-  </section>
-
-  <section id="meta">
-    <p class="antetitulo">Meta: medición, públicos y anuncios, en producción</p>
-    <h2>Tus anuncios en Facebook e Instagram, medidos contra ventas reales y vigilados cada hora.</h2>
-    <p class="entrada-seccion">Instalado el 22 de septiembre de 2026 en Hit-Air Colombia y Ekivibes sobre las API oficiales de Meta (píxel, API de conversiones, Marketing API y páginas de Facebook), conectado al mismo motor de pedidos e inventario. Las respuestas salen de reglas que define el comercio, sin inteligencia artificial, y ninguna automatización gasta por su cuenta: las campañas nuevas se crean en pausa.</p>
-    <div class="tres">
-      <div class="tarjeta">
-        <span class="etiqueta">Medición</span>
-        <h3>Cada venta atribuida, aunque haya bloqueadores</h3>
-        <p>El píxel registra visitas, productos vistos, carritos y pagos iniciados. Cada compra pagada sale además desde el servidor por la API de conversiones, con el correo, el teléfono y el nombre del cliente cifrados (SHA-256) y el número de pedido como identificador, para que Meta no la cuente dos veces. Los productos se reportan con el mismo SKU del catálogo.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Públicos</span>
-        <h3>Públicos que se actualizan solos a diario</h3>
-        <p>Compradores, carritos abandonados, contactos de WhatsApp y distribuidores se suben cada día como públicos personalizados, cifrados antes de salir. Del sitio: visitantes, quienes vieron un producto sin comprar, quienes llegaron al pago y compradores, más un público similar a tus compradores en Colombia. Sirven para no gastar en quien ya compró y volver a impactar a quien estuvo cerca. Quien pide no estar, o respondió STOP en WhatsApp, nunca se sube y se retira de los públicos existentes.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Vigilancia</span>
-        <h3>Anuncios revisados cada hora</h3>
-        <p>Aviso si Meta rechaza o limita un anuncio; pausa automática del anuncio cuyo producto se quedó sin inventario y reactivación cuando vuelve; alerta si el gasto del día pasa el tope que definas o si el costo por compra de la semana se dispara.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Reporte y campañas</span>
-        <h3>El retorno real, cada mañana</h3>
-        <p>Reporte diario por campaña (gasto, clics, compras y costo por compra) cruzado con las ventas pagadas de la tienda para calcular el retorno real de la publicidad, no solo el que informa Meta. Las campañas nuevas se preparan en una tabla (producto, público, presupuesto, texto e imagen) y se crean en pausa, listas para revisar.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Página de Facebook</span>
-        <h3>Publicaciones y comentarios al día</h3>
-        <p>Publicaciones programadas desde una tabla; cuando entra un producto nuevo o vuelve el stock, la publicación se programa sola. Los comentarios que preguntan precio, talla, envío o dónde comprar reciben respuesta al instante (los de precio, también un mensaje privado con el enlace a la tienda y a WhatsApp); las palabras que marques se ocultan y lo que no tiene respuesta se avisa al equipo.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Messenger y clic a WhatsApp</span>
-        <h3>Del anuncio a la conversación, con contexto</h3>
-        <p>En Messenger, menú de autoservicio: estado del pedido con número y correo, guía de tallas, catálogo o asesor. Quien llega a WhatsApp desde un anuncio queda registrado como contacto con el anuncio de origen y recibe de inmediato la ficha del producto anunciado, antes del menú.</p>
-      </div>
-    </div>
-    <p class="nota-tabla"><small>Opera hoy sobre el píxel, la cuenta publicitaria y las páginas de Facebook de nuestras marcas. Para operar sobre los de otro comercio, Meta debe aprobar además el acceso avanzado de nuestra app a los permisos de páginas y anuncios, y los públicos personalizados exigen aceptar una vez las condiciones de Meta en la cuenta publicitaria. La cuenta publicitaria, su método de pago y la facturación de Meta siguen siendo del comercio.</small></p>
-  </section>
-
-  <section id="instagram">
-    <p class="antetitulo">Instagram para comercio electrónico, en producción</p>
-    <h2>Tu Instagram publica, responde y te avisa, conectado a la tienda.</h2>
-    <p class="entrada-seccion">Instalado el 22 de septiembre de 2026 en la cuenta @hitaircolombia sobre la API oficial de Instagram de Meta, con el mismo motor de pedidos, catálogo e inventario que la tienda. Las respuestas salen de reglas que define el comercio, sin inteligencia artificial, y el robot se apaga con un interruptor: desde ese momento todo llega al equipo.</p>
-    <div class="tres">
-      <div class="tarjeta">
-        <span class="etiqueta">Publicaciones</span>
-        <h3>El catálogo en el feed, sin copiar y pegar</h3>
-        <p>Publicaciones programadas desde la misma tabla que alimenta Facebook: una foto o un carrusel de hasta diez, con el texto adaptado a Instagram (sin enlaces sueltos, con «enlace en la bio» y etiquetas de la marca). Cuando entra un producto nuevo o vuelve el stock, la publicación se programa sola y solo en la marca que lo vende al público.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Comentarios</span>
-        <h3>Cada pregunta del feed, respondida al instante</h3>
-        <p>Quien pregunta precio, talla, envío o dónde comprar recibe respuesta pública y, cuando hace falta un enlace (precio, talla o dónde comprar), un mensaje directo privado con la tienda o la guía de tallas. No repite la misma respuesta a la misma persona en una hora; las palabras que marques se ocultan y lo que no tiene regla se avisa al equipo.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Mensajes directos</span>
-        <h3>Autoservicio en el chat de Instagram</h3>
-        <p>Preguntas frecuentes al abrir el chat y un menú con respuestas rápidas: estado del pedido consultado en vivo con número y correo, guía de tallas, catálogo con medios de pago o hablar con un asesor en el horario de atención. Lo que el robot no resuelve pasa al equipo, que responde desde la bandeja de Meta Business Suite.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Menciones</span>
-        <h3>Sabes quién habla de tu marca</h3>
-        <p>Aviso al equipo cuando mencionan la cuenta en una publicación, en un comentario o en una historia, y un agradecimiento automático por mensaje directo a quien la menciona en su historia.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Contactos y anuncios</span>
-        <h3>Del interés a tu CRM, con su origen</h3>
-        <p>Quien pregunta precio, pide un asesor o escribe desde un anuncio de Instagram queda registrado como contacto, con el anuncio de origen cuando lo hay, y sin duplicarse. Quien llega desde un anuncio recibe de inmediato el enlace a la tienda y el menú.</p>
-      </div>
-      <div class="tarjeta">
-        <span class="etiqueta">Resumen semanal</span>
-        <h3>La cuenta en un correo, cada lunes</h3>
-        <p>Seguidores y variación de la semana, publicaciones con sus me gusta y comentarios, alcance y visitas al perfil cuando Meta los entrega, lo que respondió el robot por tema y los contactos nuevos que llegaron por Instagram.</p>
-      </div>
-    </div>
-    <p class="nota-tabla"><small>Opera hoy sobre la cuenta de Instagram de nuestra marca, conectada a su página de Facebook y a su portafolio en Meta. Para operar la cuenta de otro comercio, Meta debe aprobar además el acceso avanzado de nuestra app a los permisos de Instagram, y la cuenta del comercio debe ser profesional y estar conectada a su página. La cuenta, sus datos y sus seguidores siguen siendo del comercio.</small></p>
-  </section>
-
-  <section id="como-funciona">
-    <div class="dos">
-      <div>
-        <p class="antetitulo">Cómo funciona</p>
-        <h2>Cada tienda nueva sale de la misma base ya en producción.</h2>
-        <ol>
-          <li class="paso"><b>Configuración</b> Dominio, catálogo, precios, pagos y envíos del comercio.</li>
-          <li class="paso"><b>Conexiones</b> WhatsApp Business con tu propia cuenta de Meta, píxel y cuenta publicitaria de Meta, subcuenta de Google Merchant, Perfil de Negocio y correo transaccional.</li>
-          <li class="paso"><b>Automatización</b> Se activan los flujos de pedido, cobro, postventa, catálogo, mayoristas y reportes; en WhatsApp, el menú de autoservicio, los formularios y el catálogo en el chat, y en Meta, la medición de ventas, los públicos y la vigilancia de anuncios.</li>
-          <li class="paso"><b>Operación</b> Soulbyte vigila, respalda y mantiene; el negocio vende.</li>
-        </ol>
+    <ol class="pasos">
+      <li><h3>Configuración</h3><p>Dominio, catálogo, precios, pagos y envíos del comercio.</p></li>
+      <li><h3>Conexiones</h3><p>WhatsApp Business con tu propia cuenta de Meta, píxel y cuenta publicitaria, subcuenta de Google Merchant, Perfil de Negocio y correo transaccional.</p></li>
+      <li><h3>Automatización</h3><p>Flujos de pedido, cobro, postventa, catálogo, mayoristas y reportes; autoservicio y formularios en WhatsApp; medición, públicos y vigilancia en Meta.</p></li>
+      <li><h3>Operación</h3><p>Soulbyte vigila, respalda y mantiene el motor; tu negocio vende.</p></li>
+    </ol>
+    <div class="dos-columnas">
+      <div class="caja">
         <h3>Para quién</h3>
         <ul>
-          <li>Marcas y distribuidores con una o varias tiendas (o países) que quieren un solo motor y una sola operación.</li>
-          <li>Empresas que venden a minoristas y a distribuidores desde un mismo inventario, con reglas propias de precio y de pago por canal.</li>
-          <li>Comercios que ya venden por WhatsApp y quieren automatizar sin cambiar de número ni entregar su cuenta.</li>
-          <li>Empresas que prefieren ser dueñas de su tienda y de sus datos en lugar de alquilarlos.</li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Marcas y distribuidores con una o varias tiendas, o países, que quieren un solo motor y una sola operación.</span></li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Empresas que venden a minoristas y a distribuidores desde un mismo inventario, con reglas propias de precio y pago por canal.</span></li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Comercios que ya venden por WhatsApp y quieren automatizar sin cambiar de número ni entregar su cuenta.</span></li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Empresas que prefieren ser dueñas de su tienda y de sus datos en lugar de alquilarlos.</span></li>
         </ul>
       </div>
-      <div class="estado-fase">
+      <div class="caja estado-fase">
         <h3>Dónde estamos</h3>
-        <ul class="hitos">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span><b>Fase 1, en producción.</b> Dos marcas propias vendiendo en Colombia con pedidos, pagos, WhatsApp Business (autoservicio, Flows, catálogo en el chat, verificación) y Google Merchant funcionando a diario; desde el 22 de septiembre, también medición, públicos y control de anuncios de Meta.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg><span><b>Acreditaciones.</b> Proveedor de tecnología de WhatsApp Business (Meta, 12 sep 2026) y cuenta avanzada de Google Merchant Center (3 sep 2026).</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Fase 2, abriendo.</b> Conexión de WhatsApp Business para otros comercios mediante el registro guiado de Meta, y subcuentas de Merchant Center por tienda. Las funciones de páginas y anuncios de Meta para otros comercios, una vez Meta apruebe esos permisos.</span></li>
+        <ul>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span><b>Fase 1, en producción.</b> Dos marcas propias vendiendo en Colombia con pedidos, pagos, WhatsApp Business y Google Merchant a diario; desde el 22 de septiembre, también medición, públicos y control de anuncios de Meta, e Instagram.</span></li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span><b>Acreditaciones.</b> Proveedor de tecnología de WhatsApp Business (Meta, 12 sep 2026) y cuenta avanzada de Google Merchant Center (3 sep 2026).</span></li>
+          <li><svg class="ico"><use href="#i-reloj"/></svg><span><b>Fase 2, abriendo.</b> Conexión de WhatsApp Business para otros comercios con el registro guiado de Meta y subcuentas de Merchant Center por tienda. Páginas y anuncios de Meta para otros comercios, cuando Meta apruebe esos permisos.</span></li>
         </ul>
         <p>¿Quieres ser de los primeros comercios? Regístrate en <a href="conectar/">Conectar WhatsApp Business</a> y te contactamos para completar la puesta en marcha.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="preguntas" class="faq">
-    <p class="antetitulo">Preguntas frecuentes</p>
-    <h2>Lo que nos preguntan antes de conectar.</h2>
-    <details>
-      <summary>¿La cuenta de WhatsApp Business sigue siendo mía?</summary>
-      <p>Sí. La cuenta, el número y las plantillas quedan en el portafolio comercial de tu empresa en Meta. Tú autorizas a Soulbyte a operar sobre ellos y puedes retirar ese acceso cuando quieras desde Meta Business Suite.</p>
-    </details>
-    <details>
-      <summary>¿Qué significa que Soulbyte sea proveedor de tecnología de Meta?</summary>
-      <p>Que Meta verificó a Soulbyte S.A.S. como empresa y aprobó nuestra app para enviar mensajes y gestionar cuentas de WhatsApp Business en nombre de otros comercios (permisos de mensajería y de gestión con acceso avanzado). Sin esa acreditación, un proveedor no puede conectar cuentas ajenas a la API oficial de WhatsApp.</p>
-    </details>
-    <details>
-      <summary>¿Quién paga los mensajes de WhatsApp?</summary>
-      <p>Meta le cobra las conversaciones directamente a tu empresa, con el método de pago que registres en tu cuenta de WhatsApp Business. Soulbyte no intermedia ese cobro ni recarga tus conversaciones.</p>
-    </details>
-    <details>
-      <summary>¿El cliente puede pagar dentro de WhatsApp?</summary>
-      <p>En Colombia, WhatsApp no procesa pagos dentro del chat: el carrito del catálogo llega como una solicitud de pedido. Por eso el robot responde con el pedido, el total y el botón «Pagar mi pedido», que abre el pago de tu tienda con el carrito ya armado. El cliente paga con los medios de tu tienda y el pedido entra como cualquier venta en línea.</p>
-    </details>
-    <details>
-      <summary>¿Soulbyte maneja mis anuncios de Facebook e Instagram?</summary>
-      <p>Medimos, vigilamos y preparamos; el gasto lo decides tú. Las campañas que se arman desde la tabla quedan en pausa hasta que alguien las revisa y las activa, y ninguna automatización sube presupuestos. La única acción automática sobre un anuncio activo es pausarlo cuando su producto se queda sin inventario y reactivarlo cuando vuelve. La cuenta publicitaria, el método de pago y la facturación de Meta son de tu empresa.</p>
-    </details>
-    <details>
-      <summary>¿Necesito tener la tienda con Soulbyte para conectar WhatsApp o Google?</summary>
-      <p>No. Si ya tienes tienda, conectamos los mensajes de pedido y el catálogo de Google a lo que usas hoy, siempre que exponga sus pedidos y productos por API o archivo. Si no tienes tienda, la desplegamos sobre nuestro motor.</p>
-    </details>
-    <details>
-      <summary>¿Por qué no simplemente Shopify?</summary>
-      <p>Para una sola marca, sin mayoristas y sin reglas propias, una plataforma alquilada resuelve: trae un pago probado y disponibilidad garantizada sin que nadie mantenga servidores. Soulbyte existe para lo que esas plataformas no dejan hacer o cobran en plan empresarial: varias marcas sobre un mismo inventario, un canal mayorista completo, reglas propias en el carrito y ningún porcentaje por venta. El mantenimiento del motor, los respaldos y la vigilancia que allá vienen incluidos aquí los asumimos nosotros.</p>
-    </details>
-    <details>
-      <summary>¿Qué datos ven ustedes?</summary>
-      <p>Solo los necesarios para operar: pedidos, clientes y mensajes de tu comercio. No vendemos datos, no los usamos para publicidad propia ni de otros comercios y no cruzamos datos entre comercios. El detalle está en la <a href="privacidad/">política de privacidad</a>.</p>
-    </details>
-    <details>
-      <summary>¿Qué datos se comparten con Meta?</summary>
-      <p>Si activas la medición: los eventos de navegación y compra de tu tienda, y las listas de clientes de tus públicos personalizados. Correo, teléfono, nombre, ciudad e identificador del cliente se cifran con SHA-256 antes de salir. Todo va a tu propia cuenta publicitaria, solo para tus anuncios, y Meta lo trata según sus condiciones de las herramientas para empresas. Quien pida salir de los públicos queda excluido en la siguiente sincronización, y tu tienda lo explica en su política de privacidad con un aviso en cada página.</p>
-    </details>
-  </section>
+<section id="preguntas" class="seccion faq">
+  <div class="envoltura faq-grid">
+    <div class="cabecera-lateral">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo que nos preguntan antes de conectar.</h2>
+      <p class="lead">¿Otra duda? Escríbenos a <a href="mailto:hola@soulbyte.app">hola@soulbyte.app</a>.</p>
+    </div>
+    <div>
+      <details>
+        <summary>¿La cuenta de WhatsApp Business sigue siendo mía?</summary>
+        <p>Sí. La cuenta, el número y las plantillas quedan en el portafolio comercial de tu empresa en Meta. Tú autorizas a Soulbyte a operar sobre ellos y puedes retirar ese acceso cuando quieras desde Meta Business Suite.</p>
+      </details>
+      <details>
+        <summary>¿Qué significa que Soulbyte sea proveedor de tecnología de Meta?</summary>
+        <p>Que Meta verificó a Soulbyte S.A.S. como empresa y aprobó nuestra app para enviar mensajes y gestionar cuentas de WhatsApp Business en nombre de otros comercios (permisos de mensajería y de gestión con acceso avanzado). Sin esa acreditación, un proveedor no puede conectar cuentas ajenas a la API oficial de WhatsApp.</p>
+      </details>
+      <details>
+        <summary>¿Quién paga los mensajes de WhatsApp?</summary>
+        <p>Meta le cobra las conversaciones directamente a tu empresa, con el método de pago que registres en tu cuenta de WhatsApp Business. Soulbyte no intermedia ese cobro ni recarga tus conversaciones.</p>
+      </details>
+      <details>
+        <summary>¿El cliente puede pagar dentro de WhatsApp?</summary>
+        <p>En Colombia, WhatsApp no procesa pagos dentro del chat: el carrito del catálogo llega como una solicitud de pedido. Por eso el robot responde con el pedido, el total y el botón «Pagar mi pedido», que abre el pago de tu tienda con el carrito ya armado. El cliente paga con los medios de tu tienda y el pedido entra como cualquier venta en línea.</p>
+      </details>
+      <details>
+        <summary>¿Soulbyte maneja mis anuncios de Facebook e Instagram?</summary>
+        <p>Medimos, vigilamos y preparamos; el gasto lo decides tú. Las campañas que se arman desde la tabla quedan en pausa hasta que alguien las revisa y las activa, y ninguna automatización sube presupuestos. La única acción automática sobre un anuncio activo es pausarlo cuando su producto se queda sin inventario y reactivarlo cuando vuelve. La cuenta publicitaria, el método de pago y la facturación de Meta son de tu empresa.</p>
+      </details>
+      <details>
+        <summary>¿Necesito tener la tienda con Soulbyte para conectar WhatsApp o Google?</summary>
+        <p>No. Si ya tienes tienda, conectamos los mensajes de pedido y el catálogo de Google a lo que usas hoy, siempre que exponga sus pedidos y productos por API o archivo. Si no tienes tienda, la desplegamos sobre nuestro motor.</p>
+      </details>
+      <details>
+        <summary>¿Por qué no simplemente Shopify?</summary>
+        <p>Para una sola marca, sin mayoristas y sin reglas propias, una plataforma alquilada resuelve: trae un pago probado y disponibilidad garantizada sin que nadie mantenga servidores. Soulbyte existe para lo que esas plataformas no dejan hacer o cobran en plan empresarial: varias marcas sobre un mismo inventario, un canal mayorista completo, reglas propias en el carrito y ningún porcentaje por venta. El mantenimiento del motor, los respaldos y la vigilancia que allá vienen incluidos aquí los asumimos nosotros.</p>
+      </details>
+      <details>
+        <summary>¿Qué datos ven ustedes?</summary>
+        <p>Solo los necesarios para operar: pedidos, clientes y mensajes de tu comercio. No vendemos datos, no los usamos para publicidad propia ni de otros comercios y no cruzamos datos entre comercios. El detalle está en la <a href="privacidad/">política de privacidad</a>.</p>
+      </details>
+      <details>
+        <summary>¿Qué datos se comparten con Meta?</summary>
+        <p>Si activas la medición: los eventos de navegación y compra de tu tienda, y las listas de clientes de tus públicos personalizados. Correo, teléfono, nombre, ciudad e identificador del cliente se cifran con SHA-256 antes de salir. Todo va a tu propia cuenta publicitaria, solo para tus anuncios, y Meta lo trata según sus condiciones de las herramientas para empresas. Quien pida salir de los públicos queda excluido en la siguiente sincronización, y tu tienda lo explica en su política de privacidad con un aviso en cada página.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <div class="cierre">
+<section class="seccion" style="padding-top:0">
+  <div class="envoltura">
+    <div class="cta">
       <div>
         <h2>Conecta tu WhatsApp Business hoy y te contactamos en un día hábil.</h2>
         <p>Registro guiado por Meta, sin instalar nada. El resto de la puesta en marcha lo hacemos contigo.</p>
       </div>
-      <div class="acciones">
-        <a class="boton" href="conectar/">Conectar WhatsApp Business</a>
-        <a class="boton secundario" href="mailto:ivancorrea@plazablack.com?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Escribirnos</a>
+      <div class="hero-acciones">
+        <a class="btn btn-claro" href="conectar/">Conectar WhatsApp Business <svg class="ico"><use href="#i-flecha"/></svg></a>
+        <a class="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Escribirnos</a>
       </div>
     </div>
-  </section>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    <p><b>Soulbyte S.A.S.</b> · NIT 901.923.996-1 · Carrera 48 # 10-45, C.C. Monterrey, Oficina 2219 · Medellín, Colombia</p>
-    <p>Contacto: <a href="mailto:ivancorrea@plazablack.com">ivancorrea@plazablack.com</a> · <a href="privacidad/">Política de privacidad</a> · <a href="conectar/">Conectar WhatsApp Business</a></p>
-    <p><small>Proveedor tecnológico independiente. WhatsApp, Meta, Facebook, Instagram y Messenger son marcas de Meta Platforms, Inc.; Google y Google Merchant Center son marcas de Google LLC. Las acreditaciones mencionadas corresponden al programa de proveedores de tecnología de la plataforma de WhatsApp Business y a la configuración de cuenta avanzada de Merchant Center; no implican patrocinio ni asociación comercial con esos titulares.</small></p>
-  </footer>
-</div>
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <div class="pie-grid">
+      <div>
+        <a class="marca" href="./"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
+        <p>Plataforma de comercio electrónico para vender en tu tienda, WhatsApp, Instagram y Google desde un solo motor. Medellín, Colombia.</p>
+      </div>
+      <div>
+        <h2>Plataforma</h2>
+        <ul>
+          <li><a href="#que-incluye">Qué incluye</a></li>
+          <li><a href="#motor-propio">Tienda propia</a></li>
+          <li><a href="#mayoristas">Mayoristas</a></li>
+          <li><a href="#datos">Datos y automatización</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Canales</h2>
+        <ul>
+          <li><a href="#whatsapp">WhatsApp Business</a></li>
+          <li><a href="#meta">Meta</a></li>
+          <li><a href="#instagram">Instagram</a></li>
+          <li><a href="#google">Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Empresa</h2>
+        <ul>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+          <li><a href="conectar/">Conectar WhatsApp</a></li>
+          <li><a href="privacidad/">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:hola@soulbyte.app">hola@soulbyte.app</a></li>
+          <li>Carrera 48 # 10-45, C.C. Monterrey, Oficina 2219</li>
+          <li>Medellín, Colombia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-legal">
+      <p>© 2026 Soulbyte S.A.S. · NIT 901.923.996-1</p>
+      <p>Proveedor tecnológico independiente. WhatsApp, Meta, Facebook, Instagram y Messenger son marcas de Meta Platforms, Inc.; Google y Google Merchant Center son marcas de Google LLC. Las acreditaciones mencionadas corresponden al programa de proveedores de tecnología de la plataforma de WhatsApp Business y a la configuración de cuenta avanzada de Merchant Center; no implican patrocinio ni asociación comercial con esos titulares.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var boton = document.querySelector('.nav-toggle'), menu = document.getElementById('menu');
+  if (!boton || !menu) return;
+  function cerrar() { menu.classList.remove('abierto'); boton.setAttribute('aria-expanded', 'false'); boton.setAttribute('aria-label', 'Abrir el menú'); }
+  boton.addEventListener('click', function () {
+    var abierto = menu.classList.toggle('abierto');
+    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    boton.setAttribute('aria-label', abierto ? 'Cerrar el menú' : 'Abrir el menú');
+  });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) cerrar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+})();
+(function () {
+  var d = document.querySelector('.desplegable');
+  if (!d) return;
+  var b = d.querySelector('.desplegable-boton');
+  function fijar(abierto) { d.classList.toggle('abierto', abierto); b.setAttribute('aria-expanded', abierto ? 'true' : 'false'); }
+  b.addEventListener('click', function (e) { e.stopPropagation(); fijar(!d.classList.contains('abierto')); });
+  d.addEventListener('click', function (e) { if (e.target.closest('a')) { fijar(false); if (document.activeElement) document.activeElement.blur(); } });
+  d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget)) fijar(false); });
+  document.addEventListener('click', function (e) { if (!d.contains(e.target)) fijar(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('abierto')) { fijar(false); b.focus(); } });
+})();
+</script>
 </body>
 </html>
