@@ -115,7 +115,7 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .desplegable.abierto .desplegable-boton .ico { transform: rotate(180deg); }
 .desplegable-panel { display: none; position: absolute; top: 100%; left: -1.1rem; padding-top: 1.1rem; z-index: 70; }
 .desplegable.abierto .desplegable-panel { display: block; }
-@media (hover: hover) and (min-width: 1261px) {
+@media (hover: hover) and (min-width: 1121px) {
   .desplegable:hover .desplegable-panel { display: block; }
   .desplegable:hover .desplegable-boton { color: var(--esmeralda); }
   .desplegable:hover .desplegable-boton .ico { transform: rotate(180deg); }
@@ -391,7 +391,7 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 
 /* Pie */
 .pie { background: var(--bg-oscuro); color: var(--claro-oscuro); padding: 4.2rem 0 2.4rem; font-size: 0.93rem; }
-.pie-grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr) 1.3fr; gap: 2.2rem; }
+.pie-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr) 1.3fr; gap: 2.2rem; }
 .pie .marca { color: #fff; }
 .pie .marca:hover { color: #fff; }
 .pie .marca b { color: var(--menta); }
@@ -447,7 +447,7 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 .legal .vigencia { color: var(--tinta-3); font-size: 0.9rem; padding: 1rem 1.2rem; background: var(--bg-suave); border: 1px solid var(--linea); border-radius: 14px; }
 
 /* Adaptación */
-@media (max-width: 1260px) {
+@media (max-width: 1120px) {
   .menu { display: none; position: absolute; top: 70px; left: -1.25rem; right: -1.25rem; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 0.6rem 1.25rem 1.2rem; border-bottom: 1px solid var(--linea); box-shadow: 0 20px 30px rgba(12, 28, 23, 0.08); margin: 0; }
   .menu.abierto { display: flex; }
   .menu a { padding: 0.8rem 0; border-bottom: 1px solid var(--linea); font-size: 1rem; }
@@ -530,6 +530,18 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 .hero .marco-hero { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); }
 .hero .marco-hero .leyenda { margin-top: 0.9rem; text-align: center; }
 .hero .tarjeta-ui, .hero .producto, .hero .estado-feed { color: var(--tinta); }
+/* Barra con E-commerce y Servicios (23-sep-2026) */
+.desplegable-lista.dos-col { width: 640px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.desplegable-titulo { display: none; }
+.hero-acciones.centrado.acciones-seccion { margin-top: 2.4rem; }
+.acciones-seccion .btn { white-space: normal; }
+.baldosa .lista-check { margin-top: 0.7rem; gap: 0.6rem; }
+.baldosa .lista-check li { font-size: 0.93rem; }
+@media (max-width: 1120px) {
+  .desplegable-lista.dos-col { width: auto; grid-template-columns: 1fr; }
+  .menu { max-height: 75vh; overflow-y: auto; overscroll-behavior: contain; }
+  .desplegable-titulo { display: block; margin: 1.1rem 0 0.1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--esmeralda-2); }
+}
 .pasos.pasos-3 { grid-template-columns: repeat(3, 1fr); }
 .hero-acciones.centrado { justify-content: center; margin: 0; }
 .enlace-flecha { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; text-decoration: none; margin-top: 1.1rem; }

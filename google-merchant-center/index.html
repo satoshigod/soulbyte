@@ -67,6 +67,8 @@
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
   <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6.5 9.5l5.5 5.5 5.5-5.5"/></symbol>
+  <symbol id="i-porcentaje" viewBox="0 0 24 24"><path d="M18.5 5.5l-13 13"/><circle cx="7.5" cy="7.5" r="2.4"/><circle cx="16.5" cy="16.5" r="2.4"/></symbol>
+  <symbol id="i-rayo" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6l-1 8 8-11h-6z"/></symbol>
 </svg>
 
 <a class="salto" href="#contenido">Ir al contenido</a>
@@ -77,20 +79,33 @@
   <div class="envoltura">
     <a class="marca" href="../" aria-label="Soulbyte, inicio"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="../#que-incluye">Plataforma</a>
       <div class="desplegable">
-        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-canales">Canales<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <div class="desplegable-panel" id="menu-canales">
-          <div class="desplegable-lista">
+        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-ecommerce">E-commerce<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="desplegable-panel" id="menu-ecommerce">
+          <p class="desplegable-titulo">E-commerce</p>
+          <div class="desplegable-lista dos-col">
+            <a href="../#que-incluye"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-tienda"/></svg></span><span><b>Plataforma</b><small>Tienda propia, inventario y operación</small></span></a>
             <a href="../whatsapp-business-api/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span><span><b>WhatsApp Business</b><small>Autoservicio, catálogo y pago desde el chat</small></span></a>
             <a href="../#meta"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-grafico"/></svg></span><span><b>Meta</b><small>Medición, públicos y anuncios vigilados</small></span></a>
             <a href="../#instagram"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-imagen"/></svg></span><span><b>Instagram</b><small>Publicaciones, comentarios y mensajes directos</small></span></a>
             <a href="../google-merchant-center/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-buscar"/></svg></span><span><b>Google</b><small>Merchant Center y Perfil de Negocio</small></span></a>
+            <a href="../ecommerce-b2b-mayoristas/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-porcentaje"/></svg></span><span><b>Mayoristas B2B</b><small>Listas de precios, cotizaciones y cartera</small></span></a>
+            <a href="../#dropshipping"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-cajas"/></svg></span><span><b>Dropshipping</b><small>Una tienda por producto, un solo inventario</small></span></a>
           </div>
         </div>
       </div>
-      <a href="../ecommerce-b2b-mayoristas/">Mayoristas</a>
-      <a href="../#dropshipping">Dropshipping</a>
+      <div class="desplegable">
+        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-servicios">Servicios<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="desplegable-panel" id="menu-servicios">
+          <p class="desplegable-titulo">Servicios</p>
+          <div class="desplegable-lista">
+            <a href="../automatizacion-empresas-de-servicios/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-rayo"/></svg></span><span><b>Empresas de servicios</b><small>Automatización con n8n, WhatsApp y redes</small></span></a>
+            <a href="../automatizacion-empresas-de-servicios/#desarrollo"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-capas"/></svg></span><span><b>Desarrollo y agencias</b><small>Solicitudes, propuestas y avance de proyectos</small></span></a>
+            <a href="../automatizacion-empresas-de-servicios/#salud"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-calendario"/></svg></span><span><b>Salud</b><small>Citas, recordatorios y encuestas</small></span></a>
+            <a href="../automatizacion-empresas-de-servicios/#abogados"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-escudo"/></svg></span><span><b>Abogados y firmas</b><small>Casos, agenda y documentos</small></span></a>
+          </div>
+        </div>
+      </div>
       <a href="../#motor-propio">Por qué Soulbyte</a>
       <a href="../#preguntas">Preguntas</a>
       <a class="solo-movil" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con ventas</a>
@@ -368,10 +383,10 @@
     <div class="pie-grid">
       <div>
         <a class="marca" href="../"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
-        <p>Plataforma de comercio electrónico para vender en tu tienda, WhatsApp, Instagram y Google desde un solo motor. Medellín, Colombia.</p>
+        <p>Comercio electrónico para vender en tu tienda, WhatsApp, Instagram y Google desde un solo motor, y automatización con n8n para empresas de servicios. Medellín, Colombia.</p>
       </div>
       <div>
-        <h2>Plataforma</h2>
+        <h2>E-commerce</h2>
         <ul>
           <li><a href="../#que-incluye">Qué incluye</a></li>
           <li><a href="../#motor-propio">Tienda propia</a></li>
@@ -387,6 +402,15 @@
           <li><a href="../#meta">Meta</a></li>
           <li><a href="../#instagram">Instagram</a></li>
           <li><a href="../google-merchant-center/">Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Servicios</h2>
+        <ul>
+          <li><a href="../automatizacion-empresas-de-servicios/">Empresas de servicios</a></li>
+          <li><a href="../automatizacion-empresas-de-servicios/#desarrollo">Desarrollo y agencias</a></li>
+          <li><a href="../automatizacion-empresas-de-servicios/#salud">Salud</a></li>
+          <li><a href="../automatizacion-empresas-de-servicios/#abogados">Abogados y firmas</a></li>
         </ul>
       </div>
       <div>
@@ -429,15 +453,17 @@ try { if (!sessionStorage.getItem('sb_origen')) sessionStorage.setItem('sb_orige
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
 })();
 (function () {
-  var d = document.querySelector('.desplegable');
-  if (!d) return;
-  var b = d.querySelector('.desplegable-boton');
-  function fijar(abierto) { d.classList.toggle('abierto', abierto); b.setAttribute('aria-expanded', abierto ? 'true' : 'false'); }
-  b.addEventListener('click', function (e) { e.stopPropagation(); fijar(!d.classList.contains('abierto')); });
-  d.addEventListener('click', function (e) { if (e.target.closest('a')) { fijar(false); if (document.activeElement) document.activeElement.blur(); } });
-  d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget)) fijar(false); });
-  document.addEventListener('click', function (e) { if (!d.contains(e.target)) fijar(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('abierto')) { fijar(false); b.focus(); } });
+  var ds = [].slice.call(document.querySelectorAll('.desplegable'));
+  if (!ds.length) return;
+  function fijar(d, abierto) { d.classList.toggle('abierto', abierto); d.querySelector('.desplegable-boton').setAttribute('aria-expanded', abierto ? 'true' : 'false'); }
+  ds.forEach(function (d) {
+    var b = d.querySelector('.desplegable-boton');
+    b.addEventListener('click', function (e) { e.stopPropagation(); var abrir = !d.classList.contains('abierto'); ds.forEach(function (x) { if (x !== d) fijar(x, false); }); fijar(d, abrir); });
+    d.addEventListener('click', function (e) { if (e.target.closest('a')) { fijar(d, false); if (document.activeElement) document.activeElement.blur(); } });
+    d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget)) fijar(d, false); });
+  });
+  document.addEventListener('click', function (e) { ds.forEach(function (d) { if (!d.contains(e.target)) fijar(d, false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; ds.forEach(function (d) { if (d.classList.contains('abierto')) { fijar(d, false); d.querySelector('.desplegable-boton').focus(); } }); });
 })();
 </script>
 </body>

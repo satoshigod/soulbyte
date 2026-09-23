@@ -85,7 +85,8 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Meta: medición, públicos y control de anuncios", "description": "Píxel de Meta y API de conversiones con compras deduplicadas por pedido y datos del cliente cifrados, públicos personalizados sincronizados a diario, vigilancia de anuncios cada hora (rechazos, inventario, gasto y costo por compra), reporte diario con el retorno real de la publicidad y campañas preparadas en pausa." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Página de Facebook y Messenger automatizados", "description": "Publicaciones programadas y de novedades del catálogo, respuestas a comentarios por reglas con mensaje privado, Messenger con estado de pedido y guía de tallas, y registro de los contactos que llegan a WhatsApp desde anuncios." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instagram para comercio electrónico, automatizado", "description": "Sobre la API oficial de Instagram: publicaciones programadas de foto o carrusel y de novedades del catálogo, respuestas por reglas a los comentarios con mensaje directo privado, preguntas frecuentes y menú de autoservicio en los mensajes directos (estado del pedido, guía de tallas, catálogo, asesor), avisos de menciones, registro de contactos interesados y de quienes escriben desde anuncios, y resumen semanal por correo." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multitienda para dropshippers y vendedores de redes", "description": "Tiendas de producto con dominio, marca y catálogo propios que se abren y se cierran según la tendencia, sobre un mismo inventario con bodegas, compras a proveedores, movimientos y reportes de reposición; confirmación de pedidos, seguimiento de envíos y recuperación de carritos con permiso del cliente por la API oficial de WhatsApp; cobros con la pasarela de pagos del comercio, guías con Envia y catálogo en Google Merchant Center. Marketplace multivendedor o conexión con marketplaces externos, a pedido." } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Multitienda para dropshippers y vendedores de redes", "description": "Tiendas de producto con dominio, marca y catálogo propios que se abren y se cierran según la tendencia, sobre un mismo inventario con bodegas, compras a proveedores, movimientos y reportes de reposición; confirmación de pedidos, seguimiento de envíos y recuperación de carritos con permiso del cliente por la API oficial de WhatsApp; cobros con la pasarela de pagos del comercio, guías con Envia y catálogo en Google Merchant Center. Marketplace multivendedor o conexión con marketplaces externos, a pedido." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con n8n para empresas de servicios", "url": "https://soulbyte.app/automatizacion-empresas-de-servicios/", "description": "Para empresas que venden servicios —desarrollo de software y agencias, salud y firmas de abogados—: WhatsApp Business con menú y respuestas por reglas, formularios dentro del chat, registro de contactos con su origen y aviso al equipo, cotizaciones con seguimiento, recordatorios de cobro, series de correos y redes sociales; agenda de citas, recepción de casos y documentos pendientes a la medida." } }
     ]
   }
 }
@@ -127,20 +128,33 @@
   <div class="envoltura">
     <a class="marca" href="./" aria-label="Soulbyte, inicio"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#que-incluye">Plataforma</a>
       <div class="desplegable">
-        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-canales">Canales<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <div class="desplegable-panel" id="menu-canales">
-          <div class="desplegable-lista">
+        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-ecommerce">E-commerce<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="desplegable-panel" id="menu-ecommerce">
+          <p class="desplegable-titulo">E-commerce</p>
+          <div class="desplegable-lista dos-col">
+            <a href="#que-incluye"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-tienda"/></svg></span><span><b>Plataforma</b><small>Tienda propia, inventario y operación</small></span></a>
             <a href="whatsapp-business-api/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-chat"/></svg></span><span><b>WhatsApp Business</b><small>Autoservicio, catálogo y pago desde el chat</small></span></a>
             <a href="#meta"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-grafico"/></svg></span><span><b>Meta</b><small>Medición, públicos y anuncios vigilados</small></span></a>
             <a href="#instagram"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-imagen"/></svg></span><span><b>Instagram</b><small>Publicaciones, comentarios y mensajes directos</small></span></a>
             <a href="google-merchant-center/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-buscar"/></svg></span><span><b>Google</b><small>Merchant Center y Perfil de Negocio</small></span></a>
+            <a href="ecommerce-b2b-mayoristas/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-porcentaje"/></svg></span><span><b>Mayoristas B2B</b><small>Listas de precios, cotizaciones y cartera</small></span></a>
+            <a href="#dropshipping"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-cajas"/></svg></span><span><b>Dropshipping</b><small>Una tienda por producto, un solo inventario</small></span></a>
           </div>
         </div>
       </div>
-      <a href="ecommerce-b2b-mayoristas/">Mayoristas</a>
-      <a href="#dropshipping">Dropshipping</a>
+      <div class="desplegable">
+        <button class="desplegable-boton" type="button" aria-expanded="false" aria-controls="menu-servicios">Servicios<svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+        <div class="desplegable-panel" id="menu-servicios">
+          <p class="desplegable-titulo">Servicios</p>
+          <div class="desplegable-lista">
+            <a href="automatizacion-empresas-de-servicios/"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-rayo"/></svg></span><span><b>Empresas de servicios</b><small>Automatización con n8n, WhatsApp y redes</small></span></a>
+            <a href="automatizacion-empresas-de-servicios/#desarrollo"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-capas"/></svg></span><span><b>Desarrollo y agencias</b><small>Solicitudes, propuestas y avance de proyectos</small></span></a>
+            <a href="automatizacion-empresas-de-servicios/#salud"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-calendario"/></svg></span><span><b>Salud</b><small>Citas, recordatorios y encuestas</small></span></a>
+            <a href="automatizacion-empresas-de-servicios/#abogados"><span class="icono-mini" aria-hidden="true"><svg class="ico"><use href="#i-escudo"/></svg></span><span><b>Abogados y firmas</b><small>Casos, agenda y documentos</small></span></a>
+          </div>
+        </div>
+      </div>
       <a href="#motor-propio">Por qué Soulbyte</a>
       <a href="#preguntas">Preguntas</a>
       <a class="solo-movil" href="mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte">Hablar con ventas</a>
@@ -576,6 +590,39 @@
   </div>
 </section>
 
+<section id="servicios" class="seccion suave">
+  <div class="envoltura">
+    <div class="cabecera">
+      <p class="eyebrow">Servicios · para empresas que no venden productos</p>
+      <h2>¿Vendes servicios? También automatizamos tu empresa.</h2>
+      <p class="lead">Para desarrollo y agencias, consultorios y firmas de abogados: WhatsApp que atiende con reglas, cada contacto registrado, cotizaciones y cobros con seguimiento y tus redes al día, con n8n y sin inteligencia artificial. Con las mismas piezas que ya corren en Soulbyte, y lo propio de cada oficio a la medida.</p>
+    </div>
+    <div class="bento">
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-capas"/></svg></span>
+        <h3>Desarrollo y agencias</h3>
+        <p>Solicitudes del sitio a tu base de clientes, propuestas con seguimiento y avisos de avance por WhatsApp.</p>
+        <a class="mas" href="automatizacion-empresas-de-servicios/#desarrollo">Desarrollo y agencias <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-calendario"/></svg></span>
+        <h3>Salud</h3>
+        <p>Armamos citas por WhatsApp con confirmación y recordatorio, el formulario antes de la consulta y la encuesta después.</p>
+        <a class="mas" href="automatizacion-empresas-de-servicios/#salud">Médicos y consultorios <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+      <article class="baldosa">
+        <span class="icono"><svg class="ico"><use href="#i-escudo"/></svg></span>
+        <h3>Abogados y firmas</h3>
+        <p>Armamos la recepción de casos con formulario, la agenda de consultas y los recordatorios de documentos pendientes.</p>
+        <a class="mas" href="automatizacion-empresas-de-servicios/#abogados">Abogados y firmas <svg class="ico"><use href="#i-flecha"/></svg></a>
+      </article>
+    </div>
+    <div class="hero-acciones centrado acciones-seccion">
+      <a class="btn btn-primario" href="automatizacion-empresas-de-servicios/">Automatización para servicios <svg class="ico"><use href="#i-flecha"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <section id="motor-propio" class="seccion">
   <div class="envoltura">
     <div class="cabecera">
@@ -660,6 +707,7 @@
           <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Dropshippers y vendedores de redes que abren una tienda por producto y la cambian cuando cambia la tendencia, con un solo inventario.</span></li>
           <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Comercios que ya venden por WhatsApp y quieren automatizar sin cambiar de número ni entregar su cuenta.</span></li>
           <li><svg class="ico"><use href="#i-check-circulo"/></svg><span>Empresas que prefieren ser dueñas de su tienda y de sus datos en lugar de alquilarlos.</span></li>
+          <li><svg class="ico"><use href="#i-check-circulo"/></svg><span><a href="automatizacion-empresas-de-servicios/">Empresas de servicios</a> —desarrollo, salud, derecho— que quieren automatizar su atención, sus cobros y sus redes con n8n.</span></li>
         </ul>
       </div>
       <div class="caja estado-fase">
@@ -745,10 +793,10 @@
     <div class="pie-grid">
       <div>
         <a class="marca" href="./"><span class="isotipo" aria-hidden="true">s</span><span>soul<b>byte</b></span></a>
-        <p>Plataforma de comercio electrónico para vender en tu tienda, WhatsApp, Instagram y Google desde un solo motor. Medellín, Colombia.</p>
+        <p>Comercio electrónico para vender en tu tienda, WhatsApp, Instagram y Google desde un solo motor, y automatización con n8n para empresas de servicios. Medellín, Colombia.</p>
       </div>
       <div>
-        <h2>Plataforma</h2>
+        <h2>E-commerce</h2>
         <ul>
           <li><a href="#que-incluye">Qué incluye</a></li>
           <li><a href="#motor-propio">Tienda propia</a></li>
@@ -764,6 +812,15 @@
           <li><a href="#meta">Meta</a></li>
           <li><a href="#instagram">Instagram</a></li>
           <li><a href="google-merchant-center/">Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Servicios</h2>
+        <ul>
+          <li><a href="automatizacion-empresas-de-servicios/">Empresas de servicios</a></li>
+          <li><a href="automatizacion-empresas-de-servicios/#desarrollo">Desarrollo y agencias</a></li>
+          <li><a href="automatizacion-empresas-de-servicios/#salud">Salud</a></li>
+          <li><a href="automatizacion-empresas-de-servicios/#abogados">Abogados y firmas</a></li>
         </ul>
       </div>
       <div>
@@ -806,15 +863,17 @@ try { if (!sessionStorage.getItem('sb_origen')) sessionStorage.setItem('sb_orige
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
 })();
 (function () {
-  var d = document.querySelector('.desplegable');
-  if (!d) return;
-  var b = d.querySelector('.desplegable-boton');
-  function fijar(abierto) { d.classList.toggle('abierto', abierto); b.setAttribute('aria-expanded', abierto ? 'true' : 'false'); }
-  b.addEventListener('click', function (e) { e.stopPropagation(); fijar(!d.classList.contains('abierto')); });
-  d.addEventListener('click', function (e) { if (e.target.closest('a')) { fijar(false); if (document.activeElement) document.activeElement.blur(); } });
-  d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget)) fijar(false); });
-  document.addEventListener('click', function (e) { if (!d.contains(e.target)) fijar(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('abierto')) { fijar(false); b.focus(); } });
+  var ds = [].slice.call(document.querySelectorAll('.desplegable'));
+  if (!ds.length) return;
+  function fijar(d, abierto) { d.classList.toggle('abierto', abierto); d.querySelector('.desplegable-boton').setAttribute('aria-expanded', abierto ? 'true' : 'false'); }
+  ds.forEach(function (d) {
+    var b = d.querySelector('.desplegable-boton');
+    b.addEventListener('click', function (e) { e.stopPropagation(); var abrir = !d.classList.contains('abierto'); ds.forEach(function (x) { if (x !== d) fijar(x, false); }); fijar(d, abrir); });
+    d.addEventListener('click', function (e) { if (e.target.closest('a')) { fijar(d, false); if (document.activeElement) document.activeElement.blur(); } });
+    d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget)) fijar(d, false); });
+  });
+  document.addEventListener('click', function (e) { ds.forEach(function (d) { if (!d.contains(e.target)) fijar(d, false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; ds.forEach(function (d) { if (d.classList.contains('abierto')) { fijar(d, false); d.querySelector('.desplegable-boton').focus(); } }); });
 })();
 </script>
 </body>
