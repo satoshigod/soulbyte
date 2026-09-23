@@ -1,6 +1,6 @@
 # Soulbyte — sitio y onboarding de WhatsApp (Tech Provider de Meta)
 
-Sitio estático servido por GitHub Pages desde `main` (raíz): https://satoshigod.github.io/soulbyte/
+Sitio estático en **https://soulbyte.app** (desde el 23-sep-2026), servido por Railway: servicio `soulbyte-site` (`e4b71f90-ef42-4df7-b7ef-4407653e9295`) del proyecto EKIVIBES OK, construido con Railpack desde `main` (raíz) y desplegado solo con cada push. `www.soulbyte.app` sirve lo mismo. DNS en Cloudflare: CNAME de la raíz y de `www` a Railway, sin proxy, con sus TXT `_railway-verify`. GitHub Pages sigue publicando la misma rama en https://satoshigod.github.io/soulbyte/ (dirección anterior); las URLs canónicas apuntan a soulbyte.app.
 
 | Ruta | Qué es |
 |---|---|
@@ -20,7 +20,7 @@ Sitio estático servido por GitHub Pages desde `main` (raíz): https://satoshigo
 
 Workflow **"Soulbyte — onboarding WhatsApp de comercios (Embedded Signup, Tech Provider)"** (`va7vfi9YbATCZFlf`):
 
-- `GET /webhook/soulbyte-onboarding-config` → `{app_id, config_id, version, habilitado, hosted_url, habilitado_hosted}` leído de NocoDB `parametros` (`meta_app_id`, `meta_es_config_id`, `meta_graph_version`, `meta_hosted_onboarding_url`). CORS restringido a `https://satoshigod.github.io`.
+- `GET /webhook/soulbyte-onboarding-config` → `{app_id, config_id, version, habilitado, hosted_url, habilitado_hosted}` leído de NocoDB `parametros` (`meta_app_id`, `meta_es_config_id`, `meta_graph_version`, `meta_hosted_onboarding_url`). CORS: `https://soulbyte.app`, `https://www.soulbyte.app` y `https://satoshigod.github.io` (la respuesta devuelve el origen de la petición si está en la lista).
   - `habilitado` = hay `config_id` → se muestra el botón del registro integrado (SDK).
   - `habilitado_hosted` = hay `hosted_url` → se activa el botón "Empezar el registro en Meta".
 - `POST /webhook/soulbyte-onboarding-lead` `{via, empresa, contacto_*, sitio_web}` → guarda/actualiza el comercio en NocoDB `tenants` (`m9flo5er05seh7b`) con `origen=hosted_signup`, `estado=lead`, y avisa al equipo (correo). Es lo que usa la vía guiada por Meta antes de abrir `hosted_url`.
@@ -48,4 +48,4 @@ Tenant 1 (`clave=soulbyte`) es la operación propia: su token vive en el vault d
 - Para la vía integrada (opcional): **Inicio de sesión con Facebook para empresas → Configuración**: dominio permitido para el SDK `satoshigod.github.io`, URI de redirección `https://satoshigod.github.io/soulbyte/conectar/`; **Configuraciones → Crear a partir de plantilla → WhatsApp Embedded Signup** → copiar el ID a `parametros.meta_es_config_id`; **Configuración de la app → Básica → Dominios de la app**: `satoshigod.github.io`.
 - **WhatsApp → Configuración → Webhooks**: suscribir `account_update` (además de `messages`).
 
-Cuando el dominio definitivo exista, cambiar: `allowedOrigins` de los nodos Webhook, los dominios en Meta, el `CNAME` de Pages y las URLs canónicas.
+Dominio definitivo **soulbyte.app** (23-sep-2026): URLs canónicas, `og:url`, JSON-LD, `sitemap.xml` y `robots.txt` apuntan a https://soulbyte.app/; los nodos Webhook de n8n aceptan los orígenes `https://soulbyte.app`, `https://www.soulbyte.app` y `https://satoshigod.github.io`, y las respuestas devuelven en `Access-Control-Allow-Origin` el origen de la petición si está en esa lista. Pendiente en Meta: agregar `soulbyte.app` a los dominios de la app y al dominio permitido del SDK, y la URI de redirección `https://soulbyte.app/conectar/` (la vía guiada por Meta no depende del dominio).
