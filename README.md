@@ -8,13 +8,18 @@ Sitio estático en **https://soulbyte.app** (desde el 23-sep-2026), servido por 
 | `conectar/` | Conexión de WhatsApp Business para comercios (23-sep-2026: formulario a la derecha y, en móvil, justo después del título), con dos vías: **registro guiado por Meta** (hosted Embedded Signup, `hosted_url`) y **registro integrado** (Embedded Signup v4 con el SDK JS, `config_id`). La página obtiene la configuración de n8n; nunca ve el App Secret ni tokens. |
 | `privacidad/` | Política de privacidad de la plataforma (22-sep-2026: datos de medición y públicos de Meta, páginas de Facebook y Messenger, y sus finalidades; 23-sep-2026: carrito del catálogo de WhatsApp convertido en carrito de la tienda y recordatorio único). |
 | `assets/onboarding.js` | Lógica de las dos vías: lead + apertura del registro de Meta; SDK de Meta, evento `WA_EMBEDDED_SIGNUP`, `FB.login` con `response_type: 'code'`. |
-| `robots.txt`, `sitemap.xml` | Indexación. |
+| `robots.txt`, `sitemap.xml` | Indexación. `sitemap.xml` enviado a Search Console (propiedad de dominio `sc-domain:soulbyte.app`, verificada el 23-sep-2026). |
+| `favicon.ico`, `icon.svg`, `apple-touch-icon.png` | Íconos del sitio (23-sep-2026): ICO de 16, 32 y 48 px (el que usa Google en los resultados), SVG con la «s» de Sora convertida en trazo y 180 px para iOS. |
+| `assets/og-soulbyte.jpg`, `assets/logo-soulbyte-512.png` | Imagen para compartir (1200×630, `og:image` y `twitter:card` en las 3 páginas) y logo del marcado Organization. |
+| `404.html` | Página de error con la barra y el pie del sitio (`noindex`, enlaces absolutos a soulbyte.app para que también sirva en la copia de GitHub Pages). |
+| `Caddyfile` | Servidor en Railway. Railpack lo usa en lugar de su plantilla (la procesa como plantilla de Go: `{{.StaticFileRoot}}`). Hace: `www.soulbyte.app` → `https://soulbyte.app{uri}` con 301; oculta `README.md`, `Caddyfile`, `Staticfile` y `.nojekyll`; caché de 30 días para imágenes, 1 hora para CSS y JS, y `no-cache` para las páginas; errores con `/{código}.html`. Probar cualquier cambio con `caddy validate` y `caddy run` antes de publicar. |
 
 ## Mantenimiento
 
 - Regla de Ivan (22-sep-2026): **toda funcionalidad nueva de n8n que entre en producción se agrega a este sitio en la misma sesión**: sección o tarjeta de la portada, «Qué incluye» si cambia la oferta, JSON-LD (`hasOfferCatalog`), este README, `sitemap.xml` (`lastmod`) y, si trata datos personales, `privacidad/`.
 - Solo se publica lo que corre en producción; lo que dependa de una aprobación de Meta o Google va en la nota de la sección.
 - Publicación: el sandbox de la nube no puede hacer push a este repo. Se sube desde el Mac de Ivan: `~/Soulbyte/soulbyte-site` es un clon de este repo; un solo commit a `main` y push. Railway despliega soulbyte.app con cada push (GitHub Pages actualiza la dirección anterior en un par de minutos).
+- SEO (plan en el proyecto, `claude/seo-soulbyte.md`): portada con marcado WebSite (nombre del sitio «Soulbyte», alternativos «Soulbyte Colombia» y «soulbyte.app»), Organization con logo, razón social y contacto, y Service; subpáginas con BreadcrumbList. No se usa FAQPage: Google retiró ese resultado enriquecido en mayo de 2026.
 - Estilos: `assets/soulbyte.css` (Sora para títulos, Inter para texto, esmeralda de marca). Antes de publicar, revisar a 1280 y 390 px: sin desborde horizontal, contraste AA y el menú «Canales» con ratón, teclado y en móvil.
 
 ## Backend (n8n, `https://n8n.hitaircolombia.com`)

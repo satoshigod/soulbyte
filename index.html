@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soulbyte — plataforma de comercio electrónico: tienda, WhatsApp, Instagram y Google</title>
-<meta name="description" content="Soulbyte es la plataforma de comercio electrónico que instala, conecta y opera tu tienda propia —multimarca y con canal mayorista— junto a WhatsApp Business, Meta, Instagram y Google Merchant Center sobre un mismo inventario, sin comisión por venta. Proveedor de tecnología de WhatsApp Business acreditado por Meta. Medellín, Colombia.">
+<title>Soulbyte — e-commerce con WhatsApp Business y Google en Colombia</title>
+<meta name="description" content="Tienda propia, WhatsApp Business, Instagram, Meta y Google Merchant sobre un mismo inventario, sin comisión por venta. Proveedor de tecnología de Meta.">
 <link rel="canonical" href="https://soulbyte.app/">
 <meta name="theme-color" content="#06140f">
 <meta property="og:type" content="website">
@@ -13,7 +13,15 @@
 <meta property="og:title" content="Soulbyte — vende en tu tienda, WhatsApp, Instagram y Google desde un solo motor">
 <meta property="og:description" content="Tienda propia multimarca y mayorista, WhatsApp Business, anuncios de Meta medidos con ventas reales, Instagram automatizado y Google Merchant sobre un mismo inventario. Sin comisión por venta. Proveedor de tecnología de WhatsApp acreditado por Meta.">
 <meta property="og:url" content="https://soulbyte.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b7a5a'/%3E%3Ctext x='32' y='44' font-family='Sora,Arial,sans-serif' font-size='34' font-weight='700' fill='%23fff' text-anchor='middle'%3Es%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://soulbyte.app/assets/og-soulbyte.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Soulbyte: vende en tu tienda, WhatsApp, Instagram y Google desde un solo motor.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
@@ -21,11 +29,29 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Soulbyte S.A.S.",
-  "alternateName": "Soulbyte",
+  "@type": "WebSite",
+  "@id": "https://soulbyte.app/#sitio",
+  "name": "Soulbyte",
+  "alternateName": ["Soulbyte Colombia", "soulbyte.app"],
   "url": "https://soulbyte.app/",
+  "inLanguage": "es-CO",
+  "publisher": { "@id": "https://soulbyte.app/#organizacion" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://soulbyte.app/#organizacion",
+  "name": "Soulbyte",
+  "legalName": "Soulbyte S.A.S.",
+  "alternateName": "Soulbyte Colombia",
+  "url": "https://soulbyte.app/",
+  "logo": { "@type": "ImageObject", "url": "https://soulbyte.app/assets/logo-soulbyte-512.png", "width": 512, "height": 512 },
+  "image": "https://soulbyte.app/assets/og-soulbyte.jpg",
+  "description": "Plataforma de comercio electrónico que instala, conecta y opera la tienda propia de cada comercio junto a WhatsApp Business, Meta, Instagram y Google Merchant Center sobre un mismo inventario. Proveedor de tecnología de WhatsApp Business acreditado por Meta.",
   "email": "hola@soulbyte.app",
+  "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hola@soulbyte.app", "areaServed": "CO", "availableLanguage": ["es"] },
   "taxID": "901.923.996-1",
   "address": { "@type": "PostalAddress", "streetAddress": "Carrera 48 # 10-45, C.C. Monterrey, Oficina 2219", "addressLocality": "Medellín", "addressRegion": "Antioquia", "addressCountry": "CO" },
   "areaServed": "CO",
@@ -43,7 +69,7 @@
   "name": "Infraestructura de comercio electrónico Soulbyte",
   "serviceType": "Tienda en línea propia, instalada y operada",
   "url": "https://soulbyte.app/#motor-propio",
-  "provider": { "@type": "Organization", "name": "Soulbyte S.A.S.", "url": "https://soulbyte.app/" },
+  "provider": { "@id": "https://soulbyte.app/#organizacion" },
   "areaServed": "CO",
   "audience": { "@type": "BusinessAudience", "audienceType": "Marcas, distribuidores y comercios que venden en línea en Colombia" },
   "hasOfferCatalog": {

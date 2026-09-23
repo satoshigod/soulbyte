@@ -517,3 +517,10 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
   .tabla-ui th.num { white-space: normal; }
   .tarjeta-ui-cabecera { padding: 0.85rem 0.9rem; }
 }
+
+/* Página 404 */
+.error-404 { padding: 5rem 0 6rem; }
+.error-404 h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); }
+.enlaces-404 { list-style: none; padding: 0; margin: 0.4rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.enlaces-404 a { display: inline-block; padding: 0.45rem 0.95rem; border: 1px solid var(--linea); border-radius: 999px; background: #fff; color: var(--tinta-2); text-decoration: none; font-weight: 500; font-size: 0.94rem; }
+.enlaces-404 a:hover { border-color: var(--esmeralda); color: var(--esmeralda-2); }
