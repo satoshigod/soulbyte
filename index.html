@@ -53,7 +53,7 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reglas de negocio en el carrito y el pago", "description": "Accesorios que se agregan solos, métodos de pago por canal, precios mayoristas solo para distribuidores autenticados y promociones por canal, programadas en el motor." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sin comisión de plataforma por venta", "description": "El comercio paga únicamente la comisión de su pasarela de pagos; el motor no retiene un porcentaje de cada pedido." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sitio y datos bajo control del comercio", "description": "URLs, redirecciones, mapa del sitio y datos estructurados a la medida; base de datos propia con respaldos cifrados; software de código abierto." } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WhatsApp Business: ventas y atención automatizadas", "description": "En el número del comercio, como proveedor de tecnología acreditado por Meta: menú de autoservicio con estado de pedido, catálogo de Meta dentro del chat con botón de agregar al carrito, formularios nativos de WhatsApp Flows (guía de talla, encuesta postventa), notificaciones transaccionales y de postventa, código de verificación de un solo uso y traspaso a asesor humano." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WhatsApp Business: ventas y atención automatizadas", "description": "En el número del comercio, como proveedor de tecnología acreditado por Meta: menú de autoservicio con estado de pedido, catálogo de Meta dentro del chat con botón de agregar al carrito, el carrito del catálogo convertido en un enlace de pago de la tienda del comercio (precios e inventario del motor, un enlace por tienda y un solo recordatorio), formularios nativos de WhatsApp Flows (guía de talla, encuesta postventa), notificaciones transaccionales y de postventa, código de verificación de un solo uso y traspaso a asesor humano." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Merchant Center", "description": "Subcuenta de Merchant Center bajo cuenta avanzada con el catálogo sincronizado a diario desde el motor." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Meta: medición, públicos y control de anuncios", "description": "Píxel de Meta y API de conversiones con compras deduplicadas por pedido y datos del cliente cifrados, públicos personalizados sincronizados a diario, vigilancia de anuncios cada hora (rechazos, inventario, gasto y costo por compra), reporte diario con el retorno real de la publicidad y campañas preparadas en pausa." } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Página de Facebook y Messenger automatizados", "description": "Publicaciones programadas y de novedades del catálogo, respuestas a comentarios por reglas con mensaje privado, Messenger con estado de pedido y guía de tallas, y registro de los contactos que llegan a WhatsApp desde anuncios." } },
@@ -149,7 +149,7 @@
       <div class="tarjeta">
         <span class="etiqueta">WhatsApp Business · acreditado por Meta</span>
         <h3>Ventas y atención en tu propio número</h3>
-        <p>Conectas tu cuenta de WhatsApp Business desde tu propia cuenta de Meta, sin programar. Desde ahí salen la confirmación de pedido, pago, envío y entrega, la postventa y el carrito abandonado (solo con permiso del cliente); el cliente consulta su pedido, recibe el catálogo y llena formularios dentro del chat, y cuando pide un asesor entra tu equipo. El número, las plantillas y la facturación de Meta siguen siendo de tu empresa. <a href="#whatsapp">Ver todo lo que hace</a>.</p>
+        <p>Conectas tu cuenta de WhatsApp Business desde tu propia cuenta de Meta, sin programar. Desde ahí salen la confirmación de pedido, pago, envío y entrega, la postventa y el carrito abandonado (solo con permiso del cliente); el cliente consulta su pedido, recibe el catálogo, paga en tu tienda con un solo botón el carrito que arma en WhatsApp y llena formularios dentro del chat; cuando pide un asesor, entra tu equipo. El número, las plantillas y la facturación de Meta siguen siendo de tu empresa. <a href="#whatsapp">Ver todo lo que hace</a>.</p>
       </div>
       <div class="tarjeta">
         <span class="etiqueta">Google · cuenta avanzada</span>
@@ -279,6 +279,19 @@
         <h3>El robot sabe cuándo callarse</h3>
         <p>Si tu equipo respondió en las últimas 24 horas, el robot no interviene; el menú se ofrece como máximo cada media hora; «STOP» se respeta; el cliente que pide asesor recibe atención de una persona en el horario que definas. Todo queda registrado para auditoría.</p>
       </div>
+      <div class="tarjeta ancha">
+        <span class="etiqueta">Del carrito al pago</span>
+        <h3>El carrito de WhatsApp se paga en tu tienda, con un botón</h3>
+        <div class="dos">
+          <p>En Colombia WhatsApp no cobra dentro del chat: el carrito que el cliente arma en el catálogo llega como una solicitud de pedido. En segundos recibe la respuesta con sus productos, los precios de la tienda, el total con IVA y el botón «Pagar mi pedido», que abre el pago de tu tienda con el carrito ya armado: tarjeta, PSE, Nequi, <span style="white-space:nowrap">Bre-B</span>, transferencia o cuotas.</p>
+          <ul>
+            <li>Si mezcla productos de dos tiendas, recibe un enlace por cada una.</li>
+            <li>Lo que no tiene inventario no se manda a pagar: el cliente y tu equipo quedan avisados.</li>
+            <li>Si no paga, recibe un solo recordatorio unas horas después, en la misma conversación.</li>
+            <li>El pedido entra al motor como una venta en línea más, con su origen en WhatsApp, y tu equipo recibe el aviso con el detalle.</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <p class="nota-tabla"><small>Conexión mediante el registro guiado de Meta (Inicio de sesión con Facebook para empresas). Meta cobra las conversaciones directamente al comercio; Soulbyte no las intermedia ni las recarga.</small></p>
   </section>
@@ -406,6 +419,10 @@
     <details>
       <summary>¿Quién paga los mensajes de WhatsApp?</summary>
       <p>Meta le cobra las conversaciones directamente a tu empresa, con el método de pago que registres en tu cuenta de WhatsApp Business. Soulbyte no intermedia ese cobro ni recarga tus conversaciones.</p>
+    </details>
+    <details>
+      <summary>¿El cliente puede pagar dentro de WhatsApp?</summary>
+      <p>En Colombia, WhatsApp no procesa pagos dentro del chat: el carrito del catálogo llega como una solicitud de pedido. Por eso el robot responde con el pedido, el total y el botón «Pagar mi pedido», que abre el pago de tu tienda con el carrito ya armado. El cliente paga con los medios de tu tienda y el pedido entra como cualquier venta en línea.</p>
     </details>
     <details>
       <summary>¿Soulbyte maneja mis anuncios de Facebook e Instagram?</summary>
