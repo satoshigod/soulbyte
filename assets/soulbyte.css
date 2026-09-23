@@ -115,7 +115,7 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .desplegable.abierto .desplegable-boton .ico { transform: rotate(180deg); }
 .desplegable-panel { display: none; position: absolute; top: 100%; left: -1.1rem; padding-top: 1.1rem; z-index: 70; }
 .desplegable.abierto .desplegable-panel { display: block; }
-@media (hover: hover) and (min-width: 1121px) {
+@media (hover: hover) and (min-width: 1261px) {
   .desplegable:hover .desplegable-panel { display: block; }
   .desplegable:hover .desplegable-boton { color: var(--esmeralda); }
   .desplegable:hover .desplegable-boton .ico { transform: rotate(180deg); }
@@ -230,6 +230,7 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .baldosa .mas .ico { width: 16px; height: 16px; transition: transform 0.15s; }
 .baldosa .mas:hover .ico { transform: translateX(3px); }
 .baldosa.ancha { grid-column: span 2; }
+.baldosa.completa { grid-column: 1 / -1; }
 .baldosa.oscura { background: linear-gradient(150deg, #0a241b 0%, #06140f 100%); border-color: #0a241b; color: #e7f4ee; }
 .baldosa.oscura h3 { color: #fff; }
 .baldosa.oscura p { color: var(--claro-oscuro); }
@@ -446,7 +447,7 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 .legal .vigencia { color: var(--tinta-3); font-size: 0.9rem; padding: 1rem 1.2rem; background: var(--bg-suave); border: 1px solid var(--linea); border-radius: 14px; }
 
 /* Adaptación */
-@media (max-width: 1120px) {
+@media (max-width: 1260px) {
   .menu { display: none; position: absolute; top: 70px; left: -1.25rem; right: -1.25rem; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 0.6rem 1.25rem 1.2rem; border-bottom: 1px solid var(--linea); box-shadow: 0 20px 30px rgba(12, 28, 23, 0.08); margin: 0; }
   .menu.abierto { display: flex; }
   .menu a { padding: 0.8rem 0; border-bottom: 1px solid var(--linea); font-size: 1rem; }
