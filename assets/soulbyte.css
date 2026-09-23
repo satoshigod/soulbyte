@@ -255,7 +255,7 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .seccion.suave .marco { background: linear-gradient(155deg, #ffffff 0%, #eef6f2 100%); }
 
 /* Teléfono y chat */
-.telefono { width: 312px; max-width: 100%; margin: 0 auto; background: #0b1512; border-radius: 40px; padding: 11px; box-shadow: 0 30px 60px rgba(3, 20, 14, 0.28); }
+.telefono { width: 312px; max-width: 100%; margin: 0 auto; color: var(--tinta); background: #0b1512; border-radius: 40px; padding: 11px; box-shadow: 0 30px 60px rgba(3, 20, 14, 0.28); }
 .chat-cabecera { background: var(--esmeralda-2); color: #fff; padding: 0.8rem 1rem; display: flex; gap: 0.6rem; align-items: center; border-radius: 30px 30px 0 0; }
 .avatar { width: 32px; height: 32px; border-radius: 50%; background: #fff; color: var(--esmeralda); display: grid; place-items: center; font-weight: 700; font-size: 0.82rem; font-family: var(--display); flex: none; }
 .chat-cabecera b { display: block; font-size: 0.86rem; }
@@ -525,3 +525,13 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 .enlaces-404 { list-style: none; padding: 0; margin: 0.4rem 0 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .enlaces-404 a { display: inline-block; padding: 0.45rem 0.95rem; border: 1px solid var(--linea); border-radius: 999px; background: #fff; color: var(--tinta-2); text-decoration: none; font-weight: 500; font-size: 0.94rem; }
 .enlaces-404 a:hover { border-color: var(--esmeralda); color: var(--esmeralda-2); }
+
+/* Páginas de canal */
+.hero .marco-hero { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); }
+.hero .marco-hero .leyenda { margin-top: 0.9rem; text-align: center; }
+.pasos.pasos-3 { grid-template-columns: repeat(3, 1fr); }
+.hero-acciones.centrado { justify-content: center; margin: 0; }
+.enlace-flecha { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; text-decoration: none; margin-top: 1.1rem; }
+.enlace-flecha .ico { width: 16px; height: 16px; transition: transform 0.15s; }
+.enlace-flecha:hover .ico { transform: translateX(3px); }
+@media (max-width: 1020px) { .pasos.pasos-3 { grid-template-columns: 1fr; } }
