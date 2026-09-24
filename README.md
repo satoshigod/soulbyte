@@ -25,7 +25,7 @@ Sitio estático en **https://soulbyte.app** (desde el 23-sep-2026), servido por 
 
 - Regla de Ivan (22-sep-2026): **toda funcionalidad nueva de n8n que entre en producción se agrega a este sitio en la misma sesión**: sección o tarjeta de la portada, «Qué incluye» si cambia la oferta, JSON-LD (`hasOfferCatalog`), este README, `sitemap.xml` (`lastmod`) y, si trata datos personales, `privacidad/`. Si también sirve a empresas de servicios, se agrega en `automatizacion-empresas-de-servicios/`.
 - Solo se publica lo que corre en producción; lo que dependa de una aprobación de Meta o Google va en la nota de la sección.
-- Agenda: los servicios, horarios y textos se cambian en la agenda (panel de administración de agenda.soulbyte.app) o con el workflow de configurar; la sección `#agenda` de la página de servicios lee el catálogo en vivo.
+- Agenda: los servicios, horarios y textos de Soulbyte se cambian en la app (https://app.soulbyte.app, negocio «Soulbyte»: Catálogo, Equipo y Ajustes). La sección `#agenda` de la página de servicios los lee en vivo de la app.
 - Regla de Ivan (23-sep-2026): el sitio no menciona Wompi ni Addi. Son cuentas de Hit-Air Colombia y Ekivibes como tiendas; Soulbyte todavía no es agregador ni integrador de ellos. Los pagos se describen de forma genérica (la pasarela de pagos del comercio).
 - Regla de Ivan (23-sep-2026): dentro de e-commerce, Soulbyte ofrece a los comercializadores coordinar la importación —compra al proveedor, nacionalización y transporte con TCC, de quien somos clientes— junto con el proyecto web completo: tienda, redes, automatización y lo demás (`importacion-y-logistica/`). La declaración de importación se presenta con agencia de aduanas. Las cifras reales de la importación de Hit-Air (flete, pesos, costos) no se publican sin su OK.
 - Regla de Ivan (23-sep-2026): Soulbyte ofrece a marcas del exterior —por ejemplo, una empresa japonesa— comercializar sus productos en Colombia a través de Soulbyte: importación, bodega, imagen y lo demás. En etapa temprana prueban el mercado con Soulbyte y, con los números, se instalan en Colombia o expanden la operación con Soulbyte (`vender-en-colombia/`). No se publica tarifa ni esquema comercial fijo: se acuerdan antes de la primera orden.
@@ -55,23 +55,37 @@ Tenant 1 (`clave=soulbyte`) es la operación propia: su token vive en el vault d
 
 **Conexión de TikTok (pendiente, 23-sep-2026).** NocoDB `parametros` ya tiene `tiktok_app_id` y `tiktok_auth_url` (vacíos) y `tiktok_conexion_activa = no`. Falta el workflow de n8n con `GET /webhook/soulbyte-tiktok-config` (mismo CORS que el onboarding de WhatsApp) y `POST /webhook/soulbyte-tiktok-conexion`, que cambia el código en `POST https://business-api.tiktok.com/open_api/v1.3/tt_user/oauth2/token/` (`client_id`, `client_secret`, `grant_type=authorization_code`, `auth_code`, `redirect_uri=https://soulbyte.app/conectar/tiktok/`), guarda la cuenta por `open_id` y avisa al equipo. El secreto de la app va en una credencial de n8n, nunca en la tabla ni en la página.
 
-## Servicios: agenda y solicitudes (23-sep-2026)
+## Servicios: agenda y solicitudes
 
-Agenda en línea en **https://agenda.soulbyte.app**: Easy!Appointments 1.6.0 (imagen `alextselegidis/easyappointments:1.6.0`, código abierto) en el proyecto `soulbyte` de Railway, servicio `agenda-soulbyte` (`558b2243-9078-4904-a577-4cb4c31f43e5`) con su base `MySQL` (`aeeae3c4-5f48-4db0-90ea-dd3636650b91`). El arranque es un script en la variable `SOULBYTE_INICIO_B64`: quita xdebug y los MPM event y worker, desactiva `sess_match_ip` y confía en el proxy de Railway (`100.64.0.0/10`); sin eso la sesión se cierra en cada petición. n8n la configuró en español, con hora de Bogotá, nombre, apellido, correo y celular obligatorios, el texto de la Ley 1581, estados en español y sin correos propios de la agenda (los mensajes los manda n8n). Servicios de Soulbyte: «Llamada de diagnóstico» (30 min, `?service=1`) y «Demostración de la plataforma» (45 min, `?service=2`), con el profesional «Equipo Soulbyte», de lunes a viernes de 9:00 a 18:00. El token de la API REST de la agenda está solo en la credencial de n8n «Easy!Appointments — agenda Soulbyte (API)» y en los ajustes de la agenda (Integraciones → API), nunca en este repo.
+**Desde el 24-sep-2026 las reservas de Soulbyte se hacen en la app de Soulbyte**, la misma plataforma que se ofrece a las empresas: https://app.soulbyte.app/r/soulbyte (repo privado `satoshigod/soulbyte-app`, servicio `soulbyte-app` del proyecto `soulbyte` en Railway).
+- Servicios: «Llamada de diagnóstico» (30 min) y «Demostración de la plataforma» (45 min), por videollamada, de lunes a viernes de 9:00 a 18:00. Se reservan con Ivan Correa.
+- Los enlaces del sitio llevan el nombre del servicio: `?servicio=llamada-de-diagnostico` y `?servicio=demostracion-de-la-plataforma`.
+- La sección `#agenda` de `automatizacion-empresas-de-servicios/` lee los servicios de `GET https://app.soulbyte.app/api/publico/soulbyte/servicios`, que tiene CORS abierto y un minuto de caché. Si la app no responde, queda la lista fija del HTML.
+- La app manda los correos por Resend:
+  - al cliente, desde `agenda@soulbyte.app`, la confirmación con el archivo de calendario, los cambios de horario, las cancelaciones y los recordatorios de 24 h y 2 h antes (estos solo si los aceptó);
+  - a hola@soulbyte.app, desde `avisos@soulbyte.app`, el aviso de cada reserva en línea.
+- soulbyte.app quedó verificado en Resend el 23-sep-2026, en la cuenta de las tiendas (registros DKIM `resend._domainkey`, MX y SPF de `send`, CNAME `rsend` y DMARC `p=none` en Cloudflare).
+- Todavía no hay número de WhatsApp para servicios.
 
-Workflows de n8n (etiquetas Soulbyte y Servicios):
+**La agenda anterior se retiró el 24-sep-2026.** Era Easy!Appointments 1.6.0 en agenda.soulbyte.app, con el servicio `agenda-soulbyte` y su `MySQL` en Railway.
+- agenda.soulbyte.app redirige a la página de reservas de la app. `?service=1` y `?service=2` llevan al servicio que corresponde.
+- Se apagaron sus workflows de n8n:
+  - `gYMrTkcxVDU3tDm5`: proxy de la API;
+  - `j9ZEllgxZdJ7SRBt`: eventos;
+  - `e0bXaeWBbdWZxc9K`: recordatorios;
+  - `746Rbt07rDNe2sus`: seguimiento;
+  - `pZdL3UGJAKAJflbp`: configurar agenda;
+  - `YdyWHMtX1P4D3DVA`: catálogo público.
 
-- `gYMrTkcxVDU3tDm5` API de la agenda: proxy interno con la credencial (`/webhook/soulbyte-agenda-api-soulbyte-servicios`), solo para llamadas desde el mismo n8n y rutas permitidas.
-- `j9ZEllgxZdJ7SRBt` eventos: la agenda llama `POST /webhook/soulbyte-agenda-evento?empresa=&token=` con cada cita y servicio; n8n guarda la cita y el cliente en NocoDB, manda el mensaje al cliente y el aviso a la empresa por correo, y copia los servicios a la tabla `servicios`.
-- `e0bXaeWBbdWZxc9K` recordatorios cada 15 min (24 h y 2 h antes) y `746Rbt07rDNe2sus` seguimiento cada hora (gracias con el enlace de reseña desde 3 h después de la cita).
-- `nDIOK38dR5pWVs3E` solicitudes: `POST /webhook/soulbyte-servicios-solicitud` (CORS para soulbyte.app, www y agenda; valida origen, trampa, tiempo, autorización y correo o celular; junta en una las repetidas dentro de 30 minutos).
-- `YdyWHMtX1P4D3DVA` catálogo público: `GET /webhook/soulbyte-servicios-catalogo?empresa=` (JSON con CORS abierto y 5 minutos de caché).
-- `pZdL3UGJAKAJflbp` configurar la agenda de una empresa: `POST /webhook/soulbyte-servicios-configurar` con el encabezado `x-soulbyte-admin`; hace ajustes, webhook, profesionales y catálogo por rubro (soulbyte, abogados, salud, desarrollo y agencias, consultoría, belleza y bienestar, educación) y acepta `pasos`, `rubro` y `horario` (`{dias, inicio, fin, descansos}`).
-- `G0U6a2EhHgSA71kR` plantillas de WhatsApp de servicios en la WABA de la empresa: `POST /webhook/soulbyte-servicios-plantillas` y revisión cada 30 min de las enviadas (`cita_confirmada`, `cita_recordatorio`, `cita_reprogramada`, `cita_cancelada`, `cita_gracias` y `solicitud_recibida`, de utilidad y en español).
+Workflows de n8n que siguen activos (etiquetas Soulbyte y Servicios):
 
-Mensajes al cliente: por WhatsApp si la empresa tiene número y plantillas aprobadas (`tenants.wa_plantillas_servicios = aprobadas`); si no, por correo si hay remitente (`parametros.servicios_remitente_correo`); si no, quedan en `mensajes` como omitidos (canal `ninguno`). Soulbyte envía desde `Soulbyte <agenda@soulbyte.app>` al cliente y desde `Avisos Soulbyte <avisos@soulbyte.app>` a la empresa (`parametros.servicios_remitente_avisos`): soulbyte.app quedó verificado en Resend el 23-sep-2026, en la cuenta de las tiendas y en el lugar de mail.escala.network, que se retiró por decisión de Ivan (registros DKIM `resend._domainkey`, MX y SPF de `send`, CNAME `rsend` y DMARC `p=none` en Cloudflare). Todavía no tiene número de WhatsApp para servicios; los avisos al equipo llegan a hola@soulbyte.app.
+- `nDIOK38dR5pWVs3E`, solicitudes del formulario «Escríbenos», en `POST /webhook/soulbyte-servicios-solicitud`:
+  - CORS para soulbyte.app y www;
+  - valida el origen, la trampa, el tiempo, la autorización y que haya correo o celular;
+  - junta en una sola las solicitudes repetidas dentro de 30 minutos.
+- `G0U6a2EhHgSA71kR`, plantillas de WhatsApp de servicios en la WABA de la empresa, en `POST /webhook/soulbyte-servicios-plantillas`.
 
-NocoDB: base «Soulbyte» (`tenants`, `parametros`, `solicitudes`, `clientes`, `servicios`, `citas` y `mensajes`; empresa `soulbyte-servicios`) y base «Plantilla - Servicios», que se copia para cada empresa cliente junto con su propia agenda.
+NocoDB: base «Soulbyte», con las tablas `tenants`, `parametros`, `solicitudes` y `clientes` (empresa `soulbyte-servicios`). Las tablas `servicios`, `citas` y `mensajes` eran de Easy! y quedan como histórico; estaban vacías al retirarlo.
 
 ## Vía guiada por Meta (hosted Embedded Signup): cómo se completa un comercio
 

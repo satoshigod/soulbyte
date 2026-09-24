@@ -136,7 +136,7 @@
       <h1>Automatiza tu empresa de servicios <em>con n8n y WhatsApp</em>.</h1>
       <p class="lead">Desarrollo de software, agencias, consultorios, firmas de abogados. Soulbyte instala y opera flujos de n8n que reciben citas en tu agenda en línea, atienden WhatsApp con reglas claras, registran cada contacto, dan seguimiento a cotizaciones y cobros, y mantienen tus redes al día. Son las mismas piezas con las que hoy operan Soulbyte y sus dos marcas.</p>
       <div class="hero-acciones">
-        <a class="btn btn-primario" href="https://agenda.soulbyte.app/?service=1">Agenda una llamada <svg class="ico"><use href="#i-flecha"/></svg></a>
+        <a class="btn btn-primario" href="https://app.soulbyte.app/r/soulbyte?servicio=llamada-de-diagnostico">Agenda una llamada <svg class="ico"><use href="#i-flecha"/></svg></a>
         <a class="btn btn-oscuro-contorno" href="#que-automatizamos">Qué automatizamos</a>
       </div>
       <ul class="confianza">
@@ -372,7 +372,7 @@
             <p>Videollamada de 30 minutos para entender tu negocio y ver qué conviene automatizar: WhatsApp, tienda en línea, catálogo en Google o procesos internos.</p>
             <p class="datos-servicio">30 minutos · Videollamada</p>
           </div>
-          <a class="btn btn-primario btn-chico" href="https://agenda.soulbyte.app/?service=1" aria-label="Reservar: Llamada de diagnóstico">Reservar</a>
+          <a class="btn btn-primario btn-chico" href="https://app.soulbyte.app/r/soulbyte?servicio=llamada-de-diagnostico" aria-label="Reservar: Llamada de diagnóstico">Reservar</a>
         </li>
         <li class="servicio-agenda">
           <div>
@@ -380,7 +380,7 @@
             <p>Te mostramos en vivo la plataforma de Soulbyte: WhatsApp Business, tienda, catálogo en Google y automatizaciones con n8n.</p>
             <p class="datos-servicio">45 minutos · Videollamada</p>
           </div>
-          <a class="btn btn-primario btn-chico" href="https://agenda.soulbyte.app/?service=2" aria-label="Reservar: Demostración de la plataforma">Reservar</a>
+          <a class="btn btn-primario btn-chico" href="https://app.soulbyte.app/r/soulbyte?servicio=demostracion-de-la-plataforma" aria-label="Reservar: Demostración de la plataforma">Reservar</a>
         </li>
       </ul>
       <p class="nota">Esta lista sale de nuestra agenda: si cambia un servicio allá, cambia aquí.</p>
@@ -512,18 +512,18 @@ try { if (!sessionStorage.getItem('sb_origen')) sessionStorage.setItem('sb_orige
   document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; ds.forEach(function (d) { if (d.classList.contains('abierto')) { fijar(d, false); d.querySelector('.desplegable-boton').focus(); } }); });
 })();
 (function () {
-  // Servicios de la agenda (n8n los lee de NocoDB); si no responde, queda la lista fija
+  // Servicios de la agenda (los da la app de Soulbyte); si no responde, queda la lista fija
   var lista = document.getElementById('servicios-agenda');
   if (!lista || !window.fetch) return;
-  var AGENDA = 'https://agenda.soulbyte.app/';
+  var AGENDA = 'https://app.soulbyte.app/r/soulbyte';
   function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  fetch('https://n8n.soulbyte.app/webhook/soulbyte-servicios-catalogo?empresa=soulbyte-servicios')
+  fetch('https://app.soulbyte.app/api/publico/soulbyte/servicios')
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) {
       var s = d && Array.isArray(d.servicios) ? d.servicios.filter(function (x) { return x && x.nombre && String(x.reservar || '').indexOf(AGENDA) === 0; }) : [];
       if (!s.length) return;
       lista.innerHTML = s.map(function (x) {
-        var datos = [x.duracion_min ? x.duracion_min + ' minutos' : '', x.ubicacion || ''].filter(Boolean).join(' · ');
+        var datos = [x.duracion_min ? x.duracion_min + ' minutos' : '', x.lugar || ''].filter(Boolean).join(' · ');
         return '<li class="servicio-agenda"><div><h3>' + esc(x.nombre) + '</h3>' + (x.descripcion ? '<p>' + esc(x.descripcion) + '</p>' : '') +
           (datos ? '<p class="datos-servicio">' + esc(datos) + '</p>' : '') + '</div><a class="btn btn-primario btn-chico" href="' + esc(x.reservar) +
           '" aria-label="Reservar: ' + esc(x.nombre) + '">Reservar</a></li>';
