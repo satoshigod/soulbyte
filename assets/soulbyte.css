@@ -573,3 +573,10 @@ form.ficha .opcional { font-weight: 400; color: var(--tinta-3); }
 @media (max-width: 680px) { .servicio-agenda { grid-template-columns: 1fr; } .servicio-agenda .btn { width: 100%; } }
 /* Importación y logística (23-sep-2026): etiquetas sobre baldosas claras */
 .baldosa:not(.oscura) .datos-tienda li { background: var(--esmeralda-tenue); border-color: var(--esmeralda-tenue); color: var(--esmeralda-2); }
+/* Vender en Colombia (23-sep-2026): enlace a todo el ancho al final del menú E-commerce y tabla después de baldosas */
+.desplegable-lista.dos-col > a.fila-completa { grid-column: 1 / -1; background: var(--bg-suave); }
+.desplegable-lista.dos-col > a.fila-completa:hover { background: var(--esmeralda-tenue); }
+.bento + .comparacion { margin-top: 2.8rem; }
+@media (max-width: 1120px) {
+  .menu .desplegable-lista.dos-col > a.fila-completa, .menu .desplegable-lista.dos-col > a.fila-completa:hover { background: none; }
+}
