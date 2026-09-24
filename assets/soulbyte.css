@@ -571,3 +571,5 @@ form.ficha .opcional { font-weight: 400; color: var(--tinta-3); }
 .trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 @media (max-width: 1020px) { .agenda-grid { grid-template-columns: 1fr; gap: 2.6rem; } }
 @media (max-width: 680px) { .servicio-agenda { grid-template-columns: 1fr; } .servicio-agenda .btn { width: 100%; } }
+/* Importación y logística (23-sep-2026): etiquetas sobre baldosas claras */
+.baldosa:not(.oscura) .datos-tienda li { background: var(--esmeralda-tenue); border-color: var(--esmeralda-tenue); color: var(--esmeralda-2); }
