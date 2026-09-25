@@ -1,0 +1,134 @@
+/* Tailwind sin «preflight»: la base la pone src/marca/marca.css (la hoja de estilos de soulbyte.app),
+   que aquí manda también sobre las piezas de la plataforma (.eyebrow, .lead, .envoltura) para que las
+   páginas portadas se vean igual que antes. Las utilidades usan los colores y fuentes de la marca. */
+@layer theme, base, components, marca, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@import '@fontsource-variable/inter';
+@import '@fontsource/sora/600.css';
+@import '@fontsource/sora/700.css';
+
+@import '../marca/marca.css' layer(marca);
+
+@theme inline {
+  --color-primario: var(--primario);
+  --color-primario-2: var(--primario-2);
+  --color-primario-tenue: var(--primario-tenue);
+  --color-acento: var(--acento);
+  --color-fondo: var(--fondo);
+  --color-fondo-suave: var(--fondo-suave);
+  --color-fondo-oscuro: var(--fondo-oscuro);
+  --color-tinta: var(--tinta);
+  --color-tinta-2: var(--tinta-2);
+  --color-tinta-3: var(--tinta-3);
+  --color-linea: var(--linea);
+  --color-linea-fuerte: var(--linea-fuerte);
+  --color-alerta: var(--alerta);
+  --color-alerta-tenue: var(--alerta-tenue);
+  --color-exito: var(--exito);
+  --color-exito-tenue: var(--exito-tenue);
+  --font-display: var(--display);
+  --font-texto: var(--texto);
+  --radius-caja: var(--radio);
+  --radius-grande: var(--radio-grande);
+  --shadow-suave: var(--sombra);
+}
+
+/* Piezas que se repiten en las páginas de la plataforma. */
+@layer components {
+  .envoltura {
+    width: min(var(--ancho), 100% - 2.5rem);
+    margin-inline: auto;
+  }
+  .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .boton:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .boton-primario {
+    background: var(--primario);
+    color: #fff;
+  }
+  .boton-primario:hover:not(:disabled) {
+    background: var(--primario-2);
+    color: #fff;
+  }
+  .boton-secundario {
+    background: #fff;
+    color: var(--tinta);
+    border-color: var(--linea-fuerte);
+  }
+  .boton-secundario:hover:not(:disabled) {
+    border-color: var(--primario);
+    color: var(--primario-2);
+  }
+  .boton-chico {
+    padding: 0.6rem 1rem;
+    font-size: 0.92rem;
+  }
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .campo > span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--tinta-2);
+  }
+  .entrada {
+    width: 100%;
+    padding: 0.8rem 0.95rem;
+    border: 1px solid var(--linea-fuerte);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--tinta);
+    line-height: 1.4;
+  }
+  .entrada:focus {
+    outline: 2px solid var(--primario);
+    outline-offset: 1px;
+    border-color: var(--primario);
+  }
+  .tarjeta {
+    background: #fff;
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    padding: 1.25rem;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primario);
+    margin: 0 0 1rem;
+  }
+  .lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--tinta-2);
+    max-width: 62ch;
+  }
+}
