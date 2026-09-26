@@ -20,10 +20,10 @@ export default async function Contacto({ searchParams }: { searchParams: Promise
   const r = paginas(n).servicios ? await getServicios() : null;
   const servicios = r?.ok ? r.servicios : [];
   const whatsapp = sitio.whatsapp || n.whatsapp;
-  const titulo = n.perfil.motor === 'proyectos' ? 'Pide una propuesta' : 'Escríbenos';
+  const titulo = n.perfil.motor === 'proyectos' ? 'Pide una propuesta' : n.perfil.motor === 'marca' ? 'Para empresas y marcas' : 'Escríbenos';
   return (
     <Seccion>
-      <Encabezado eyebrow={n.nombre} titulo={titulo} texto={n.perfil.motor === 'proyectos' ? 'Cuéntanos qué necesitas y te enviamos una propuesta con alcance, tiempos y valor.' : 'Déjanos tus datos y te respondemos en horario de atención.'} />
+      <Encabezado eyebrow={n.nombre} titulo={titulo} texto={n.perfil.motor === 'proyectos' ? 'Cuéntanos qué necesitas y te enviamos una propuesta con alcance, tiempos y valor.' : n.perfil.motor === 'marca' ? 'Charlas, talleres, consultorías y colaboraciones: cuéntame qué buscas y para cuándo, y te respondo con una propuesta.' : 'Déjanos tus datos y te respondemos en horario de atención.'} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
         <FormularioContacto negocio={n} servicios={servicios} asunto={asunto} />
         <aside className="flex flex-col gap-4">

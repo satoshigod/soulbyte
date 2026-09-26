@@ -6,8 +6,8 @@ import { rastrear } from './medicion';
 import { cuerpoPersona, DatosPersona, usePersona, validarPersona } from './persona';
 import { Aviso, Boton, Cargando, cx, Icono } from './ui';
 
-/** Horario semanal de clases con cupos, y reserva de cupo con los datos de la persona. */
-export function HorarioClases({ negocio: n, inicial, sesionInicial }: { negocio: Negocio; inicial: Sesion[]; sesionInicial?: string | null }) {
+/** Horario de clases con cupos (una semana, o cuatro para los cursos de una marca personal), y reserva de cupo con los datos de la persona. */
+export function HorarioClases({ negocio: n, inicial, sesionInicial, dias: ventana = 7 }: { negocio: Negocio; inicial: Sesion[]; sesionInicial?: string | null; dias?: number }) {
   const [desde, setDesde] = useState(hoy());
   const [sesiones, setSesiones] = useState<Sesion[]>(inicial);
   const [cargando, setCargando] = useState(false);
@@ -20,7 +20,7 @@ export function HorarioClases({ negocio: n, inicial, sesionInicial }: { negocio:
   useEffect(() => {
     if (desde === hoy()) return;
     let activo = true;
-    obtener<{ sesiones: Sesion[] }>(`clases?desde=${desde}&dias=7`).then((r) => {
+    obtener<{ sesiones: Sesion[] }>(`clases?desde=${desde}&dias=${ventana}`).then((r) => {
       if (!activo) return;
       setCargando(false);
       if (r.ok) setSesiones(r.sesiones);
@@ -29,7 +29,7 @@ export function HorarioClases({ negocio: n, inicial, sesionInicial }: { negocio:
     return () => {
       activo = false;
     };
-  }, [desde]);
+  }, [desde, ventana]);
 
   function cambiarSemana(n: number) {
     const nuevo = sumarDias(desde, n);
@@ -79,16 +79,16 @@ export function HorarioClases({ negocio: n, inicial, sesionInicial }: { negocio:
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
       <div>
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <Boton variante="secundario" chico onClick={() => cambiarSemana(-7)} disabled={desde <= hoy()}>
-            <Icono nombre="volver" size={16} /> Semana anterior
+          <Boton variante="secundario" chico onClick={() => cambiarSemana(-ventana)} disabled={desde <= hoy()}>
+            <Icono nombre="volver" size={16} /> {ventana > 7 ? 'Fechas anteriores' : 'Semana anterior'}
           </Boton>
-          <Boton variante="secundario" chico onClick={() => cambiarSemana(7)}>
-            Semana siguiente <Icono nombre="flecha" size={16} />
+          <Boton variante="secundario" chico onClick={() => cambiarSemana(ventana)}>
+            {ventana > 7 ? 'Siguientes fechas' : 'Semana siguiente'} <Icono nombre="flecha" size={16} />
           </Boton>
           {cargando && <Cargando texto="" />}
         </div>
         {error && !elegida && <Aviso tipo="error">{error}</Aviso>}
-        {dias.length === 0 && !cargando && <Aviso>No hay clases programadas esta semana.</Aviso>}
+        {dias.length === 0 && !cargando && <Aviso>{ventana > 7 ? 'No hay cursos con fecha en estas semanas.' : 'No hay clases programadas esta semana.'}</Aviso>}
         {dias.map((d) => (
           <section key={d} className="mb-6">
             <h2 className="!mb-2 !text-lg">{fechaLarga(d)}</h2>
@@ -133,7 +133,7 @@ export function HorarioClases({ negocio: n, inicial, sesionInicial }: { negocio:
             </Boton>
           </form>
         ) : (
-          <p className="m-0 text-tinta-2">Elige una clase del horario para reservar tu cupo. Si tienes plan, se descuenta solo.</p>
+          <p className="m-0 text-tinta-2">{ventana > 7 ? 'Elige una fecha para reservar tu cupo. Si tienes membresía, se descuenta sola.' : 'Elige una clase del horario para reservar tu cupo. Si tienes plan, se descuenta solo.'}</p>
         )}
       </aside>
     </div>

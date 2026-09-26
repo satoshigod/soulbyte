@@ -57,12 +57,12 @@ export function paginas(n: Negocio) {
   const m = n.perfil.motor;
   const p = sitio.paginas;
   return {
-    servicios: p.servicios && (m === 'citas' || m === 'proyectos' || m === 'ordenes'),
-    reservar: p.reservar && (m === 'citas' || m === 'proyectos') && n.reservasEnLinea,
+    servicios: p.servicios && (m === 'citas' || m === 'proyectos' || m === 'ordenes' || m === 'marca'),
+    reservar: p.reservar && (m === 'citas' || m === 'proyectos' || m === 'marca') && n.reservasEnLinea,
     contacto: p.contacto,
     cotizar: p.cotizar && m === 'ordenes',
-    horario: p.horario && m === 'clases',
-    planes: p.planes && m === 'clases',
+    horario: p.horario && (m === 'clases' || m === 'marca'),
+    planes: p.planes && (m === 'clases' || m === 'marca'),
     espacios: p.espacios && m === 'alquiler',
     chat: p.chat,
   };
@@ -83,6 +83,9 @@ export function accionPrincipal(n: Negocio): { texto: string; href: string } {
       return pg.horario ? { texto: 'Ver horario', href: '/horario' } : { texto: 'Inscribirme', href: '/contacto' };
     case 'alquiler':
       return pg.espacios ? { texto: 'Ver disponibilidad', href: '/espacios' } : { texto: 'Reservar', href: '/contacto' };
+    case 'marca':
+      // Marca personal: la sesión individual es lo que más se vende; empresas y marcas escriben por contacto.
+      return pg.reservar ? { texto: `Agendar ${v.cita[0]}`, href: '/reservar' } : { texto: 'Escríbeme', href: '/contacto' };
   }
 }
 
@@ -92,12 +95,13 @@ export function enlacesPlataforma(n: Negocio): { texto: string; href: string }[]
   const pg = paginas(n);
   const out: { texto: string; href: string }[] = [];
   if (pg.servicios) out.push({ texto: cap(v.servicio[1]), href: '/servicios' });
-  if (pg.reservar) out.push({ texto: n.perfil.motor === 'proyectos' ? 'Agendar reunión' : `Reservar`, href: '/reservar' });
+  const marca = n.perfil.motor === 'marca';
+  if (pg.reservar) out.push({ texto: n.perfil.motor === 'proyectos' ? 'Agendar reunión' : marca ? `Agendar ${v.cita[0]}` : `Reservar`, href: '/reservar' });
   if (pg.cotizar) out.push({ texto: 'Cotizar', href: '/cotizar' });
-  if (pg.horario) out.push({ texto: 'Horario', href: '/horario' });
-  if (pg.planes) out.push({ texto: 'Planes', href: '/planes' });
+  if (pg.horario) out.push({ texto: marca ? (v.clasesMenu ?? 'Cursos') : 'Horario', href: '/horario' });
+  if (pg.planes) out.push({ texto: marca ? 'Membresías' : 'Planes', href: '/planes' });
   if (pg.espacios) out.push({ texto: 'Espacios', href: '/espacios' });
-  if (pg.contacto) out.push({ texto: 'Contacto', href: '/contacto' });
+  if (pg.contacto) out.push({ texto: marca ? 'Empresas y marcas' : 'Contacto', href: '/contacto' });
   return out;
 }
 

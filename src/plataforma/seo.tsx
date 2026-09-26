@@ -43,23 +43,26 @@ export function jsonLdNegocio(n: Negocio) {
   const direccion = sitio.legal.direccion || n.direccion;
   const ciudad = sitio.legal.ciudad || n.ciudad;
   const sameAs = Object.values(n.redes).filter(Boolean);
-  const local = n.perfil.motor !== 'proyectos';
+  const marca = n.perfil.motor === 'marca';
+  const local = n.perfil.motor !== 'proyectos' && !marca;
   return {
     '@context': 'https://schema.org',
-    '@type': local ? 'LocalBusiness' : 'Organization',
+    // Marca personal: la persona es la marca (Person); los demás, negocio local u organización.
+    '@type': marca ? 'Person' : local ? 'LocalBusiness' : 'Organization',
     '@id': `${DOMINIO}/#negocio`,
     name: sitio.nombre || n.nombre,
-    legalName: sitio.legal.razonSocial || undefined,
+    legalName: marca ? undefined : sitio.legal.razonSocial || undefined,
     url: `${DOMINIO}/`,
-    logo: { '@type': 'ImageObject', url: url(sitio.marca.logo) },
+    logo: marca ? undefined : { '@type': 'ImageObject', url: url(sitio.marca.logo) },
     image: url(sitio.marca.imagenSocial),
     description: sitio.descripcion,
+    jobTitle: marca ? sitio.lema || undefined : undefined,
     email: n.correo ?? sitio.legal.correo,
     telephone: n.telefono ?? n.whatsapp ?? undefined,
     taxID: sitio.legal.nit || undefined,
     sameAs: sameAs.length ? sameAs : undefined,
     address: direccion || ciudad ? { '@type': 'PostalAddress', streetAddress: direccion ?? undefined, addressLocality: ciudad ?? undefined, addressRegion: sitio.legal.region, addressCountry: 'CO' } : undefined,
-    areaServed: 'CO',
+    areaServed: marca ? undefined : 'CO',
     openingHoursSpecification: local && n.horario.length ? n.horario.map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: DIA_SCHEMA[h.dia], opens: hm(h.desdeMin), closes: hm(h.hastaMin) })) : undefined,
   };
 }

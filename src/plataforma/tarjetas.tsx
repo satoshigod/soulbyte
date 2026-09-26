@@ -17,7 +17,7 @@ export function TarjetaServicio({ s, reservar, motor }: { s: Servicio; reservar:
         <span className="font-display font-semibold">{cop(s.precio)}</span>
         {reservar && (
           <Link href={`/reservar?servicio=${s.id}`} className="boton boton-primario boton-chico">
-            {motor === 'proyectos' ? 'Agendar' : 'Reservar'} <Icono nombre="flecha" size={16} />
+            {motor === 'proyectos' || motor === 'marca' ? 'Agendar' : 'Reservar'} <Icono nombre="flecha" size={16} />
           </Link>
         )}
       </div>

@@ -10,7 +10,7 @@ const PLATAFORMA = (process.env.NEXT_PUBLIC_PLATAFORMA || sitio.plataforma).repl
 export const NEGOCIO = process.env.NEXT_PUBLIC_NEGOCIO || sitio.negocio;
 export const API = `${PLATAFORMA}/api/publico/${NEGOCIO}`;
 
-export type Motor = 'citas' | 'proyectos' | 'ordenes' | 'clases' | 'alquiler';
+export type Motor = 'citas' | 'proyectos' | 'ordenes' | 'clases' | 'alquiler' | 'marca';
 
 export type Vocabulario = {
   cliente: [string, string];
@@ -21,6 +21,8 @@ export type Vocabulario = {
   hito: [string, string];
   agenda: string;
   trabajoMenu: string;
+  /** Nombre del módulo de cursos cuando convive con otro módulo de trabajo (marca personal). */
+  clasesMenu?: string;
 };
 
 export type Negocio = {

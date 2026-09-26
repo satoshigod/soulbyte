@@ -62,7 +62,7 @@ export function FormularioContacto({ negocio: n, servicios, asunto }: { negocio:
         </Campo>
       )}
       <Campo etiqueta="¿Qué necesitas?" htmlFor="c-mensaje">
-        <textarea id="c-mensaje" className="entrada" rows={4} maxLength={1500} value={mensaje} onChange={(e) => setMensaje(e.target.value)} placeholder={n.perfil.motor === 'proyectos' ? 'Cuéntanos qué quieres lograr, para cuándo y cualquier detalle que ayude.' : 'Cuéntanos qué necesitas.'} />
+        <textarea id="c-mensaje" className="entrada" rows={4} maxLength={1500} value={mensaje} onChange={(e) => setMensaje(e.target.value)} placeholder={n.perfil.motor === 'proyectos' ? 'Cuéntanos qué quieres lograr, para cuándo y cualquier detalle que ayude.' : n.perfil.motor === 'marca' ? 'Cuéntame de tu empresa o tu marca, qué buscas (charla, taller, consultoría, colaboración) y para cuándo.' : 'Cuéntanos qué necesitas.'} />
       </Campo>
       <Boton type="submit" disabled={enviando} className="self-start">
         {enviando ? 'Enviando…' : 'Enviar'} <Icono nombre="flecha" size={18} />
