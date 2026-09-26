@@ -33,8 +33,10 @@ const sitio: SitioConfig = {
   whatsapp: '',
   whatsappMensaje: 'Hola, quiero información sobre Soulbyte.',
   medicion: {
-    metaPixel: '',
-    ga4: '',
+    // Conjunto de datos «Soulbyte (web)» del portafolio Soulbyte SAS (Administrador de eventos de Meta).
+    metaPixel: '1603159084782853',
+    // Propiedad «Soulbyte» de la cuenta «Soulbyte SAS» en Google Analytics 4, flujo web soulbyte.app.
+    ga4: 'G-9VR4SZZ57X',
   },
   paginas: {
     servicios: false,
