@@ -23,7 +23,7 @@ const ECOMMERCE: Entrada[] = [
 ];
 
 const SERVICIOS: Entrada[] = [
-  { href: '/automatizacion-empresas-de-servicios/', icono: 'i-rayo', titulo: 'Empresas de servicios', texto: 'Automatización con n8n, WhatsApp y redes' },
+  { href: '/automatizacion-empresas-de-servicios/', icono: 'i-rayo', titulo: 'Empresas de servicios', texto: 'Agenda, WhatsApp, cobros y redes automatizados' },
   { href: '/automatizacion-empresas-de-servicios/#desarrollo', icono: 'i-capas', titulo: 'Desarrollo y agencias', texto: 'Solicitudes, propuestas y avance de proyectos' },
   { href: '/automatizacion-empresas-de-servicios/#salud', icono: 'i-calendario', titulo: 'Salud', texto: 'Citas, recordatorios y encuestas' },
   { href: '/automatizacion-empresas-de-servicios/#abogados', icono: 'i-escudo', titulo: 'Abogados y firmas', texto: 'Casos, agenda y documentos' },
