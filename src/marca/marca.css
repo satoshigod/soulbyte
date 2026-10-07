@@ -500,10 +500,10 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
 }
 @media (max-width: 1120px) {
   .acciones-barra { gap: 0.6rem; }
-  .acciones-barra .btn-cuenta { display: none; }
   .cuenta-movil { display: inline-flex; }
   .menu .menu-cuenta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 0.5rem 0 0.9rem; }
   .menu .menu-cuenta a { padding: 0.9rem 0.8rem; border-bottom: 0; font-size: 0.98rem; }
+  .menu .menu-cuenta a.btn-primario, .menu .menu-cuenta a.btn-primario:hover { color: #fff; }
 }
 @media (max-width: 359px) {
   .menu .menu-cuenta { grid-template-columns: 1fr; }

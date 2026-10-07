@@ -8,6 +8,7 @@ import sitio from '../../sitio.config';
  * Mismo marcado y clases del sitio anterior (assets/soulbyte.css); la lógica del menú y los desplegables
  * ahora vive aquí (solo uno abierto a la vez; se cierran con clic afuera, Escape, foco fuera o al elegir).
  * «Iniciar sesión» lleva a la app; «Crear cuenta», a la solicitud de cuenta (las cuentas se crean por invitación).
+ * Conectar WhatsApp no va aquí: cada negocio lo hace dentro de su app.
  */
 
 type Entrada = { href: string; icono: string; titulo: string; texto: string; clase?: string };
@@ -91,8 +92,7 @@ function Desplegable({ id, titulo, entradas, dosCol, abierto, alternar, cerrar }
 
 export function Cabecera() {
   const ruta = usePathname();
-  const enConectar = ruta.startsWith('/conectar');
-  const conectar = enConectar && !ruta.startsWith('/conectar/tiktok') ? '#ficha' : '/conectar/';
+  const enCrear = ruta.startsWith('/crear-cuenta');
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [desplegable, setDesplegable] = useState<'ecommerce' | 'servicios' | null>(null);
 
@@ -121,7 +121,7 @@ export function Cabecera() {
         Ir al contenido
       </a>
       <aside className="anuncio" aria-label="Aviso">
-        Soulbyte es proveedor de tecnología de WhatsApp Business acreditado por Meta · {enConectar ? <a href="/whatsapp-business-api/">Qué incluye →</a> : <a href="/conectar/">Conecta tu número →</a>}
+        Soulbyte es proveedor de tecnología de WhatsApp Business acreditado por Meta · {enCrear ? <a href="/whatsapp-business-api/">Qué incluye →</a> : <a href={CREAR_CUENTA}>Crea tu cuenta →</a>}
       </aside>
       <header className="sitio">
         <div className="envoltura">
@@ -135,7 +135,7 @@ export function Cabecera() {
           </a>
           <nav className={`menu${menuAbierto ? ' abierto' : ''}`} id="menu" aria-label="Principal" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMenuAbierto(false); }}>
             <div className="menu-cuenta">
-              <a className="btn btn-contorno" href={CREAR_CUENTA}>
+              <a className="btn btn-primario" href={CREAR_CUENTA}>
                 Crear cuenta
               </a>
               <a className="btn btn-contorno" href={ENTRAR}>
@@ -149,22 +149,19 @@ export function Cabecera() {
             <a className="solo-movil" href={VENTAS}>
               Hablar con ventas
             </a>
-            <a className="solo-movil btn btn-primario" href={conectar}>
-              Conectar WhatsApp
-            </a>
           </nav>
           <div className="acciones-barra">
+            <a className="enlace" href={VENTAS}>
+              Hablar con ventas
+            </a>
             <a className="enlace enlace-cuenta" href={ENTRAR}>
               <svg className="ico" aria-hidden="true">
                 <use href="#i-usuario" />
               </svg>
               Iniciar sesión
             </a>
-            <a className="btn btn-contorno btn-chico btn-cuenta" href={CREAR_CUENTA}>
+            <a className="btn btn-primario btn-chico btn-cuenta" href={CREAR_CUENTA}>
               Crear cuenta
-            </a>
-            <a className="btn btn-primario btn-chico" href={conectar}>
-              Conectar WhatsApp
             </a>
             <a className="cuenta-movil" href={ENTRAR} aria-label="Iniciar sesión" title="Iniciar sesión">
               <svg className="ico" aria-hidden="true">
