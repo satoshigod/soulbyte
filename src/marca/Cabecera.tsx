@@ -1,11 +1,13 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import sitio from '../../sitio.config';
 
 /**
  * Cabecera de soulbyte.app: barra fija con los menús «E-commerce» y «Servicios», enlaces y acciones.
  * Mismo marcado y clases del sitio anterior (assets/soulbyte.css); la lógica del menú y los desplegables
  * ahora vive aquí (solo uno abierto a la vez; se cierran con clic afuera, Escape, foco fuera o al elegir).
+ * «Iniciar sesión» lleva a la app; «Crear cuenta», a la solicitud de cuenta (las cuentas se crean por invitación).
  */
 
 type Entrada = { href: string; icono: string; titulo: string; texto: string; clase?: string };
@@ -14,7 +16,7 @@ const ECOMMERCE: Entrada[] = [
   { href: '/#que-incluye', icono: 'i-tienda', titulo: 'Plataforma', texto: 'Tienda propia, inventario y operación' },
   { href: '/whatsapp-business-api/', icono: 'i-chat', titulo: 'WhatsApp Business', texto: 'Autoservicio, catálogo y pago desde el chat' },
   { href: '/#meta', icono: 'i-grafico', titulo: 'Meta', texto: 'Medición, públicos y anuncios vigilados' },
-  { href: '/#instagram', icono: 'i-imagen', titulo: 'Instagram', texto: 'Publicaciones, comentarios y mensajes directos' },
+  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook e Instagram', texto: 'Publicar, responder y respuestas con tus reglas' },
   { href: '/google-merchant-center/', icono: 'i-buscar', titulo: 'Google', texto: 'Merchant Center y Perfil de Negocio' },
   { href: '/ecommerce-b2b-mayoristas/', icono: 'i-porcentaje', titulo: 'Mayoristas B2B', texto: 'Listas de precios, cotizaciones y cartera' },
   { href: '/#dropshipping', icono: 'i-cajas', titulo: 'Dropshipping', texto: 'Una tienda por producto, un solo inventario' },
@@ -27,10 +29,13 @@ const SERVICIOS: Entrada[] = [
   { href: '/automatizacion-empresas-de-servicios/#desarrollo', icono: 'i-capas', titulo: 'Desarrollo y agencias', texto: 'Solicitudes, propuestas y avance de proyectos' },
   { href: '/automatizacion-empresas-de-servicios/#salud', icono: 'i-calendario', titulo: 'Salud', texto: 'Citas, recordatorios y encuestas' },
   { href: '/automatizacion-empresas-de-servicios/#abogados', icono: 'i-escudo', titulo: 'Abogados y firmas', texto: 'Casos, agenda y documentos' },
+  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook e Instagram', texto: 'Comentarios y mensajes con tus reglas' },
   { href: '/reservar/', icono: 'i-calendario', titulo: 'Agenda una llamada', texto: 'Diagnóstico o demostración de la plataforma' },
 ];
 
 const VENTAS = 'mailto:hola@soulbyte.app?subject=Quiero%20vender%20en%20l%C3%ADnea%20con%20Soulbyte';
+const ENTRAR = `${sitio.plataforma}/entrar`;
+const CREAR_CUENTA = '/crear-cuenta/';
 
 function Desplegable({ id, titulo, entradas, dosCol, abierto, alternar, cerrar }: { id: string; titulo: string; entradas: Entrada[]; dosCol?: boolean; abierto: boolean; alternar: () => void; cerrar: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -129,6 +134,14 @@ export function Cabecera() {
             </span>
           </a>
           <nav className={`menu${menuAbierto ? ' abierto' : ''}`} id="menu" aria-label="Principal" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMenuAbierto(false); }}>
+            <div className="menu-cuenta">
+              <a className="btn btn-contorno" href={CREAR_CUENTA}>
+                Crear cuenta
+              </a>
+              <a className="btn btn-contorno" href={ENTRAR}>
+                Iniciar sesión
+              </a>
+            </div>
             <Desplegable id="menu-ecommerce" titulo="E-commerce" entradas={ECOMMERCE} dosCol abierto={desplegable === 'ecommerce'} alternar={() => setDesplegable((d) => (d === 'ecommerce' ? null : 'ecommerce'))} cerrar={() => setDesplegable((d) => (d === 'ecommerce' ? null : d))} />
             <Desplegable id="menu-servicios" titulo="Servicios" entradas={SERVICIOS} abierto={desplegable === 'servicios'} alternar={() => setDesplegable((d) => (d === 'servicios' ? null : 'servicios'))} cerrar={() => setDesplegable((d) => (d === 'servicios' ? null : d))} />
             <a href="/#motor-propio">Por qué Soulbyte</a>
@@ -141,11 +154,22 @@ export function Cabecera() {
             </a>
           </nav>
           <div className="acciones-barra">
-            <a className="enlace" href={VENTAS}>
-              Hablar con ventas
+            <a className="enlace enlace-cuenta" href={ENTRAR}>
+              <svg className="ico" aria-hidden="true">
+                <use href="#i-usuario" />
+              </svg>
+              Iniciar sesión
+            </a>
+            <a className="btn btn-contorno btn-chico btn-cuenta" href={CREAR_CUENTA}>
+              Crear cuenta
             </a>
             <a className="btn btn-primario btn-chico" href={conectar}>
               Conectar WhatsApp
+            </a>
+            <a className="cuenta-movil" href={ENTRAR} aria-label="Iniciar sesión" title="Iniciar sesión">
+              <svg className="ico" aria-hidden="true">
+                <use href="#i-usuario" />
+              </svg>
             </a>
             <button
               className="nav-toggle"

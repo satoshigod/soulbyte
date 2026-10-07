@@ -5,11 +5,40 @@ import { rastrear } from '@/plataforma/medicion';
 
 const INTERESES = ['Agenda y recordatorios', 'Atención por WhatsApp', 'Cotizaciones y cobros', 'Correos y redes sociales', 'Otra cosa'];
 
+type Props = {
+  id?: string;
+  titulo?: string;
+  sub?: string;
+  etiquetaInteres?: string;
+  intereses?: string[];
+  /** Primera línea del mensaje que llega a Solicitudes (por ejemplo, «Quiero crear la cuenta…»). */
+  asunto?: string;
+  /** Para crear una cuenta: el negocio y el correo son obligatorios (al correo llega el enlace de activación). */
+  paraCuenta?: boolean;
+  boton?: string;
+  nota?: string;
+  exito?: string;
+  origen?: string;
+};
+
 /**
- * Formulario «Escríbenos» de la página de servicios (mismo marcado y clases del sitio estático).
- * Ahora llega a Solicitudes del panel de Soulbyte por la API pública, con aviso al equipo.
+ * Formulario de solicitud del sitio (mismo marcado y clases del sitio estático): «Escríbenos» en la página de
+ * servicios y la solicitud de cuenta en /crear-cuenta/. Llega a Solicitudes del panel de Soulbyte por la API
+ * pública, con aviso al equipo.
  */
-export function FormularioSolicitud() {
+export function FormularioSolicitud({
+  id = 'solicitud',
+  titulo = 'Escríbenos',
+  sub = 'Te respondemos por WhatsApp o, si lo prefieres, por correo.',
+  etiquetaInteres = '¿Qué quieres automatizar?',
+  intereses = INTERESES,
+  asunto,
+  paraCuenta = false,
+  boton = 'Enviar',
+  nota = 'Con tu celular te respondemos por WhatsApp.',
+  exito = 'Recibimos tu solicitud. Te vamos a contactar pronto.',
+  origen = 'servicios',
+}: Props) {
   const [estado, setEstado] = useState<{ texto: string; error?: boolean } | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [t0] = useState(() => Date.now());
@@ -20,40 +49,49 @@ export function FormularioSolicitud() {
     const v = (n: string) => String((f.elements.namedItem(n) as HTMLInputElement | null)?.value ?? '').trim();
     const marcado = (n: string) => Boolean((f.elements.namedItem(n) as HTMLInputElement | null)?.checked);
     if (v('nombre').length < 2) return setEstado({ texto: 'Escribe tu nombre.', error: true });
+    if (paraCuenta && v('empresa_cliente').length < 2) return setEstado({ texto: 'Escribe el nombre de tu negocio.', error: true });
     if (v('telefono').replace(/\D/g, '').length < 10) return setEstado({ texto: 'Escribe tu celular completo, por ejemplo 300 123 4567.', error: true });
+    if (paraCuenta && !v('email')) return setEstado({ texto: 'Escribe tu correo: allí te llega el enlace para activar tu cuenta.', error: true });
     if (v('email') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) return setEstado({ texto: 'Revisa el correo.', error: true });
     if (!marcado('consentimiento')) return setEstado({ texto: 'Para responderte necesitamos tu autorización de tratamiento de datos.', error: true });
     if (v('_hp') || Date.now() - t0 < 1500) return setEstado({ texto: 'No pudimos enviar tu solicitud. Escríbenos a hola@soulbyte.app.', error: true });
     setEnviando(true);
     setEstado({ texto: 'Enviando…' });
-    const mensaje = [`Interés: ${v('servicio')}`, v('mensaje')].filter(Boolean).join('\n');
+    const mensaje = [asunto, `Interés: ${v('servicio')}`, v('mensaje')].filter(Boolean).join('\n');
     const r = await enviar<{ id: string }>('solicitudes', { nombre: v('nombre'), celular: v('telefono'), correo: v('email') || null, empresa: v('empresa_cliente') || null, autorizaDatos: true, recordatorios: marcado('whatsapp_optin'), promociones: false, mensaje });
     setEnviando(false);
     if (!r.ok) return setEstado({ texto: r.error, error: true });
     f.reset();
-    setEstado({ texto: 'Recibimos tu solicitud. Te vamos a contactar pronto.' });
-    rastrear('solicitud', { origen: 'servicios' });
+    setEstado({ texto: exito });
+    rastrear('solicitud', { origen });
   }
 
   return (
-    <form className="ficha" id="solicitud" noValidate onSubmit={onSubmit}>
-      <p className="ficha-titulo">Escríbenos</p>
-      <p className="ficha-sub">Te respondemos por WhatsApp o, si lo prefieres, por correo.</p>
+    <form className="ficha" id={id} noValidate onSubmit={onSubmit}>
+      <p className="ficha-titulo">{titulo}</p>
+      <p className="ficha-sub">{sub}</p>
       <label htmlFor="s-nombre">Nombre</label>
       <input id="s-nombre" name="nombre" autoComplete="name" maxLength={120} required />
       <label htmlFor="s-empresa">
-        Empresa <span className="opcional">(opcional)</span>
+        {paraCuenta ? (
+          'Nombre de tu negocio'
+        ) : (
+          <>
+            Empresa <span className="opcional">(opcional)</span>
+          </>
+        )}
       </label>
-      <input id="s-empresa" name="empresa_cliente" autoComplete="organization" maxLength={160} />
+      <input id="s-empresa" name="empresa_cliente" autoComplete="organization" maxLength={160} required={paraCuenta} />
       <label htmlFor="s-telefono">Celular</label>
       <input id="s-telefono" name="telefono" type="tel" autoComplete="tel" maxLength={40} required />
       <label htmlFor="s-email">
-        Correo <span className="opcional">(opcional)</span>
+        Correo{' '}
+        {!paraCuenta && <span className="opcional">(opcional)</span>}
       </label>
-      <input id="s-email" name="email" type="email" autoComplete="email" maxLength={160} />
-      <label htmlFor="s-servicio">¿Qué quieres automatizar?</label>
-      <select id="s-servicio" name="servicio" defaultValue={INTERESES[0]}>
-        {INTERESES.map((o) => (
+      <input id="s-email" name="email" type="email" autoComplete="email" maxLength={160} required={paraCuenta} />
+      <label htmlFor="s-servicio">{etiquetaInteres}</label>
+      <select id="s-servicio" name="servicio" defaultValue={intereses[0]}>
+        {intereses.map((o) => (
           <option key={o}>{o}</option>
         ))}
       </select>
@@ -76,9 +114,9 @@ export function FormularioSolicitud() {
         <span>Pueden escribirme por WhatsApp sobre esta solicitud.</span>
       </label>
       <button className="boton" type="submit" disabled={enviando}>
-        Enviar
+        {boton}
       </button>
-      <p className="nota">Con tu celular te respondemos por WhatsApp.</p>
+      <p className="nota">{nota}</p>
       <div className={`estado${estado ? ' visible' : ''}${estado?.error ? ' error' : ''}`} id="s-estado" role="status" aria-live="polite">
         {estado?.texto}
       </div>

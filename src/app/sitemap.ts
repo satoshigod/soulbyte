@@ -9,12 +9,14 @@ export const dynamic = 'force-dynamic';
 const PROPIAS: [string, MetadataRoute.Sitemap[number]['changeFrequency'], number][] = [
   ['/', 'weekly', 1],
   ['/whatsapp-business-api/', 'monthly', 0.8],
+  ['/facebook-e-instagram/', 'monthly', 0.8],
   ['/ecommerce-b2b-mayoristas/', 'monthly', 0.8],
   ['/google-merchant-center/', 'monthly', 0.8],
   ['/importacion-y-logistica/', 'monthly', 0.8],
   ['/vender-en-colombia/', 'monthly', 0.8],
   ['/automatizacion-empresas-de-servicios/', 'monthly', 0.8],
   ['/conectar/', 'monthly', 0.7],
+  ['/crear-cuenta/', 'monthly', 0.6],
   ['/privacidad/', 'yearly', 0.2],
 ];
 

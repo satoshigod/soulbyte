@@ -39,7 +39,6 @@
   --fondo: var(--bg);
   --fondo-suave: var(--bg-suave);
   --fondo-oscuro: var(--bg-oscuro);
-  --linea-fuerte: var(--linea-fuerte);
   --exito: var(--esmeralda);
   --exito-tenue: var(--esmeralda-tenue);
 }
@@ -143,6 +142,23 @@ code { font-size: 0.9em; background: rgba(12, 28, 23, 0.06); padding: 0.05em 0.3
 .desplegable-lista a:hover b { color: var(--esmeralda-2); }
 .desplegable-lista small { display: block; color: var(--tinta-3); font-size: 0.82rem; line-height: 1.4; margin-top: 0.1rem; }
 .nav-toggle { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--linea); background: #fff; color: var(--tinta); align-items: center; justify-content: center; cursor: pointer; }
+/* Cuenta: «Iniciar sesión» lleva a la app; «Crear cuenta», a la solicitud de cuenta. */
+.acciones-barra .enlace-cuenta { display: inline-flex; align-items: center; gap: 0.45rem; }
+.acciones-barra .enlace-cuenta .ico { width: 19px; height: 19px; }
+.cuenta-movil { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--linea); background: #fff; color: var(--tinta); align-items: center; justify-content: center; text-decoration: none; transition: color 0.15s ease, border-color 0.15s ease; }
+.cuenta-movil:hover { color: var(--esmeralda); border-color: var(--linea-fuerte); }
+.cuenta-movil .ico { width: 21px; height: 21px; }
+.menu .menu-cuenta { display: none; }
+@media (min-width: 1121px) and (max-width: 1279px) {
+  .sitio .envoltura { gap: 1.2rem; }
+  .menu { gap: 1.15rem; margin-left: 0.2rem; }
+  .acciones-barra { gap: 0.75rem; }
+}
+@media (min-width: 1121px) and (max-width: 1199px) {
+  .acciones-barra { gap: 0.6rem; }
+  .acciones-barra .enlace-cuenta .ico { display: none; }
+  .acciones-barra .btn-chico { padding-left: 0.95rem; padding-right: 0.95rem; }
+}
 
 /* Portada */
 .hero { position: relative; overflow: hidden; color: #e7f4ee; padding: 5.2rem 0 6.5rem;
@@ -481,6 +497,16 @@ form.ficha .nota { margin: 0.9rem 0 0; font-size: 0.86rem; }
   .menu .desplegable-lista a:hover { background: none; }
   .desplegable-lista .icono-mini, .desplegable-lista small { display: none; }
   .desplegable-lista b { font-family: var(--texto); font-weight: 500; font-size: 1rem; letter-spacing: 0; }
+}
+@media (max-width: 1120px) {
+  .acciones-barra { gap: 0.6rem; }
+  .acciones-barra .btn-cuenta { display: none; }
+  .cuenta-movil { display: inline-flex; }
+  .menu .menu-cuenta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 0.5rem 0 0.9rem; }
+  .menu .menu-cuenta a { padding: 0.9rem 0.8rem; border-bottom: 0; font-size: 0.98rem; }
+}
+@media (max-width: 359px) {
+  .menu .menu-cuenta { grid-template-columns: 1fr; }
 }
 @media (max-width: 1020px) {
   .hero { padding: 3.8rem 0 4.5rem; }

@@ -25,6 +25,7 @@ export function Sprite() {
 <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
 <symbol id="i-calendario" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" /><path d="M3.5 10h17M8 3v4M16 3v4" /></symbol>
 <symbol id="i-campana" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z" /><path d="M10 20.5a2 2 0 0 0 4 0" /></symbol>
+<symbol id="i-usuario" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="10" r="3" /><path d="M6.6 18.3c1.2-2 3.1-3.1 5.4-3.1s4.2 1.1 5.4 3.1" /></symbol>
 <symbol id="i-usuarios" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2" /><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5" /><path d="M16 5.6a3 3 0 0 1 0 5.8M18.3 14.6c1.5.8 2.4 2.4 2.7 4.9" /></symbol>
 <symbol id="i-avion" viewBox="0 0 24 24"><path d="M21 3.5L10.5 14" /><path d="M21 3.5l-6.5 17-4-6.5-6.5-4z" /></symbol>
 <symbol id="i-pausa" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M10 9v6M14 9v6" /></symbol>
