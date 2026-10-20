@@ -3,6 +3,7 @@
    (válido 10 minutos) y n8n lo cambia por los tokens. La URL de autorización y el interruptor salen de n8n. */
 (function () {
   var N8N = 'https://n8n.hitaircolombia.com/webhook';
+  var PLATAFORMA = 'https://app.soulbyte.app';
   var CLAVE = 'sb_tiktok_state';
   var boton = document.getElementById('conectar-tiktok');
   var nota = document.getElementById('nota');
@@ -18,6 +19,12 @@
   var q = new URLSearchParams(location.search);
   var code = q.get('code') || q.get('auth_code');
   var state = q.get('state') || '';
+  /* La autorización que empezó en el panel de la plataforma la termina la plataforma (la página ya la pasó allá
+     al cargar; esto es el respaldo). Ese código nunca va a n8n. */
+  if (state.indexOf('sbapp1.') === 0) {
+    location.replace(PLATAFORMA + '/redes/tiktok/volver' + location.search);
+    return;
+  }
   var error = q.get('error') || q.get('error_code');
   var detalle = q.get('error_description') || '';
   if (code || error) { try { history.replaceState(null, '', location.pathname); } catch (e) { /* sin historial */ } }
