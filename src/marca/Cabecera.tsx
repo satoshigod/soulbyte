@@ -17,12 +17,13 @@ const ECOMMERCE: Entrada[] = [
   { href: '/#que-incluye', icono: 'i-tienda', titulo: 'Plataforma', texto: 'Tienda propia, inventario y operación' },
   { href: '/whatsapp-business-api/', icono: 'i-chat', titulo: 'WhatsApp Business', texto: 'Autoservicio, catálogo y pago desde el chat' },
   { href: '/#meta', icono: 'i-grafico', titulo: 'Meta', texto: 'Medición, públicos y anuncios vigilados' },
-  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook e Instagram', texto: 'Publicar, responder y respuestas con tus reglas' },
+  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook, Instagram y TikTok', texto: 'Publicar en las tres redes y responder con tus reglas' },
   { href: '/google-merchant-center/', icono: 'i-buscar', titulo: 'Google', texto: 'Merchant Center y Perfil de Negocio' },
+  { href: '/mercadolibre/', icono: 'i-carrito', titulo: 'MercadoLibre', texto: 'Tu catálogo publicado y al día' },
   { href: '/ecommerce-b2b-mayoristas/', icono: 'i-porcentaje', titulo: 'Mayoristas B2B', texto: 'Listas de precios, cotizaciones y cartera' },
   { href: '/#dropshipping', icono: 'i-cajas', titulo: 'Dropshipping', texto: 'Una tienda por producto, un solo inventario' },
   { href: '/importacion-y-logistica/', icono: 'i-globo', titulo: 'Importación y logística', texto: 'Compra, aduana y transporte con TCC' },
-  { href: '/vender-en-colombia/', icono: 'i-bandera', titulo: 'Vender en Colombia', texto: 'Marcas del exterior: prueba de mercado sin abrir empresa', clase: 'fila-completa' },
+  { href: '/vender-en-colombia/', icono: 'i-bandera', titulo: 'Vender en Colombia', texto: 'Marcas del exterior: prueba de mercado sin abrir empresa' },
 ];
 
 const SERVICIOS: Entrada[] = [
@@ -30,7 +31,7 @@ const SERVICIOS: Entrada[] = [
   { href: '/automatizacion-empresas-de-servicios/#desarrollo', icono: 'i-capas', titulo: 'Desarrollo y agencias', texto: 'Solicitudes, propuestas y avance de proyectos' },
   { href: '/automatizacion-empresas-de-servicios/#salud', icono: 'i-calendario', titulo: 'Salud', texto: 'Citas, recordatorios y encuestas' },
   { href: '/automatizacion-empresas-de-servicios/#abogados', icono: 'i-escudo', titulo: 'Abogados y firmas', texto: 'Casos, agenda y documentos' },
-  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook e Instagram', texto: 'Comentarios y mensajes con tus reglas' },
+  { href: '/facebook-e-instagram/', icono: 'i-imagen', titulo: 'Facebook, Instagram y TikTok', texto: 'Comentarios y mensajes con tus reglas' },
   { href: '/reservar/', icono: 'i-calendario', titulo: 'Agenda una llamada', texto: 'Diagnóstico o demostración de la plataforma' },
 ];
 

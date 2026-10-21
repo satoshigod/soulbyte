@@ -12,6 +12,7 @@ const PROPIAS: [string, MetadataRoute.Sitemap[number]['changeFrequency'], number
   ['/facebook-e-instagram/', 'monthly', 0.8],
   ['/ecommerce-b2b-mayoristas/', 'monthly', 0.8],
   ['/google-merchant-center/', 'monthly', 0.8],
+  ['/mercadolibre/', 'monthly', 0.8],
   ['/importacion-y-logistica/', 'monthly', 0.8],
   ['/vender-en-colombia/', 'monthly', 0.8],
   ['/automatizacion-empresas-de-servicios/', 'monthly', 0.8],
