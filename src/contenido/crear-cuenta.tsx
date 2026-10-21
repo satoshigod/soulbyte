@@ -10,7 +10,7 @@ export const metadatos = {
   titulo: 'Crear cuenta — Soulbyte',
   descripcion: 'Crea la cuenta de tu negocio en Soulbyte: nos cuentas qué haces, te la preparamos con lo que vas a usar y te llega al correo el enlace para activarla.',
   ogTitulo: 'Crea la cuenta de tu negocio — Soulbyte',
-  ogDescripcion: 'Tienda, agenda, WhatsApp Business, Facebook e Instagram: déjanos los datos de tu negocio y te enviamos el enlace para activar tu cuenta.',
+  ogDescripcion: 'Tienda, agenda, WhatsApp Business, Facebook, Instagram, TikTok y MercadoLibre: déjanos los datos de tu negocio y te enviamos el enlace para activar tu cuenta.',
   ruta: '/crear-cuenta/',
   noIndex: false,
 };
@@ -27,7 +27,7 @@ export const jsonld: unknown[] = [
 ];
 
 const ENTRAR = `${sitio.plataforma}/entrar`;
-const USOS = ['Tienda en línea', 'Agenda y servicios', 'WhatsApp Business', 'Facebook e Instagram', 'Todavía no lo sé'];
+const USOS = ['Tienda en línea', 'Agenda y servicios', 'WhatsApp Business', 'Facebook, Instagram y TikTok', 'MercadoLibre', 'Todavía no lo sé'];
 
 export function Contenido() {
   return (
@@ -36,7 +36,7 @@ export function Contenido() {
         <div className="conectar-intro">
           <p className="eyebrow">Tu cuenta de Soulbyte</p>
           <h1>Crea la cuenta de tu negocio.</h1>
-          <p className="lead">Nos cuentas qué haces y por dónde te escriben tus clientes, te preparamos la cuenta con lo que vas a usar —tienda, agenda, WhatsApp Business, Facebook e Instagram— y te llega al correo el enlace para activarla.</p>
+          <p className="lead">Nos cuentas qué haces y por dónde te escriben tus clientes, te preparamos la cuenta con lo que vas a usar —tienda, agenda, WhatsApp Business, Facebook, Instagram, TikTok o MercadoLibre— y te llega al correo el enlace para activarla.</p>
           <p>
             <a className="enlace-flecha" href={ENTRAR}>
               ¿Ya tienes cuenta? Inicia sesión <svg className="ico"><use href="#i-flecha" /></svg>

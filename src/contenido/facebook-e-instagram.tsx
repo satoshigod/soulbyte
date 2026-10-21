@@ -1,9 +1,9 @@
-/** Contenido de /facebook-e-instagram/: el panel de redes de la plataforma (publicar, responder y respuestas automáticas). */
+/** Contenido de /facebook-e-instagram/: el panel de redes de la plataforma (Facebook, Instagram y TikTok: publicar, responder y respuestas automáticas). */
 export const metadatos = {
-  titulo: 'Facebook e Instagram para empresas en Colombia — Soulbyte',
-  descripcion: 'Publica, programa y responde los comentarios y mensajes de Facebook e Instagram desde un panel, con respuestas automáticas que escribes tú, sin IA, y un resumen cada lunes.',
-  ogTitulo: 'Facebook e Instagram para empresas en Colombia — Soulbyte',
-  ogDescripcion: 'Publicaciones y carruseles programados, comentarios y mensajes en un solo lugar, y respuestas automáticas con tus reglas: menú del chat, preguntas al abrir el chat y menciones.',
+  titulo: 'Facebook, Instagram y TikTok para empresas en Colombia — Soulbyte',
+  descripcion: 'Publica reels y carruseles en Facebook, Instagram y TikTok desde un panel, y responde comentarios y mensajes con reglas que escribes tú, sin IA.',
+  ogTitulo: 'Facebook, Instagram y TikTok para empresas en Colombia — Soulbyte',
+  ogDescripcion: 'Escribes una vez y sale en las tres redes con el texto ajustado a cada una; los comentarios sin responder, a la vista; y respuestas automáticas con tus reglas.',
   ruta: '/facebook-e-instagram/',
   noIndex: false,
 };
@@ -14,20 +14,20 @@ export const jsonld: unknown[] = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://soulbyte.app/' },
-      { '@type': 'ListItem', position: 2, name: 'Facebook e Instagram', item: 'https://soulbyte.app/facebook-e-instagram/' },
+      { '@type': 'ListItem', position: 2, name: 'Facebook, Instagram y TikTok', item: 'https://soulbyte.app/facebook-e-instagram/' },
     ],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Facebook e Instagram para empresas',
-    serviceType: 'Gestión y respuestas automáticas de la página de Facebook, Messenger e Instagram de una empresa',
+    name: 'Facebook, Instagram y TikTok para empresas',
+    serviceType: 'Gestión y respuestas automáticas de la página de Facebook, Messenger, Instagram y TikTok de una empresa',
     url: 'https://soulbyte.app/facebook-e-instagram/',
     provider: { '@type': 'Organization', '@id': 'https://soulbyte.app/#organizacion', name: 'Soulbyte', url: 'https://soulbyte.app/' },
     areaServed: 'CO',
     audience: { '@type': 'BusinessAudience', audienceType: 'Tiendas, marcas y empresas de servicios en Colombia' },
     description:
-      'Panel para la página de Facebook y la cuenta profesional de Instagram de una empresa: publicaciones y carruseles programados, comentarios y mensajes de Messenger e Instagram en un solo lugar, estadísticas y respuestas automáticas por reglas que escribe la empresa, sin inteligencia artificial: palabras clave, menú del chat, preguntas al abrir el chat, menciones de Instagram, avisos al equipo, actividad de 30 días y resumen semanal por correo.',
+      'Panel para la página de Facebook, la cuenta profesional de Instagram y la cuenta de TikTok de una empresa: publicaciones con fotos, carruseles y reels, ahora o programadas, en una red o en las tres con el texto ajustado a cada una, e historias en Facebook e Instagram; publicaciones de Instagram llevadas a Facebook y a TikTok; comentarios de las tres redes y mensajes de Messenger e Instagram en un solo lugar, con los comentarios sin responder a la vista; estadísticas de Instagram y TikTok, y respuestas automáticas por reglas que escribe la empresa, sin inteligencia artificial: palabras clave, menú del chat, preguntas al abrir el chat, menciones de Instagram, avisos al equipo, actividad de 30 días y resumen semanal por correo.',
   },
 ];
 
@@ -38,19 +38,19 @@ export function Contenido() {
         <div className="envoltura hero-grid">
           <div>
             <a className="chip" href="#respuestas">
-              <span className="punto" aria-hidden="true"></span>Facebook, Messenger e Instagram · API oficial de Meta
+              <span className="punto" aria-hidden="true"></span>Facebook, Messenger, Instagram y TikTok · API oficial de Meta y de TikTok
             </a>
             <h1>
-              Tu Facebook e Instagram, <em>desde un solo panel</em>.
+              Tu Facebook, Instagram y TikTok, <em>desde un solo panel</em>.
             </h1>
             <p className="lead">
-              Publica y programa, responde comentarios y mensajes, y deja que las preguntas de siempre se respondan solas con reglas que escribes tú, sin inteligencia artificial. Hoy atiende las páginas de Hit-Air Colombia y Ekivibes.
+              Publica y programa en las tres redes, responde comentarios y mensajes, y deja que las preguntas de siempre se respondan solas con reglas que escribes tú, sin inteligencia artificial. Hoy atiende las redes de Hit-Air Colombia y Ekivibes.
             </p>
             <div className="hero-acciones">
               <a className="btn btn-primario" href="/reservar/">
                 Agenda una llamada <svg className="ico"><use href="#i-flecha" /></svg>
               </a>{' '}
-              <a className="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20Facebook%20e%20Instagram%20con%20Soulbyte">
+              <a className="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20Facebook%2C%20Instagram%20y%20TikTok%20con%20Soulbyte">
                 Hablar con ventas
               </a>
             </div>
@@ -102,19 +102,29 @@ export function Contenido() {
         <div className="envoltura">
           <div className="cabecera">
             <p className="eyebrow">Qué hace el panel</p>
-            <h2>Tus dos redes en un solo lugar, leídas en vivo de Meta.</h2>
-            <p className="lead">Sin saltar entre la app de Facebook, la de Instagram y Business Suite. Si manejas varias marcas, cambias de una a otra con el mismo usuario.</p>
+            <h2>Tus redes en un solo lugar, leídas en vivo.</h2>
+            <p className="lead">Sin saltar entre la app de Facebook, la de Instagram, la de TikTok y Business Suite. Si manejas varias marcas, cambias de una a otra con el mismo usuario.</p>
           </div>
           <div className="bento">
             <article className="baldosa">
               <span className="icono"><svg className="ico"><use href="#i-calendario" /></svg></span>
               <h3>Publicar y programar</h3>
-              <p>Foto, enlace o carrusel de hasta diez fotos, en Facebook, Instagram o los dos, ahora o con fecha y hora. Si Meta falla por algo pasajero, la programada se reintenta sola.</p>
+              <p>Foto, carrusel de hasta diez fotos o reel, en Facebook, Instagram, TikTok o las tres, y también historias en Facebook e Instagram, ahora o con fecha y hora. Si una red falla por algo pasajero, la programada se reintenta sola.</p>
+            </article>
+            <article className="baldosa ancha">
+              <span className="icono"><svg className="ico"><use href="#i-capas" /></svg></span>
+              <h3>Un texto, tres redes</h3>
+              <p>Escribes una vez y ves cómo sale en cada red antes de publicar. En Instagram y TikTok, donde los enlaces no se pueden tocar, pasan a «el enlace de la bio»; Instagram se queda con hasta 30 hashtags y Facebook con los tres primeros de un bloque al final, y cada red recibe su largo. Si quieres, cambias a mano el texto de una red.</p>
+            </article>
+            <article className="baldosa">
+              <span className="icono"><svg className="ico"><use href="#i-imagen" /></svg></span>
+              <h3>Llevar a Facebook y a TikTok</h3>
+              <p>Lo que ya publicaste en Instagram lo llevas a Facebook o a TikTok con sus fotos o su video y su texto. Lo revisas y lo publicas.</p>
             </article>
             <article className="baldosa">
               <span className="icono"><svg className="ico"><use href="#i-chat" /></svg></span>
               <h3>Comentarios</h3>
-              <p>Responde, oculta o elimina los comentarios de tus publicaciones de Facebook e Instagram sin entrar a cada red.</p>
+              <p>Responde, oculta o elimina los comentarios de Facebook, Instagram y TikTok sin entrar a cada red. Los que nadie ha respondido quedan a la vista en tu bandeja hasta que alguien los atiende.</p>
             </article>
             <article className="baldosa">
               <span className="icono"><svg className="ico"><use href="#i-usuarios" /></svg></span>
@@ -123,8 +133,8 @@ export function Contenido() {
             </article>
             <article className="baldosa">
               <span className="icono"><svg className="ico"><use href="#i-grafico" /></svg></span>
-              <h3>Estadísticas de Instagram</h3>
-              <p>Seguidores, alcance, visitas al perfil, interacciones y lo que logró cada publicación: me gusta, comentarios, guardados y compartidos.</p>
+              <h3>Estadísticas de Instagram y TikTok</h3>
+              <p>Seguidores, alcance, visualizaciones, visitas al perfil e interacciones de 7, 14 o 28 días, y los números de cada publicación.</p>
             </article>
             <article className="baldosa">
               <span className="icono"><svg className="ico"><use href="#i-campana" /></svg></span>
@@ -143,7 +153,7 @@ export function Contenido() {
       <section id="respuestas" className="seccion">
         <div className="envoltura division">
           <div className="division-texto">
-            <p className="eyebrow">Respuestas automáticas</p>
+            <p className="eyebrow">Respuestas automáticas · Facebook e Instagram</p>
             <h2>Tú escribes las reglas. El panel las cumple, sin inventar nada.</h2>
             <p className="lead">Cada respuesta sale de un texto que escribiste. Lo que no tiene regla le llega a tu equipo, y cada parte tiene su interruptor.</p>
             <ul className="lista-check">
@@ -210,7 +220,66 @@ export function Contenido() {
         </div>
       </section>
 
-      <section id="limites" className="seccion suave">
+      <section id="tiktok" className="seccion suave">
+        <div className="envoltura">
+          <div className="cabecera">
+            <p className="eyebrow">TikTok · API oficial de TikTok for Business</p>
+            <h2>TikTok, en el mismo panel que tus otras redes.</h2>
+            <p className="lead">Conectas la cuenta de TikTok de tu empresa entrando con su usuario, sin darnos la contraseña, y queda como una red más: publicas, respondes y ves sus números junto a Facebook e Instagram.</p>
+          </div>
+          <div className="dos-columnas">
+            <div className="caja">
+              <h3>Publicar</h3>
+              <ul>
+                <li>
+                  <svg className="ico"><use href="#i-check-circulo" /></svg>
+                  <span>
+                    <b>Reels como video.</b> El mismo reel de Facebook e Instagram sale en TikTok, con videos de hasta 10 minutos.
+                  </span>
+                </li>
+                <li>
+                  <svg className="ico"><use href="#i-check-circulo" /></svg>
+                  <span>
+                    <b>Fotos como carrusel.</b> Una publicación con fotos sale en TikTok como carrusel de fotos, de 1 a 35, ajustadas al tamaño que TikTok acepta.
+                  </span>
+                </li>
+                <li>
+                  <svg className="ico"><use href="#i-check-circulo" /></svg>
+                  <span>
+                    <b>Desde Instagram.</b> Lo que ya publicaste en Instagram lo llevas a TikTok con su video o sus fotos y su texto. Las historias no van a TikTok.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="caja">
+              <h3>Comentarios y estadísticas</h3>
+              <ul>
+                <li>
+                  <svg className="ico"><use href="#i-chat" /></svg>
+                  <span>
+                    <b>Comentarios.</b> Los de cada publicación, también los ocultos: respondes como la cuenta, ocultas o vuelves a mostrar los de otras personas y eliminas los tuyos.
+                  </span>
+                </li>
+                <li>
+                  <svg className="ico"><use href="#i-grafico" /></svg>
+                  <span>
+                    <b>Estadísticas.</b> Seguidores, visualizaciones, espectadores, visitas al perfil, me gusta, comentarios y compartidos de 7, 14 o 28 días, y los números de cada publicación.
+                  </span>
+                </li>
+                <li>
+                  <svg className="ico"><use href="#i-reloj" /></svg>
+                  <span>
+                    <b>Límites de TikTok.</b> Hasta 15 publicaciones al día por cuenta; lo que va a TikTok sale en segundo plano y el panel te avisa cuando quedó publicado.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p className="nota">Las respuestas automáticas por palabra clave son de Facebook e Instagram; en TikTok los comentarios se responden desde el panel.</p>
+        </div>
+      </section>
+
+      <section id="limites" className="seccion">
         <div className="envoltura">
           <div className="cabecera">
             <p className="eyebrow">Límites</p>
@@ -244,13 +313,13 @@ export function Contenido() {
                 <li>
                   <svg className="ico"><use href="#i-llave" /></svg>
                   <span>
-                    <b>Tus cuentas siguen siendo tuyas.</b> La página, la cuenta de Instagram y sus seguidores siguen en el portafolio de tu empresa en Meta. Retiras el acceso cuando quieras desde Meta Business Suite.
+                    <b>Tus cuentas siguen siendo tuyas.</b> La página, la cuenta de Instagram y sus seguidores siguen en el portafolio de tu empresa en Meta, y la cuenta de TikTok sigue a tu nombre. Retiras el acceso cuando quieras desde Meta Business Suite, desde TikTok o desde el panel.
                   </span>
                 </li>
                 <li>
                   <svg className="ico"><use href="#i-escudo" /></svg>
                   <span>
-                    <b>Sin contraseñas.</b> La página se comparte con Soulbyte desde Meta: nunca te pedimos la clave de Facebook ni la de Instagram.
+                    <b>Sin contraseñas.</b> La página se comparte con Soulbyte desde Meta y TikTok se conecta entrando con tu usuario: nunca te pedimos la clave de Facebook, de Instagram ni de TikTok.
                   </span>
                 </li>
                 <li>
@@ -265,7 +334,7 @@ export function Contenido() {
         </div>
       </section>
 
-      <section id="como-se-conecta" className="seccion">
+      <section id="como-se-conecta" className="seccion suave">
         <div className="envoltura">
           <div className="cabecera">
             <p className="eyebrow">Cómo se conecta</p>
@@ -278,7 +347,7 @@ export function Contenido() {
             </li>
             <li>
               <h3>La habilitamos en tu panel</h3>
-              <p>Tu página aparece en Redes con sus publicaciones, comentarios, mensajes y estadísticas, y la conectas con un clic.</p>
+              <p>Tu página aparece en Redes con sus publicaciones, comentarios, mensajes y estadísticas, y la conectas con un clic. TikTok lo conectas tú, entrando con el usuario de tu cuenta.</p>
             </li>
             <li>
               <h3>Escribes tus reglas</h3>
@@ -293,11 +362,11 @@ export function Contenido() {
         </div>
       </section>
 
-      <section id="preguntas" className="seccion faq suave">
+      <section id="preguntas" className="seccion faq">
         <div className="envoltura faq-grid">
           <div className="cabecera-lateral">
             <p className="eyebrow">Preguntas frecuentes</p>
-            <h2>Sobre Facebook e Instagram con Soulbyte.</h2>
+            <h2>Sobre Facebook, Instagram y TikTok con Soulbyte.</h2>
             <p className="lead">
               ¿Otra duda? Escríbenos a <a href="mailto:hola@soulbyte.app">hola@soulbyte.app</a>.
             </p>
@@ -316,12 +385,16 @@ export function Contenido() {
               <p>Toca «Hablar con alguien» o lo pide, tu equipo recibe el aviso y el asistente deja de responderle solo. Si alguien de tu equipo le contesta desde el panel, el asistente se calla 12 horas con esa persona.</p>
             </details>
             <details>
-              <summary>¿Puedo programar carruseles?</summary>
-              <p>Sí, de hasta diez fotos: en Instagram sale como carrusel y en Facebook como una publicación con varias fotos. Puedes publicar en una red o en las dos a la vez.</p>
+              <summary>¿Qué puedo publicar y programar?</summary>
+              <p>Fotos, carruseles de hasta diez fotos, reels e historias, ahora o con fecha y hora. El carrusel sale en Instagram como carrusel, en Facebook como una publicación con varias fotos y en TikTok como carrusel de fotos; el reel, como video en Facebook y en TikTok. Las historias van a Instagram y, las de foto, también a Facebook.</p>
+            </details>
+            <details>
+              <summary>¿Tengo que escribir un texto para cada red?</summary>
+              <p>No. Escribes uno y el panel lo ajusta a cada red con reglas fijas, sin inteligencia artificial: los enlaces pasan a «el enlace de la bio» en Instagram y TikTok, y cada red recibe su largo y sus hashtags. Antes de publicar ves cómo sale en cada una y, si quieres, cambias a mano el de una red.</p>
             </details>
             <details>
               <summary>¿Sirve para cualquier página?</summary>
-              <p>Para la página de Facebook de tu empresa y la cuenta profesional de Instagram conectada a ella. Hoy opera en las cuentas de nuestras marcas; para las de otra empresa, Meta debe aprobar además el acceso avanzado de nuestra app.</p>
+              <p>Para la página de Facebook de tu empresa y la cuenta profesional de Instagram conectada a ella. Hoy opera en las cuentas de nuestras marcas; para las de otra empresa, Meta debe aprobar además el acceso avanzado de nuestra app. En TikTok, la cuenta de tu empresa autoriza la conexión por su lado.</p>
             </details>
             <details>
               <summary>¿Cuánto cuesta?</summary>
@@ -342,7 +415,7 @@ export function Contenido() {
               <a className="btn btn-claro" href="/reservar/">
                 Agenda una llamada <svg className="ico"><use href="#i-flecha" /></svg>
               </a>{' '}
-              <a className="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20Facebook%20e%20Instagram%20con%20Soulbyte">
+              <a className="btn btn-oscuro-contorno" href="mailto:hola@soulbyte.app?subject=Quiero%20Facebook%2C%20Instagram%20y%20TikTok%20con%20Soulbyte">
                 Escribirnos
               </a>
             </div>
